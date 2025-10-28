@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Categorías Deportivas</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .video-fondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    .contenido {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding-top: 20%;
+      font-family: sans-serif;
+    }
+   
+
+
+    nav {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      display: block;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: #00ff88;
+      color: #111;
+      border-radius: 5px;
+    }
+
+
+    nav ul ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      min-width: 200px;
+      border-radius: 5px;
+      z-index: 10;
+    }
+
+    nav ul ul li a {
+      padding: 10px 15px;
+    }
+
+    nav ul li:hover > ul {
+      display: block;
+    }
+
+ 
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      ul {
+        flex-direction: column;
+        width: 100%;
+      }
+      nav ul li a {
+        width: 100%;
+      }
+      nav ul ul {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+
+      <li>
+        <a href="#">Fútbol ⚽</a>
+        <ul>
+          <li><a href="#">Ligas Nacionales</a></li>
+          <li><a href="#">Copas Internacionales</a></li>
+          <li><a href="#">Fútbol Femenino</a></li>
+          <li><a href="#">Selecciones</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Baloncesto 🏀</a>
+        <ul>
+          <li><a href="#">NBA</a></li>
+          <li><a href="#">Euroliga</a></li>
+          <li><a href="#">FIBA</a></li>
+          <li><a href="#">Ligas Nacionales</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Tenis 🎾</a>
+        <ul>
+          <li><a href="#">ATP</a></li>
+          <li><a href="#">WTA</a></li>
+          <li><a href="#">Grand Slams</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Motor 🏎️</a>
+        <ul>
+          <li><a href="#">Fórmula 1</a></li>
+          <li><a href="#">MotoGP</a></li>
+          <li><a href="#">Rally</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Más Deportes 🏅</a>
+        <ul>
+          <li><a href="#">Boxeo / MMA</a></li>
+          <li><a href="#">Ciclismo</a></li>
+          <li><a href="#">Atletismo</a></li>
+          <li><a href="#">E-Sports</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Noticias 📰</a></li>
+      <li><a href="#">Tienda 🛒</a></li>
+    </ul>
+  </nav>
+   <video autoplay loop muted class="video-fondo">
+    <source src="logofondo.mp4" type="video/mp4">
+    Tu navegador no soporta el video.
+  </video>
+</body>
+
+</html>
