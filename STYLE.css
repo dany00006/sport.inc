@@ -1,0 +1,211 @@
+/* 🎨 RESETEO Y CONFIGURACIÓN GLOBAL */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+    /* 🎬 VIDEO DE FONDO */
+    .video-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.8);
+  pointer-events: none; /* evita que el video intercepte clics */
+}
+
+
+    /* 🧭 MENÚ DE NAVEGACIÓN */
+    nav {
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 40px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    nav ul li a:hover {
+      background: #fff;
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    nav ul ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(0, 0, 0, 0.9);
+      border-radius: 6px;
+      display: none;
+      min-width: 200px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    nav ul li:hover > ul {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    nav ul ul li a {
+      padding: 10px 15px;
+      font-size: 0.95em;
+    }
+
+    /* ✨ EFECTO SUAVE */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 🧱 CONTENIDO PRINCIPAL */
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 130px 5% 80px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      margin: 40px 0 20px;
+      font-size: 2.2rem;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+  
+    .producto {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .producto:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .producto h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .producto p {
+      font-size: 0.95rem;
+      color: #ddd;
+      margin-bottom: 8px;
+    }
+
+    .precio {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #00ff8c;
+    }
+
+    button {
+      margin-top: 10px;
+      background: #fff;
+      color: #111;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #ff0000;
+      transform: scale(1.05);
+    }
+
+    /* 📱 RESPONSIVE */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 25px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul li a {
+        width: 100%;
+        padding: 12px;
+      }
+
+      nav ul ul {
+        position: static;
+        width: 100%;
+        background: rgba(20, 20, 20, 0.9);
+      }
+
+      .producto {
+        width: 90%;
+      }
+    }

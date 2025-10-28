@@ -3,121 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Categorías Deportivas</title>
-  <style>
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .video-fondo {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
-      object-fit: cover;
-    }
-
-    .contenido {
-      position: relative;
-      z-index: 1;
-      color: white;
-      text-align: center;
-      padding-top: 20%;
-      font-family: sans-serif;
-    }
-   
-
-
-    nav {
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      padding: 15px 40px;
-      display: flex;
-      justify-content: center;
-    }
-
-    ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    nav ul li {
-      position: relative;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      padding: 12px 20px;
-      display: block;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      background: #00ff88;
-      color: #111;
-      border-radius: 5px;
-    }
-
-
-    nav ul ul {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: rgba(0, 0, 0, 0.9);
-      display: none;
-      min-width: 200px;
-      border-radius: 5px;
-      z-index: 10;
-    }
-
-    nav ul ul li a {
-      padding: 10px 15px;
-    }
-
-    nav ul li:hover > ul {
-      display: block;
-    }
-
- 
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      ul {
-        flex-direction: column;
-        width: 100%;
-      }
-      nav ul li a {
-        width: 100%;
-      }
-      nav ul ul {
-        position: static;
-      }
-    }
-  </style>
+  <title>Catálogo Deportivo</title>
+  <link href="STYLE.css" rel="stylesheet">
 </head>
 <body>
+
+  <video class="video-fondo" autoplay muted loop playsinline>
+    <source src="FONDOLOGIN.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+
+  <nav>...</nav>
+  <main>...</main>
+
+  <!-- 🧭 Menú de navegación -->
   <nav>
     <ul>
       <li><a href="#">Inicio</a></li>
-
       <li>
         <a href="#">Fútbol ⚽</a>
         <ul>
@@ -127,7 +29,6 @@
           <li><a href="#">Selecciones</a></li>
         </ul>
       </li>
-
       <li>
         <a href="#">Baloncesto 🏀</a>
         <ul>
@@ -137,7 +38,6 @@
           <li><a href="#">Ligas Nacionales</a></li>
         </ul>
       </li>
-
       <li>
         <a href="#">Tenis 🎾</a>
         <ul>
@@ -146,7 +46,6 @@
           <li><a href="#">Grand Slams</a></li>
         </ul>
       </li>
-
       <li>
         <a href="#">Motor 🏎️</a>
         <ul>
@@ -155,7 +54,6 @@
           <li><a href="#">Rally</a></li>
         </ul>
       </li>
-
       <li>
         <a href="#">Más Deportes 🏅</a>
         <ul>
@@ -165,15 +63,68 @@
           <li><a href="#">E-Sports</a></li>
         </ul>
       </li>
-
       <li><a href="#">Noticias 📰</a></li>
       <li><a href="#">Tienda 🛒</a></li>
     </ul>
   </nav>
-   <video autoplay loop muted class="video-fondo">
-    <source src="logofondo.mp4" type="video/mp4">
-    Tu navegador no soporta el video.
-  </video>
-</body>
 
+  <!-- 🏆 Catálogo -->
+  <main>
+    <h1>Catálogo Deportivo</h1>
+
+    <h1>ADIDAS</h1>
+    <section>
+      <article class="producto">
+        <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/4229e87f23044869a5218fbc64c4fd71_9366/Balon_Trionda_Pro_Copa_Mundial_de_la_FIFA_26tm_Blanco_JD8021_HM1.jpg" alt="">
+        <h2>Balón Trionda Pro Copa Mundial de la FIFA 26</h2>
+        <p>Control preciso y gran durabilidad, ideal para partidos intensos.</p>
+        <p class="precio">$350.000 COP</p>
+        <button>Comprar</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/2301d0c0b0db4c9f8779b07fb7e9127c_9366/Camiseta_de_local_autentica_del_Real_Madrid_temporada_2025-2026_Blanco_JV5918_HM1.jpg" alt="">
+        <h2>Camiseta Real Madrid 2025</h2>
+        <p>Oficial con tecnología AeroReady para mayor comodidad.</p>
+        <p class="precio">$280.000 COP</p>
+        <button>Comprar</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/15dbd44e1eeb4190afa1d1490e26752f_9366/Camiseta_Local_Seleccion_Colombia_24_Version_Jugador_Amarillo_IP8280_21_model.jpg" alt="">
+        <h2>Camiseta Selección Colombia</h2>
+        <p>Versión oficial para apoyar a la tricolor con orgullo.</p>
+        <p class="precio">$260.000 COP</p>
+        <button>Comprar</button>
+      </article>
+    </section>
+
+    <h1>NIKE</h1>
+    <section>
+      <article class="producto">
+        <img src="https://nikeco.vtexassets.com/arquivos/ids/393029-500-500?v=638392160069530000" alt="Nike Air Force 1">
+        <h2>Nike Air Force 1</h2>
+        <p>Clásicos, cómodos y con estilo urbano. Un ícono eterno.</p>
+        <p class="precio">$499.900</p>
+        <button>Comprar</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://nikeco.vtexassets.com/arquivos/ids/907251-500-500?v=638906044613700000" alt="Camiseta Nike Dri-Fit">
+        <h2>Camiseta Dri-Fit</h2>
+        <p>Tecnología que absorbe el sudor, ideal para entrenamientos.</p>
+        <p class="precio">$149.900</p>
+        <button>Comprar</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://static.nike.com/a/images/t_default/8ddca2ae-a169-471f-a53e-167ded1d739d/NK+FLIGHT+-+FA23.png" alt="Balón Nike Flight">
+        <h2>Balón Nike Flight</h2>
+        <p>Balón oficial de alto rendimiento, con diseño aerodinámico.</p>
+        <p class="precio">$299.900</p>
+        <button>Comprar</button>
+      </article>
+    </section>
+  </main>
+</body>
 </html>
