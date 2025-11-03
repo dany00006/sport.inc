@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Energy-Motor</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
+  <title>Energy-Noticias</title>
   <link href="STYLE.css" rel="stylesheet" />
   <style>
     .contenido {
@@ -16,7 +14,7 @@
       padding: 10% 20px;
     }
 
-    section.motor-layout {
+    section.noticias-layout {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 40px;
@@ -24,7 +22,7 @@
       padding: 0 40px;
     }
 
-    section.motor-layout li {
+    section.noticias-layout article {
       list-style: none;
       background: rgba(0, 0, 0, 0.7);
       border-radius: 10px;
@@ -33,29 +31,50 @@
       transition: transform 0.3s ease;
     }
 
-    section.motor-layout li:hover {
+    section.noticias-layout article:hover {
       transform: scale(1.05);
       background: rgba(0, 255, 136, 0.2);
     }
 
-    section.motor-layout img {
+    section.noticias-layout img {
       width: 100%;
       border-radius: 8px;
       margin-bottom: 15px;
     }
 
-    section.motor-layout h3 {
+    section.noticias-layout h3 {
       margin-bottom: 10px;
       font-size: 1.3em;
     }
 
-    section.motor-layout p {
+    section.noticias-layout p {
       font-size: 0.95em;
       line-height: 1.4em;
     }
 
+    form {
+      margin-top: 60px;
+    }
+
+    input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      border: none;
+      background: #00ff88;
+      color: #111;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
-      section.motor-layout {
+      section.noticias-layout {
         grid-template-columns: 1fr;
       }
     }
@@ -64,10 +83,10 @@
 <body>
 
   <video class="video-fondo" autoplay muted loop playsinline>
-    <source src="https://cdn.pixabay.com/video/2015/11/09/1295-145209438_large.mp4" type="video/mp4">
+    <source src="https://cdn.pixabay.com/video/2016/01/29/1992-153555258_large.mp4" type="video/mp4">
     Tu navegador no soporta video HTML5.
   </video>
-  
+
   <nav>...</nav>
   <main>...</main>
 
@@ -103,28 +122,35 @@
 </nav>
 
   <main class="contenido">
-    <h1>Motor</h1>
-    <p>Velocidad, estrategia y adrenalina. Explora las principales disciplinas del automovilismo y motociclismo mundial.</p>
+    <h1>Noticias Deportivas 📰</h1>
+    <p>Entérate de lo último en fútbol, baloncesto, tenis, motor y más. Actualizaciones globales, eventos destacados y curiosidades del deporte.</p>
 
-    <section class="motor-layout">
+    <section class="noticias-layout">
       <ul>
-        <li>
-          <img src="f1.jpg" alt="Fórmula 1">
-          <h3>Fórmula 1</h3>
-          <p>La máxima categoría del automovilismo. Escuderías legendarias, circuitos icónicos y pilotos de élite compiten por la gloria.</p>
-        </li>
-        <li>
-          <img src="motogp.jpg" alt="MotoGP">
-          <h3>MotoGP</h3>
-          <p>La velocidad sobre dos ruedas. Las mejores motos y los pilotos más audaces del mundo en una batalla por milésimas de segundo.</p>
-        </li>
-        <li>
-          <img src="rally.jpg" alt="Rally">
-          <h3>Rally</h3>
-          <p>Competencias extremas en tierra, nieve y asfalto. El WRC y el Dakar desafían a los conductores en condiciones impredecibles.</p>
-        </li>
+        <article>
+          <img src="noticia1.jpg" alt="Noticia fútbol">
+          <h3>Final épica en la Champions League</h3>
+          <p>El Real Madrid se coronó campeón tras vencer al Manchester City en un partido lleno de emoción y goles.</p>
+        </article>
+        <article>
+          <img src="noticia2.jpg" alt="Noticia tenis">
+          <h3>Swiatek domina Roland Garros</h3>
+          <p>La tenista polaca retiene su título en París con una actuación impecable frente a Coco Gauff.</p>
+        </article>
+        <article>
+          <img src="noticia3.jpg" alt="Noticia motor">
+          <h3>Verstappen gana en Mónaco</h3>
+          <p>El piloto neerlandés se impone en las calles del Principado y amplía su ventaja en el campeonato de F1.</p>
+        </article>
       </ul>
     </section>
+
+    <h2 style="margin-top:60px;">Suscríbete al Boletín</h2>
+    <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
+    <form>
+      <input type="email" placeholder="Tu correo electrónico" required>
+      <button type="submit">Suscribirse</button>
+    </form>
   </main>
 
 </body>
