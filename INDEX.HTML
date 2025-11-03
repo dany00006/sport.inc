@@ -124,5 +124,27 @@
       </article>
     </section>
   </main>
+<section id="newsletter" style="position:relative; z-index:1; padding:40px; background:rgba(0,0,0,0.85); color:white; text-align:center;">
+  <h2>Suscríbete al Boletín 📰</h2>
+  <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
+  <form id="form-newsletter">
+    <input type="email" id="email" placeholder="Tu correo electrónico" required style="padding:10px; width:250px;">
+    <button type="submit" style="padding:10px 20px; margin-left:10px;">Suscribirse</button>
+  </form>
+  <div id="mensaje-newsletter" style="margin-top:20px;"></div>
+</section>
+
+<script>
+  const formNewsletter = document.getElementById("form-newsletter");
+  const mensaje = document.getElementById("mensaje-newsletter");
+
+  formNewsletter.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const email = document.getElementById("email").value;
+
+    mensaje.innerHTML = `¡Gracias por suscribirte, ${email}! 🏅`;
+    formNewsletter.reset();
+  });
+</script>
 </body>
 </html>

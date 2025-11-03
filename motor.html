@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motor 🏎️</title>
+  <link href="STYLE.css" rel="stylesheet" />
+  <style>
+    .contenido {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding: 10% 20px;
+    }
+
+    section.motor-layout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+      padding: 0 40px;
+    }
+
+    section.motor-layout li {
+      list-style: none;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      padding: 20px;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    section.motor-layout li:hover {
+      transform: scale(1.05);
+      background: rgba(0, 255, 136, 0.2);
+    }
+
+    section.motor-layout img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    section.motor-layout h3 {
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+    section.motor-layout p {
+      font-size: 0.95em;
+      line-height: 1.4em;
+    }
+
+    @media (max-width: 768px) {
+      section.motor-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <video class="video-fondo" autoplay muted loop playsinline>
+    <source src="FONDOLOGIN.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+  
+  <nav>...</nav>
+  <main>...</main>
+
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li>
+        <a href="#">Fútbol </a>
+    
+      </li>
+      <li>
+        <a href="#">Baloncesto </a>
+        
+      </li>
+      <li>
+        <a href="#">Tenis </a>
+        
+      </li>
+      <li>
+        <a href="#">Motor </a>
+        
+      </li>
+      <li>
+        <a href="#">Más Deportes </a>
+        <ul>
+          <li><a href="#">Boxeo / MMA</a></li>
+          <li><a href="#">Ciclismo</a></li>
+          <li><a href="#">Atletismo</a></li>
+          <li><a href="#">E-Sports</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Noticias </a></li>
+      <li><a href="#">Tienda </a></li>
+    </ul>
+  </nav>
+
+  <main class="contenido">
+    <h1>Motor 🏎️</h1>
+    <p>Velocidad, estrategia y adrenalina. Explora las principales disciplinas del automovilismo y motociclismo mundial.</p>
+
+    <section class="motor-layout">
+      <ul>
+        <li>
+          <img src="f1.jpg" alt="Fórmula 1">
+          <h3>Fórmula 1</h3>
+          <p>La máxima categoría del automovilismo. Escuderías legendarias, circuitos icónicos y pilotos de élite compiten por la gloria.</p>
+        </li>
+        <li>
+          <img src="motogp.jpg" alt="MotoGP">
+          <h3>MotoGP</h3>
+          <p>La velocidad sobre dos ruedas. Las mejores motos y los pilotos más audaces del mundo en una batalla por milésimas de segundo.</p>
+        </li>
+        <li>
+          <img src="rally.jpg" alt="Rally">
+          <h3>Rally</h3>
+          <p>Competencias extremas en tierra, nieve y asfalto. El WRC y el Dakar desafían a los conductores en condiciones impredecibles.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>
