@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -85,7 +86,7 @@
       z-index: 10;
     }
 
-    nav li:hover > ul {
+    nav li:hover>ul {
       display: block;
     }
 
@@ -177,7 +178,7 @@
       border-radius: 12px;
       padding: 2rem;
       margin-top: 3rem;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
       color: #fff;
       backdrop-filter: blur(10px);
     }
@@ -232,14 +233,14 @@
       position: relative;
       z-index: 1;
       padding: 40px;
-      background: rgba(0,0,0,0.85);
-      color: rgb(35, 19, 184);
+      background: rgba(0, 0, 0, 0.85);
+      color: rgb(255, 255, 255);
       text-align: center;
       margin-top: 3rem;
     }
 
     #newsletter h2 {
-      color: #371dcee7;
+      color: #ffffffe7;
       margin-bottom: 1rem;
     }
 
@@ -500,9 +501,17 @@
 
     /* Animación de añadir al carrito */
     @keyframes addToCart {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
 
     .animate-add {
@@ -534,29 +543,31 @@
     }
   </style>
 </head>
+
 <body>
   <video class="video-fondo" autoplay muted loop playsinline>
     <source src="FONDOLOGIN.mp4" type="video/mp4">
     Tu navegador no soporta video HTML5.
   </video>
 
-  
 
-  <nav style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-  
 
-  <a href="INDEX.HTML" style="color: #2a7bf5be; font-weight: 700; font-size: 1.6em; text-decoration: none;">
-    Energy~Sports
-  </a>
+  <nav
+    style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
 
-  
-  <ul style="list-style: none; display: flex; flex-wrap: wrap; margin: 0; padding: 0;">
-    <li><a href="INDEX.HTML">Inicio</a></li>
 
-    <li><a href="futbol.html">Fútbol</a></li>
-    <li><a href="baloncesto.html">Baloncesto</a></li>
-    <li><a href="tenis.html">Tenis</a></li>
-    <li><a href="motor.html">Motor</a></li>
+    <a href="INDEX.HTML" style="color: #2a7bf5be; font-weight: 700; font-size: 1.6em; text-decoration: none;">
+      Energy~Sports
+    </a>
+
+
+    <ul style="list-style: none; display: flex; flex-wrap: wrap; margin: 0; padding: 0;">
+      <li><a href="INDEX.HTML">Inicio</a></li>
+
+      <li><a href="futbol.html">Fútbol</a></li>
+      <li><a href="baloncesto.html">Baloncesto</a></li>
+      <li><a href="tenis.html">Tenis</a></li>
+      <li><a href="motor.html">Motor</a></li>
 
 
       <li>
@@ -584,37 +595,48 @@
         <h2>Balón Trionda Pro</h2>
         <p>Balón oficial Copa Mundial FIFA 2026. Precisión, durabilidad y diseño profesional.</p>
         <p class="precio">$350.900 COP</p>
-        <button class="btn-comprar" data-id="1" data-name="Balón Trionda Pro" data-price="350900" data-image="https://media.falabella.com/falabellaCO/73398815_1/w=800,h=800,fit=pad">Añadir al carrito</button>
+        <button class="btn-comprar" data-id="1" data-name="Balón Trionda Pro" data-price="350900"
+          data-image="https://media.falabella.com/falabellaCO/73398815_1/w=800,h=800,fit=pad">Añadir al carrito</button>
       </article>
 
       <article class="producto">
         <a href="baloncesto.html">
-          <img src="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/9f2c2e7f-9c2e-4e7e-9b6a-0f6e3e7e2f2e/nike-lebron-xxi.jpg" alt="Zapatillas LeBron XXI">
+          <img
+            src="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/9f2c2e7f-9c2e-4e7e-9b6a-0f6e3e7e2f2e/nike-lebron-xxi.jpg"
+            alt="Zapatillas LeBron XXI">
         </a>
         <h2>Zapatillas Nike Air Zoom</h2>
         <p>Diseño ligero y amortiguación Zoom Air para máximo rendimiento en cancha.</p>
         <p class="precio">$689.000 COP</p>
-        <button class="btn-comprar" data-id="2" data-name="Zapatillas Nike Air Zoom" data-price="689000" data-image="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/9f2c2e7f-9c2e-4e7e-9b6a-0f6e3e7e2f2e/nike-lebron-xxi.jpg">Añadir al carrito</button>
+        <button class="btn-comprar" data-id="2" data-name="Zapatillas Nike Air Zoom" data-price="689000"
+          data-image="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/9f2c2e7f-9c2e-4e7e-9b6a-0f6e3e7e2f2e/nike-lebron-xxi.jpg">Añadir
+          al carrito</button>
       </article>
 
       <article class="producto">
         <a href="tenis.html">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xLqtL-M-yEfkaVmC4TWV5RX9klWq96AYKg&s" alt="Raqueta Wilson Blade 98">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xLqtL-M-yEfkaVmC4TWV5RX9klWq96AYKg&s"
+            alt="Raqueta Wilson Blade 98">
         </a>
         <h2>Raqueta Wilson Pro Staff</h2>
         <p>Control y potencia para jugadores competitivos. Tecnología FeelFlex y diseño ergonómico.</p>
         <p class="precio">$499.900 COP</p>
-        <button class="btn-comprar" data-id="3" data-name="Raqueta Wilson Pro Staff" data-price="499900" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xLqtL-M-yEfkaVmC4TWV5RX9klWq96AYKg&s">Añadir al carrito</button>
+        <button class="btn-comprar" data-id="3" data-name="Raqueta Wilson Pro Staff" data-price="499900"
+          data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xLqtL-M-yEfkaVmC4TWV5RX9klWq96AYKg&s">Añadir
+          al carrito</button>
       </article>
 
       <article class="producto">
         <a href="motor.html">
-          <img src="https://virtualed.com.co/cdn/shop/files/IMG-9235.jpg?v=1701362653&width=1445" alt="Casco HJC RPHA 11 Pro">
+          <img src="https://virtualed.com.co/cdn/shop/files/IMG-9235.jpg?v=1701362653&width=1445"
+            alt="Casco HJC RPHA 11 Pro">
         </a>
         <h2>Casco HJC RPHA 11 Pro</h2>
         <p>Casco deportivo de alto rendimiento. Aerodinámica avanzada y ventilación optimizada.</p>
         <p class="precio">$1.250.000 COP</p>
-        <button class="btn-comprar" data-id="4" data-name="Casco HJC RPHA 11 Pro" data-price="1250000" data-image="https://virtualed.com.co/cdn/shop/files/IMG-9235.jpg?v=1701362653&width=1445">Añadir al carrito</button>
+        <button class="btn-comprar" data-id="4" data-name="Casco HJC RPHA 11 Pro" data-price="1250000"
+          data-image="https://virtualed.com.co/cdn/shop/files/IMG-9235.jpg?v=1701362653&width=1445">Añadir al
+          carrito</button>
       </article>
     </section>
 
@@ -627,7 +649,9 @@
         <ul>
           <li>Colombia vs Alemania – Mundial Sub-17 (5 Nov, 14:00)</li>
           <li>Millonarios vs Nacional – Liga BetPlay (8 Nov, 19:30)</li>
-          <li><a href="https://www.elinformador.com.co/index.php/tendencias/215-mas-populares/329825-el-deporte-colombiano-en-este-2025" target="_blank">Ver más en El Informador</a></li>
+          <li><a
+              href="https://www.elinformador.com.co/index.php/tendencias/215-mas-populares/329825-el-deporte-colombiano-en-este-2025"
+              target="_blank">Ver más en El Informador</a></li>
         </ul>
       </section>
 
@@ -636,7 +660,8 @@
         <ul>
           <li>Toros del Valle vs Titanes – LBP (6 Nov, 18:00)</li>
           <li>Lakers vs Warriors – NBA (7 Nov, 21:00)</li>
-          <li><a href="https://www.calendariodecolombia.com/fechas/calendario-de-eventos-deportivos-2025-en-colombia" target="_blank">Calendario completo en CalendarioDeColombia</a></li>
+          <li><a href="https://www.calendariodecolombia.com/fechas/calendario-de-eventos-deportivos-2025-en-colombia"
+              target="_blank">Calendario completo en CalendarioDeColombia</a></li>
         </ul>
       </section>
 
@@ -645,7 +670,9 @@
         <ul>
           <li>Masters 1000 París – Cuartos de final (6–9 Nov)</li>
           <li>ATP Finals – Inicio (12 Nov)</li>
-          <li><a href="https://rentifyexperience.com/colombia-2025-eventos-deportivos-imperdibles-en-bogota-medellin-cali-cartagena-y-barranquilla/" target="_blank">Eventos destacados en Rentify Experience</a></li>
+          <li><a
+              href="https://rentifyexperience.com/colombia-2025-eventos-deportivos-imperdibles-en-bogota-medellin-cali-cartagena-y-barranquilla/"
+              target="_blank">Eventos destacados en Rentify Experience</a></li>
         </ul>
       </section>
 
@@ -654,7 +681,8 @@
         <ul>
           <li>MotoGP Valencia – Gran Premio final (10 Nov)</li>
           <li>WRC Japón – Etapa decisiva (9–12 Nov)</li>
-          <li><a href="https://www.calendariodecolombia.com/fechas/calendario-de-eventos-deportivos-2025-en-colombia" target="_blank">Ver agenda completa</a></li>
+          <li><a href="https://www.calendariodecolombia.com/fechas/calendario-de-eventos-deportivos-2025-en-colombia"
+              target="_blank">Ver agenda completa</a></li>
         </ul>
       </section>
     </section>
@@ -713,12 +741,12 @@
     function initStore() {
       loadCartFromStorage();
       updateCartUI();
-      
+
       // Event listeners
       cartButton.addEventListener('click', toggleCart);
       closeCart.addEventListener('click', toggleCart);
       checkoutBtn.addEventListener('click', checkout);
-      
+
       // Añadir event listeners a los botones de compra
       document.querySelectorAll('.btn-comprar').forEach(button => {
         button.addEventListener('click', (e) => {
@@ -726,11 +754,11 @@
           const productName = e.target.getAttribute('data-name');
           const productPrice = parseInt(e.target.getAttribute('data-price'));
           const productImage = e.target.getAttribute('data-image');
-          
+
           addToCart(productId, productName, productPrice, productImage);
         });
       });
-      
+
       // Cerrar carrito al hacer clic fuera de él
       document.addEventListener('click', (e) => {
         if (!cartPanel.contains(e.target) && !cartButton.contains(e.target) && cartPanel.classList.contains('active')) {
@@ -742,7 +770,7 @@
     // Añadir producto al carrito
     function addToCart(productId, productName, productPrice, productImage) {
       const existingItem = cart.find(item => item.id === productId);
-      
+
       if (existingItem) {
         existingItem.quantity += 1;
       } else {
@@ -754,16 +782,16 @@
           quantity: 1
         });
       }
-      
+
       // Animación del botón del carrito
       cartButton.classList.add('animate-add');
       setTimeout(() => {
         cartButton.classList.remove('animate-add');
       }, 500);
-      
+
       updateCartUI();
       saveCartToStorage();
-      
+
       // Abrir el carrito automáticamente
       if (!cartPanel.classList.contains('active')) {
         toggleCart();
@@ -781,9 +809,9 @@
     function updateQuantity(productId, change) {
       const item = cart.find(item => item.id === productId);
       if (!item) return;
-      
+
       item.quantity += change;
-      
+
       if (item.quantity <= 0) {
         removeFromCart(productId);
       } else {
@@ -797,21 +825,21 @@
       // Calcular totales
       cartCount = cart.reduce((total, item) => total + item.quantity, 0);
       totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-      
+
       // Formatear el total como moneda colombiana
       const formattedTotal = new Intl.NumberFormat('es-CO', {
         style: 'currency',
         currency: 'COP',
         minimumFractionDigits: 0
       }).format(totalAmount);
-      
+
       // Actualizar elementos del DOM
       cartCountElement.textContent = cartCount;
       totalAmountElement.textContent = formattedTotal;
-      
+
       // Renderizar elementos del carrito
       cartItems.innerHTML = '';
-      
+
       if (cart.length === 0) {
         cartItems.innerHTML = `
           <section class="empty-cart">
@@ -821,14 +849,14 @@
         `;
         return;
       }
-      
+
       cart.forEach(item => {
         const formattedPrice = new Intl.NumberFormat('es-CO', {
           style: 'currency',
           currency: 'COP',
           minimumFractionDigits: 0
         }).format(item.price);
-        
+
         const cartItem = document.createElement('section');
         cartItem.className = 'cart-item';
         cartItem.innerHTML = `
@@ -844,10 +872,10 @@
             </section>
           </section>
         `;
-        
+
         cartItems.appendChild(cartItem);
       });
-      
+
       // Añadir event listeners a los botones de cantidad y eliminar
       document.querySelectorAll('.quantity-btn.minus').forEach(button => {
         button.addEventListener('click', (e) => {
@@ -855,14 +883,14 @@
           updateQuantity(productId, -1);
         });
       });
-      
+
       document.querySelectorAll('.quantity-btn.plus').forEach(button => {
         button.addEventListener('click', (e) => {
           const productId = parseInt(e.target.getAttribute('data-id'));
           updateQuantity(productId, 1);
         });
       });
-      
+
       document.querySelectorAll('.remove-item').forEach(button => {
         button.addEventListener('click', (e) => {
           const productId = parseInt(e.target.getAttribute('data-id'));
@@ -882,7 +910,7 @@
         alert('Tu carrito está vacío. Añade algunos productos antes de finalizar la compra.');
         return;
       }
-      
+
       alert(`¡Gracias por tu compra! Total: ${totalAmountElement.textContent}\n\nTu pedido ha sido procesado.`);
       cart = [];
       updateCartUI();
@@ -906,5 +934,69 @@
     // Inicializar la aplicación
     document.addEventListener('DOMContentLoaded', initStore);
   </script>
+  <!-- 🌐 Redes Sociales - Versión Neon Minimal -->
+  <section id="redes-sociales"
+    style="padding:50px 0; text-align:center; background:radial-gradient(circle at center, rgba(66, 63, 63, 0.9) 0%, rgba(0,0,0,1) 100%); color:#fff; border-top:2px solid #00ff88;">
+    <h2 style="font-size:1.8em; margin-bottom:25px; color:#ffffff; letter-spacing:1px;">Conéctate con Energy~Sports</h2>
+
+    <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
+
+      <a href="https://facebook.com" target="_blank" title="Facebook" style="
+      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+      background:#111; color:#00ff88; font-size:26px; text-decoration:none;
+      box-shadow:0 0 10px rgba(0,255,136,0.4), inset 0 0 10px rgba(0,255,136,0.2);
+      transition:all 0.3s ease;
+    " onmouseover="this.style.background='#00ff88'; this.style.color='black'; this.style.boxShadow='0 0 20px #00ff88';"
+        onmouseout="this.style.background='#111'; this.style.color='#00ff88'; this.style.boxShadow='0 0 10px rgba(0,255,136,0.4), inset 0 0 10px rgba(0,255,136,0.2)';">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <a href="https://instagram.com" target="_blank" title="Instagram" style="
+      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+      background:#111; color:#ff00ff; font-size:26px; text-decoration:none;
+      box-shadow:0 0 10px rgba(255,0,255,0.4), inset 0 0 10px rgba(255,0,255,0.2);
+      transition:all 0.3s ease;
+    " onmouseover="this.style.background='#ff00ff'; this.style.color='white'; this.style.boxShadow='0 0 20px #ff00ff';"
+        onmouseout="this.style.background='#111'; this.style.color='#ff00ff'; this.style.boxShadow='0 0 10px rgba(255,0,255,0.4), inset 0 0 10px rgba(255,0,255,0.2)';">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a href="https://twitter.com" target="_blank" title="Twitter" style="
+      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+      background:#111; color:#1da1f2; font-size:26px; text-decoration:none;
+      box-shadow:0 0 10px rgba(29,161,242,0.4), inset 0 0 10px rgba(29,161,242,0.2);
+      transition:all 0.3s ease;
+    " onmouseover="this.style.background='#1da1f2'; this.style.color='black'; this.style.boxShadow='0 0 20px #1da1f2';"
+        onmouseout="this.style.background='#111'; this.style.color='#1da1f2'; this.style.boxShadow='0 0 10px rgba(29,161,242,0.4), inset 0 0 10px rgba(29,161,242,0.2)';">
+        <i class="fab fa-x-twitter"></i>
+      </a>
+
+      <a href="https://youtube.com" target="_blank" title="YouTube" style="
+      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+      background:#111; color:#ff0000; font-size:26px; text-decoration:none;
+      box-shadow:0 0 10px rgba(255,0,0,0.4), inset 0 0 10px rgba(255,0,0,0.2);
+      transition:all 0.3s ease;
+    " onmouseover="this.style.background='#ff0000'; this.style.color='white'; this.style.boxShadow='0 0 20px #ff0000';"
+        onmouseout="this.style.background='#111'; this.style.color='#ff0000'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.4), inset 0 0 10px rgba(255,0,0,0.2)';">
+        <i class="fab fa-youtube"></i>
+      </a>
+
+      <a href="https://tiktok.com" target="_blank" title="TikTok" style="
+      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+      background:#111; color:#00ffff; font-size:26px; text-decoration:none;
+      box-shadow:0 0 10px rgba(0,255,255,0.4), inset 0 0 10px rgba(0,255,255,0.2);
+      transition:all 0.3s ease;
+    " onmouseover="this.style.background='#00ffff'; this.style.color='black'; this.style.boxShadow='0 0 20px #00ffff';"
+        onmouseout="this.style.background='#111'; this.style.color='#00ffff'; this.style.boxShadow='0 0 10px rgba(0,255,255,0.4), inset 0 0 10px rgba(0,255,255,0.2)';">
+        <i class="fab fa-tiktok"></i>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- 💡 Librería de iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </body>
+
 </html>
