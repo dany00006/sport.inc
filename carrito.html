@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EnergySports</title>
+  <title>Baloncesto - EnergySports</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -97,11 +97,53 @@
       z-index: 1;
     }
 
-    h1 {
+    .hero-baloncesto {
       text-align: center;
+      margin-bottom: 3rem;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, rgba(25, 25, 112, 0.3), rgba(70, 130, 180, 0.2));
+      border-radius: 15px;
+      border: 1px solid rgba(123, 104, 238, 0.3);
+    }
+
+    .hero-baloncesto h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #7b68ee;
+      text-shadow: 0 0 10px rgba(123, 104, 238, 0.5);
+    }
+
+    .hero-baloncesto p {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .categorias-baloncesto {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
       margin-bottom: 2rem;
-      color: #2a27df;
-      font-size: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .categoria-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(123, 104, 238, 0.3);
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 600;
+    }
+
+    .categoria-btn.active,
+    .categoria-btn:hover {
+      background: #7b68ee;
+      color: #000;
+      transform: translateY(-2px);
     }
 
     .productos {
@@ -119,11 +161,23 @@
       transition: transform 0.3s, box-shadow 0.3s;
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .producto::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #7b68ee, #4169e1);
     }
 
     .producto:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
+      box-shadow: 0 10px 25px rgba(123, 104, 238, 0.2);
     }
 
     .producto img {
@@ -154,8 +208,8 @@
     }
 
     .btn-comprar {
-      background: linear-gradient(45deg, #ffffff, #e0e0e0);
-      color: #000;
+      background: linear-gradient(45deg, #7b68ee, #6a5acd);
+      color: #fff;
       border: none;
       padding: 0.8rem 1.5rem;
       border-radius: 50px;
@@ -167,9 +221,9 @@
     }
 
     .btn-comprar:hover {
-      background: linear-gradient(45deg, #ffffff, #0624cf);
+      background: linear-gradient(45deg, #6a5acd, #483d8b);
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+      box-shadow: 0 5px 15px rgba(123, 104, 238, 0.4);
     }
 
     .seccion-calendarios {
@@ -180,12 +234,13 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
       color: #fff;
       backdrop-filter: blur(10px);
+      border: 1px solid rgba(123, 104, 238, 0.2);
     }
 
     .seccion-calendarios h2 {
       font-size: 1.6rem;
       margin-bottom: 1rem;
-      color: #122dc5d0;
+      color: #7b68ee;
       text-align: center;
     }
 
@@ -239,7 +294,7 @@
     }
 
     #newsletter h2 {
-      color: #371dcee7;
+      color: #7b68ee;
       margin-bottom: 1rem;
     }
 
@@ -253,8 +308,8 @@
 
     #newsletter button {
       padding: 10px 20px;
-      background: #f1f1f1;
-      color: #000;
+      background: #7b68ee;
+      color: #fff;
       border: none;
       border-radius: 5px;
       font-weight: 600;
@@ -265,8 +320,8 @@
       position: fixed;
       top: 20px;
       right: 20px;
-      background: #2216c791;
-      color: #000;
+      background: #7b68ee;
+      color: #fff;
       padding: 10px 20px;
       border-radius: 50px;
       text-decoration: none;
@@ -276,7 +331,7 @@
     }
 
     .boton-login:hover {
-      background: #9c9dac;
+      background: #6a5acd;
       transform: translateY(-2px);
     }
 
@@ -289,8 +344,8 @@
     }
 
     .cart-button {
-      background-color: #e06b279f;
-      color: #000;
+      background-color: #7b68ee;
+      color: #fff;
       width: 70px;
       height: 70px;
       border-radius: 50%;
@@ -298,7 +353,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4);
+      box-shadow: 0 6px 20px rgba(123, 104, 238, 0.4);
       transition: all 0.3s ease;
       border: none;
       font-size: 1.5rem;
@@ -307,7 +362,7 @@
 
     .cart-button:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(45, 68, 197, 0.5);
+      box-shadow: 0 8px 25px rgba(123, 104, 238, 0.5);
     }
 
     .cart-count {
@@ -330,7 +385,7 @@
       position: absolute;
       bottom: 85px;
       right: 0;
-      width: 350px;
+      width: 380px;
       background: rgba(0, 0, 0, 0.95);
       border-radius: 12px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -339,7 +394,7 @@
       visibility: hidden;
       transform: translateY(20px);
       transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(123, 104, 238, 0.3);
       backdrop-filter: blur(10px);
     }
 
@@ -355,13 +410,13 @@
       align-items: center;
       margin-bottom: 1.5rem;
       padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(123, 104, 238, 0.3);
     }
 
     .cart-title {
       font-size: 1.5rem;
       font-weight: 700;
-      color: #0026ff;
+      color: #7b68ee;
     }
 
     .close-cart {
@@ -413,7 +468,7 @@
     }
 
     .item-price {
-      color: #ff5100;
+      color: #7b68ee;
       font-weight: 600;
     }
 
@@ -439,8 +494,8 @@
     }
 
     .quantity-btn:hover {
-      background: #0077ff93;
-      color: #000;
+      background: #7b68ee;
+      color: #fff;
     }
 
     .quantity-value {
@@ -476,8 +531,8 @@
     }
 
     .checkout-btn {
-      background-color: #959c9c;
-      color: #000;
+      background-color: #7b68ee;
+      color: #fff;
       border: none;
       padding: 1rem;
       border-radius: 50px;
@@ -489,7 +544,7 @@
     }
 
     .checkout-btn:hover {
-      background-color: #f18810d0;
+      background-color: #6a5acd;
     }
 
     .empty-cart {
@@ -512,52 +567,54 @@
     /* Responsive */
     @media (max-width: 768px) {
       .cart-panel {
-        width: 300px;
-        right: -50px;
+        width: 320px;
+        right: -30px;
       }
 
-      .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      .productos {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       }
     }
 
     @media (max-width: 480px) {
       .cart-panel {
         width: 280px;
-        right: -80px;
+        right: -60px;
       }
 
       .floating-cart {
         bottom: 1rem;
         right: 1rem;
       }
+      
+      nav {
+        padding: 10px 20px;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
+
   <video class="video-fondo" autoplay muted loop playsinline>
     <source src="FONDOLOGIN.mp4" type="video/mp4">
     Tu navegador no soporta video HTML5.
   </video>
 
-  
-
-  <nav style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-  
-
-  <a href="INDEX.HTML" style="color: #2a7bf5be; font-weight: 700; font-size: 1.6em; text-decoration: none;">
-    Energy~Sports
-  </a>
-
-  
-  <ul style="list-style: none; display: flex; flex-wrap: wrap; margin: 0; padding: 0;">
-    <li><a href="INDEX.HTML">Inicio</a></li>
-
-    <li><a href="futbol.html">Fútbol</a></li>
-    <li><a href="baloncesto.html">Baloncesto</a></li>
-    <li><a href="tenis.html">Tenis</a></li>
-    <li><a href="motor.html">Motor</a></li>
-
+  <nav>
+    <a href="INDEX.HTML" class="logo">Energy~Sports</a>
+    
+    <ul>
+      <li><a href="INDEX.HTML">Inicio</a></li>
+      <li><a href="futbol.html">Fútbol</a></li>
+      <li><a href="baloncesto.html">Baloncesto</a></li>
+      <li><a href="tenis.html">Tenis</a></li>
+      <li><a href="motor.html">Motor</a></li>
 
       <li>
         <a href="#">Más Deportes</a>
@@ -574,95 +631,121 @@
   </nav>
 
   <main>
-    <h1>Catálogo Deportivo</h1>
+    <section class="hero-baloncesto">
+      <h1>Baloncesto EnergySports</h1>
+      <p>Todo lo que necesitas para dominar la cancha. Desde zapatillas de última generación hasta equipamiento profesional.</p>
+    </section>
+
+    <section class="categorias-baloncesto">
+      <button class="categoria-btn active">Todos</button>
+      <button class="categoria-btn">Zapatillas</button>
+      <button class="categoria-btn">Balones</button>
+      <button class="categoria-btn">Ropa</button>
+      <button class="categoria-btn">Accesorios</button>
+    </section>
 
     <section class="productos">
       <article class="producto">
-        <a href="futbol.html">
-          <img src="https://media.falabella.com/falabellaCO/73398815_1/w=800,h=800,fit=pad" alt="Balón Trionda Pro">
-        </a>
-        <h2>Balón Trionda Pro</h2>
-        <p>Balón oficial Copa Mundial FIFA 2026. Precisión, durabilidad y diseño profesional.</p>
-        <p class="precio">$350.900 COP</p>
-        <button class="btn-comprar" data-id="1" data-name="Balón Trionda Pro" data-price="350900" data-image="https://media.falabella.com/falabellaCO/73398815_1/w=800,h=800,fit=pad">Añadir al carrito</button>
-      </article>
-
-      <article class="producto">
-        <a href="baloncesto.html">
-          <img src="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/9f2c2e7f-9c2e-4e7e-9b6a-0f6e3e7e2f2e/nike-lebron-xxi.jpg" alt="Zapatillas LeBron XXI">
-        </a>
-        <h2>Zapatillas Nike Air Zoom</h2>
-        <p>Diseño ligero y amortiguación Zoom Air para máximo rendimiento en cancha.</p>
+        <img src="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/9f2c2e7f-9c2e-4e7e-9b6a-0f6e3e7e2f2e/nike-lebron-xxi.jpg" alt="Zapatillas LeBron XXI">
+        <h2>Zapatillas LeBron XXI</h2>
+        <p>Tecnología Zoom Air y Max Air para máximo rendimiento y comodidad en cancha.</p>
         <p class="precio">$689.000 COP</p>
-        <button class="btn-comprar" data-id="2" data-name="Zapatillas Nike Air Zoom" data-price="689000" data-image="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/9f2c2e7f-9c2e-4e7e-9b6a-0f6e3e7e2f2e/nike-lebron-xxi.jpg">Añadir al carrito</button>
+        <button class="btn-comprar" data-id="baloncesto-1" data-name="Zapatillas LeBron XXI" data-price="689000" data-image="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/9f2c2e7f-9c2e-4e7e-9b6a-0f6e3e7e2f2e/nike-lebron-xxi.jpg">Añadir al carrito</button>
       </article>
 
       <article class="producto">
-        <a href="tenis.html">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xLqtL-M-yEfkaVmC4TWV5RX9klWq96AYKg&s" alt="Raqueta Wilson Blade 98">
-        </a>
-        <h2>Raqueta Wilson Pro Staff</h2>
-        <p>Control y potencia para jugadores competitivos. Tecnología FeelFlex y diseño ergonómico.</p>
-        <p class="precio">$499.900 COP</p>
-        <button class="btn-comprar" data-id="3" data-name="Raqueta Wilson Pro Staff" data-price="499900" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xLqtL-M-yEfkaVmC4TWV5RX9klWq96AYKg&s">Añadir al carrito</button>
+        <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/936b3b5c9c1c4d5c8f6b9d5b00e6c6f6_9366/Balon_de_Baloncesto_NBA_Official_Game_Ball_Rojo_HM3623_01_standard.jpg" alt="Balón NBA Official">
+        <h2>Balón NBA Official Game</h2>
+        <p>Balón oficial de la NBA. Cuero sintético premium para máximo control.</p>
+        <p class="precio">$289.900 COP</p>
+        <button class="btn-comprar" data-id="baloncesto-2" data-name="Balón NBA Official Game" data-price="289900" data-image="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/936b3b5c9c1c4d5c8f6b9d5b00e6c6f6_9366/Balon_de_Baloncesto_NBA_Official_Game_Ball_Rojo_HM3623_01_standard.jpg">Añadir al carrito</button>
       </article>
 
       <article class="producto">
-        <a href="motor.html">
-          <img src="https://virtualed.com.co/cdn/shop/files/IMG-9235.jpg?v=1701362653&width=1445" alt="Casco HJC RPHA 11 Pro">
-        </a>
-        <h2>Casco HJC RPHA 11 Pro</h2>
-        <p>Casco deportivo de alto rendimiento. Aerodinámica avanzada y ventilación optimizada.</p>
-        <p class="precio">$1.250.000 COP</p>
-        <button class="btn-comprar" data-id="4" data-name="Casco HJC RPHA 11 Pro" data-price="1250000" data-image="https://virtualed.com.co/cdn/shop/files/IMG-9235.jpg?v=1701362653&width=1445">Añadir al carrito</button>
+        <img src="https://www.spalding.com/dw/image/v2/ABAH_PRD/on/demandware.static/-/Sites-master-catalog/default/dw6c3e3f9d/images/hi-res/74853E_1.jpg?sw=800&sh=800" alt="Balón Spalding TF-1000">
+        <h2>Balón Spalding TF-1000</h2>
+        <p>Diseñado para competición profesional. Excelente agarre y durabilidad.</p>
+        <p class="precio">$245.000 COP</p>
+        <button class="btn-comprar" data-id="baloncesto-3" data-name="Balón Spalding TF-1000" data-price="245000" data-image="https://www.spalding.com/dw/image/v2/ABAH_PRD/on/demandware.static/-/Sites-master-catalog/default/dw6c3e3f9d/images/hi-res/74853E_1.jpg?sw=800&sh=800">Añadir al carrito</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/af1b8b8b-8b8b-4b8b-8b8b-8b8b8b8b8b8b/jordan-jumpman-pro-t-shirt-7J8w8w.png" alt="Camiseta Jordan">
+        <h2>Camiseta Jordan Jumpman</h2>
+        <p>Algodón 100% premium. Diseño clásico del Jumpman para entrenar o casual.</p>
+        <p class="precio">$89.900 COP</p>
+        <button class="btn-comprar" data-id="baloncesto-4" data-name="Camiseta Jordan Jumpman" data-price="89900" data-image="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/af1b8b8b-8b8b-4b8b-8b8b-8b8b8b8b8b8b/jordan-jumpman-pro-t-shirt-7J8w8w.png">Añadir al carrito</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b_9366/Shorts_de_Baloncesto_NBA_Chicago_Bulls_Black_HM3623_01_standard.jpg" alt="Shorts Chicago Bulls">
+        <h2>Shorts Chicago Bulls</h2>
+        <p>Shorts oficiales NBA. Tela transpirable y diseño icónico de los Bulls.</p>
+        <p class="precio">$129.900 COP</p>
+        <button class="btn-comprar" data-id="baloncesto-5" data-name="Shorts Chicago Bulls" data-price="129900" data-image="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8b8b8b8b8b8b8b8b8b8b8b8b8b8b8b_9366/Shorts_de_Baloncesto_NBA_Chicago_Bulls_Black_HM3623_01_standard.jpg">Añadir al carrito</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://www.underarmour.com/dw/image/v2/ABAH_PRD/on/demandware.static/-/Sites-master-catalog/default/dw8b8b8b8b/images/hi-res/1286040-001_1.jpg?sw=800&sh=800" alt="Zapatillas Curry Flow">
+        <h2>Zapatillas Curry Flow 10</h2>
+        <p>Tecnología Flow para tracción superior sin necesidad de goma exterior.</p>
+        <p class="precio">$749.000 COP</p>
+        <button class="btn-comprar" data-id="baloncesto-6" data-name="Zapatillas Curry Flow 10" data-price="749000" data-image="https://www.underarmour.com/dw/image/v2/ABAH_PRD/on/demandware.static/-/Sites-master-catalog/default/dw8b8b8b8b/images/hi-res/1286040-001_1.jpg?sw=800&sh=800">Añadir al carrito</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://m.media-amazon.com/images/I/71Z8b5+5Q5L._AC_SL1500_.jpg" alt="Rodilleras Nike Pro">
+        <h2>Rodilleras Nike Pro</h2>
+        <p>Protección de espuma D3O. Ajuste seguro y cómodo para máximo movimiento.</p>
+        <p class="precio">$79.900 COP</p>
+        <button class="btn-comprar" data-id="baloncesto-7" data-name="Rodilleras Nike Pro" data-price="79900" data-image="https://m.media-amazon.com/images/I/71Z8b5+5Q5L._AC_SL1500_.jpg">Añadir al carrito</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://cdn.shopify.com/s/files/1/0258/8356/5365/products/1_1200x1200.jpg?v=1620223456" alt="Mochila Jordan">
+        <h2>Mochila Jordan Heritage</h2>
+        <p>Compartimentos especiales para calzado y equipamiento. Resistente al agua.</p>
+        <p class="precio">$159.900 COP</p>
+        <button class="btn-comprar" data-id="baloncesto-8" data-name="Mochila Jordan Heritage" data-price="159900" data-image="https://cdn.shopify.com/s/files/1/0258/8356/5365/products/1_1200x1200.jpg?v=1620223456">Añadir al carrito</button>
       </article>
     </section>
 
     <section class="seccion-calendarios">
-      <h2>Calendarios y Partidos</h2>
-      <p>Consulta los próximos encuentros y accede a los portales deportivos más visitados en Colombia.</p>
+      <h2>Calendarios de Baloncesto</h2>
+      <p>No te pierdas los próximos partidos y torneos de baloncesto nacional e internacional.</p>
 
       <section>
-        <h3>Fútbol</h3>
-        <ul>
-          <li>Colombia vs Alemania – Mundial Sub-17 (5 Nov, 14:00)</li>
-          <li>Millonarios vs Nacional – Liga BetPlay (8 Nov, 19:30)</li>
-          <li><a href="https://www.elinformador.com.co/index.php/tendencias/215-mas-populares/329825-el-deporte-colombiano-en-este-2025" target="_blank">Ver más en El Informador</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Baloncesto</h3>
+        <h3>Liga Colombiana de Baloncesto</h3>
         <ul>
           <li>Toros del Valle vs Titanes – LBP (6 Nov, 18:00)</li>
-          <li>Lakers vs Warriors – NBA (7 Nov, 21:00)</li>
-          <li><a href="https://www.calendariodecolombia.com/fechas/calendario-de-eventos-deportivos-2025-en-colombia" target="_blank">Calendario completo en CalendarioDeColombia</a></li>
+          <li>Piratas vs Cóndores – Semifinal (8 Nov, 19:30)</li>
+          <li>Final LBP 2025 – (15 Nov, 20:00)</li>
         </ul>
       </section>
 
       <section>
-        <h3>Tenis</h3>
+        <h3>NBA 2024-2025</h3>
         <ul>
-          <li>Masters 1000 París – Cuartos de final (6–9 Nov)</li>
-          <li>ATP Finals – Inicio (12 Nov)</li>
-          <li><a href="https://rentifyexperience.com/colombia-2025-eventos-deportivos-imperdibles-en-bogota-medellin-cali-cartagena-y-barranquilla/" target="_blank">Eventos destacados en Rentify Experience</a></li>
+          <li>Lakers vs Warriors – Conferencia Oeste (7 Nov, 21:00)</li>
+          <li>Celtics vs Bucks – Conferencia Este (9 Nov, 19:30)</li>
+          <li>All-Star Game 2025 – (16 Feb, 20:00)</li>
         </ul>
       </section>
 
       <section>
-        <h3>Motor</h3>
+        <h3>Torneos Internacionales</h3>
         <ul>
-          <li>MotoGP Valencia – Gran Premio final (10 Nov)</li>
-          <li>WRC Japón – Etapa decisiva (9–12 Nov)</li>
-          <li><a href="https://www.calendariodecolombia.com/fechas/calendario-de-eventos-deportivos-2025-en-colombia" target="_blank">Ver agenda completa</a></li>
+          <li>FIBA AmeriCup – Fase de grupos (12-18 Nov)</li>
+          <li>Liga Sudamericana – Cuartos de final (20-25 Nov)</li>
+          <li>Copa de Campeones – Final (30 Nov)</li>
         </ul>
       </section>
     </section>
   </main>
 
   <section id="newsletter">
-    <h2>Suscríbete al Boletín</h2>
-    <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
+    <h2>Suscríbete al Boletín de Baloncesto</h2>
+    <p>Recibe las últimas noticias, resultados y ofertas exclusivas de baloncesto.</p>
     <form id="form-newsletter">
       <input type="email" id="email" placeholder="Tu correo electrónico" required>
       <button type="submit">Suscribirse</button>
@@ -695,7 +778,7 @@
   </section>
 
   <script>
-    // Estado del carrito
+    // Estado del carrito - Usamos un prefijo específico para baloncesto
     let cart = [];
     let cartCount = 0;
     let totalAmount = 0;
@@ -722,7 +805,7 @@
       // Añadir event listeners a los botones de compra
       document.querySelectorAll('.btn-comprar').forEach(button => {
         button.addEventListener('click', (e) => {
-          const productId = parseInt(e.target.getAttribute('data-id'));
+          const productId = e.target.getAttribute('data-id');
           const productName = e.target.getAttribute('data-name');
           const productPrice = parseInt(e.target.getAttribute('data-price'));
           const productImage = e.target.getAttribute('data-image');
@@ -736,6 +819,15 @@
         if (!cartPanel.contains(e.target) && !cartButton.contains(e.target) && cartPanel.classList.contains('active')) {
           toggleCart();
         }
+      });
+
+      // Filtrado por categorías
+      document.querySelectorAll('.categoria-btn').forEach(button => {
+        button.addEventListener('click', (e) => {
+          document.querySelectorAll('.categoria-btn').forEach(btn => btn.classList.remove('active'));
+          e.target.classList.add('active');
+          // Aquí puedes agregar la lógica de filtrado si es necesario
+        });
       });
     }
 
@@ -851,21 +943,21 @@
       // Añadir event listeners a los botones de cantidad y eliminar
       document.querySelectorAll('.quantity-btn.minus').forEach(button => {
         button.addEventListener('click', (e) => {
-          const productId = parseInt(e.target.getAttribute('data-id'));
+          const productId = e.target.getAttribute('data-id');
           updateQuantity(productId, -1);
         });
       });
       
       document.querySelectorAll('.quantity-btn.plus').forEach(button => {
         button.addEventListener('click', (e) => {
-          const productId = parseInt(e.target.getAttribute('data-id'));
+          const productId = e.target.getAttribute('data-id');
           updateQuantity(productId, 1);
         });
       });
       
       document.querySelectorAll('.remove-item').forEach(button => {
         button.addEventListener('click', (e) => {
-          const productId = parseInt(e.target.getAttribute('data-id'));
+          const productId = e.target.getAttribute('data-id');
           removeFromCart(productId);
         });
       });
@@ -890,14 +982,14 @@
       toggleCart();
     }
 
-    // Guardar carrito en localStorage
+    // Guardar carrito en localStorage - Usamos una clave específica para baloncesto
     function saveCartToStorage() {
-      localStorage.setItem('energySportsCart', JSON.stringify(cart));
+      localStorage.setItem('energySportsBaloncestoCart', JSON.stringify(cart));
     }
 
-    // Cargar carrito desde localStorage
+    // Cargar carrito desde localStorage - Usamos la clave específica para baloncesto
     function loadCartFromStorage() {
-      const savedCart = localStorage.getItem('energySportsCart');
+      const savedCart = localStorage.getItem('energySportsBaloncestoCart');
       if (savedCart) {
         cart = JSON.parse(savedCart);
       }
