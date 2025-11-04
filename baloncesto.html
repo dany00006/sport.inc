@@ -8,6 +8,171 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #fff;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .video-fondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.4;
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      color: #1230b8;
+      font-weight: 700;
+      font-size: 1.6em;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      position: relative;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #3022f5;
+    }
+
+    nav ul ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      min-width: 200px;
+      border-radius: 5px;
+      z-index: 10;
+    }
+
+    nav li:hover > ul {
+      display: block;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2a27df;
+      font-size: 2.5rem;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .producto {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .producto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .producto h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .producto p {
+      color: #ccc;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .precio {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #8694d3;
+      margin-bottom: 1rem;
+    }
+
+    .btn-comprar {
+      background: linear-gradient(45deg, #ffffff, #e0e0e0);
+      color: #000;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 100px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .btn-comprar:hover {
+      background: linear-gradient(45deg, #ffffff, #0624cf);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+    }
     .contenido {
       position: relative;
       z-index: 1;
@@ -28,6 +193,61 @@
   justify-items: center;
 }
 
+  .seccion-calendarios {
+      background-color: rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 3rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      color: #fff;
+      backdrop-filter: blur(10px);
+    }
+
+    .seccion-calendarios h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #122dc5d0;
+      text-align: center;
+    }
+
+    .seccion-calendarios p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #e0e0e0;
+    }
+
+    .seccion-calendarios section {
+      margin-bottom: 2rem;
+    }
+
+    .seccion-calendarios h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #c4c4c4;
+    }
+
+    .seccion-calendarios ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .seccion-calendarios li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.95rem;
+      color: #d6d9d9;
+    }
+
+    .seccion-calendarios a {
+      color: #0080ff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .seccion-calendarios a:hover {
+      text-decoration: underline;
+    }
 
     section.tenis-layout {
       display: grid;
@@ -81,13 +301,11 @@
     Tu navegador no soporta video HTML5.
   </video>
 
-    <nav>...</nav>
-  <main>...</main>
 
-  <nav style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+   <nav style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
   
- 
-  <a href="INDEX.HTML" style="color: #00ff88; font-weight: 700; font-size: 1.6em; text-decoration: none;">
+
+  <a href="INDEX.HTML" style="color: #2a7bf5be; font-weight: 700; font-size: 1.6em; text-decoration: none;">
     Energy~Sports
   </a>
 
@@ -100,20 +318,21 @@
     <li><a href="tenis.html">Tenis</a></li>
     <li><a href="motor.html">Motor</a></li>
 
-    <li>
-      <a href="#">Más Deportes</a>
-      <ul style="position: absolute; top: 100%; left: 0; background: rgba(0, 0, 0, 0.9); display: none; min-width: 200px; border-radius: 5px; z-index: 10;">
-        <li><a href="#">Boxeo / MMA</a></li>
-        <li><a href="#">Ciclismo</a></li>
-        <li><a href="#">Atletismo</a></li>
-        <li><a href="#">E-Sports</a></li>
-      </ul>
-    </li>
 
-    <li><a href="Noticias.html">Noticias</a></li>
-                                                                                                                                                                                                                                                                                                                                                                                                         <li><a href="#">Carrito</a></li>
-  </ul>
-</nav>
+      <li>
+        <a href="#">Más Deportes</a>
+        <ul>
+          <li><a href="#">Boxeo / MMA</a></li>
+          <li><a href="ciclismo.html">Ciclismo</a></li>
+          <li><a href="#">Atletismo</a></li>
+          <li><a href="#">E-Sports</a></li>
+        </ul>
+      </li>
+
+      <li><a href="Noticias.html">Noticias</a></li>
+    </ul>
+  </nav>
+
 <main class="seccion-productos">
   <h2>Productos de Baloncesto</h2>
 
@@ -194,42 +413,4 @@
 
 <a href="LOGIN.HTML" class="boton-login" title="Iniciar sesión">Iniciar sesión</a>
 </body>
-<section id="calendario-baloncesto" style="padding:40px; background:rgba(255,255,255,0.05); color:white; text-align:center;">
-  <h2>Calendario Internacional de Baloncesto 2025</h2>
-  <p>Principales torneos y partidos destacados a nivel mundial.</p>
-  
-  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; margin-top:30px;">
-    
-    <article style="background:rgba(0,0,0,0.7); padding:20px; border-radius:10px;">
-      <h3>🏆 EuroLeague Women 2025-26</h3>
-      <p>16 Sept 2025 – 19 Abr 2026</p>
-      <p>Competición de clubes femeninos más prestigiosa de Europa.</p>
-    </article>
-    
-    <article style="background:rgba(0,0,0,0.7); padding:20px; border-radius:10px;">
-      <h3>🌍 FIBA Europe Cup</h3>
-      <p>24 Sept 2025 – 29 Abr 2026</p>
-      <p>Torneo internacional de clubes europeos con formato eliminatorio.</p>
-    </article>
-    
-    <article style="background:rgba(0,0,0,0.7); padding:20px; border-radius:10px;">
-      <h3>🇺🇸 NBA All-Star Weekend</h3>
-      <p>14 – 16 Feb 2025, San Francisco</p>
-      <p>Evento anual con concurso de mates, triples y el partido de estrellas.</p>
-    </article>
-    
-    <article style="background:rgba(0,0,0,0.7); padding:20px; border-radius:10px;">
-      <h3>🏀 AmeriCup Qualifiers</h3>
-      <p>21 – 24 Feb 2025</p>
-      <p>Clasificatorios de selecciones nacionales en América.</p>
-    </article>
-    
-  </div>
-  
-  <p style="margin-top:20px; font-size:0.9em;">
-    Fuente: <a href="https://www.fiba.basketball/es/events" target="_blank" style="color:#00ff88;">FIBA Basketball</a>
-  </p>
-</section>
-
-
 </html>

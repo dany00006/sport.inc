@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Energy–Boxing</title>
+  <link href="STYLE.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #fff;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .video-fondo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.4;
+    }
+
+    nav {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      color: #1230b8;
+      font-weight: 700;
+      font-size: 1.6em;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      position: relative;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #3022f5;
+    }
+
+    nav ul ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      min-width: 200px;
+      border-radius: 5px;
+      z-index: 10;
+    }
+
+    nav li:hover > ul {
+      display: block;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #2a27df;
+      font-size: 2.5rem;
+    }
+
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .producto {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .producto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .producto h2 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .producto p {
+      color: #ccc;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .precio {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #8694d3;
+      margin-bottom: 1rem;
+    }
+
+    .btn-comprar {
+      background: linear-gradient(45deg, #ffffff, #e0e0e0);
+      color: #000;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 100px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .btn-comprar:hover {
+      background: linear-gradient(45deg, #ffffff, #0624cf);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+    }
+
+    .producto {
+      background: rgba(255,255,255,0.06);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .producto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgb(255, 255, 255);
+    }
+
+    .producto img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .producto h3 {color: #fff; margin-bottom: 0.5rem;}
+    .producto p {color: #ccc; font-size: 0.9rem; margin-bottom: 1rem;}
+
+    .precio {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #6252f5;
+      margin-bottom: 1rem;
+    }
+
+    .btn-comprar {
+      background: linear-gradient(45deg, #fdfcff, #e9e9e9);
+      color: #000;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .btn-comprar:hover {
+      background: linear-gradient(45deg, #fff, #2f1aec);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(231, 228, 228, 0.4);
+    }
+
+    #newsletter {
+      background: rgba(0,0,0,0.85);
+      padding: 40px;
+      color: #fff;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    #newsletter h2 {color: #665bff; margin-bottom: 1rem;}
+    #newsletter input {
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    #newsletter button {
+      padding: 10px 20px;
+      background: #2c2fee;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .boton-login {
+      position: fixed;
+      top: 20px; right: 20px;
+      background: #ffffff;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      z-index: 100;
+      transition: all 0.3s;
+    }
+
+    .boton-login:hover {background: #4c30ec; transform: translateY(-2px);}
+
+    
+  </style>
+</head>
+
+<body>
+
+  <video class="video-fondo" autoplay muted loop playsinline>
+    <source src="https://cdn.pixabay.com/video/2020/05/15/39181-421020226_large.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+<nav style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+  
+
+  <a href="INDEX.HTML" style="color: #2a7bf5be; font-weight: 700; font-size: 1.6em; text-decoration: none;">
+    Energy~Sports
+  </a>
+
+  
+  <ul style="list-style: none; display: flex; flex-wrap: wrap; margin: 0; padding: 0;">
+    <li><a href="INDEX.HTML">Inicio</a></li>
+
+    <li><a href="futbol.html">Fútbol</a></li>
+    <li><a href="baloncesto.html">Baloncesto</a></li>
+    <li><a href="tenis.html">Tenis</a></li>
+    <li><a href="motor.html">Motor</a></li>
+
+
+      <li>
+        <a href="#">Más Deportes</a>
+        <ul>
+          <li><a href="boxeo.html">Boxeo / MMA</a></li>
+          <li><a href="ciclismo.html">Ciclismo</a></li>
+          <li><a href="#">Atletismo</a></li>
+          <li><a href="#">E-Sports</a></li>
+        </ul>
+      </li>
+
+      <li><a href="Noticias.html">Noticias</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>Equipamiento de ciclismo Profesional</h1>
+
+    <section class="productos">
+
+      <article class="producto">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGqepwlDjKGvJhxVjFi6kRchmmeFXvCTQI2Q&s" alt="Guantes de boxeo">
+        <h3>bicicleta de velodromo </h3>
+        <p>bicicleta profesionales de entrenamiento con ventilación aerodinamica.</p>
+        <span class="precio">$6.259.900</span>
+        <button class="btn-comprar" data-id="box-1" data-name="Guantes Everlast Elite" data-price="259900" data-image="https://m.media-amazon.com/images/I/71bZAC1tMYL.AC_SL1500.jpg">Añadir al carrito</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1fUzoh3xCNdcpMXmC2ACzwUCeFq9mIT31NQ&s" alt="Vendas de boxeo">
+        <h3>Bicicleta de velodromo Elast</h3>
+        <p>bicicleta en fibra de carbono v2.</p>
+        <span class="precio">$8.049.900</span>
+        <button class="btn-comprar" data-id="box-2" data-name="Vendas Everlast 4.5m" data-price="49900" data-image="https://http2.mlstatic.com/D_NQ_NP_627145-MLA50259159833_062022-O.webp">Añadir al carrito</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzRtXtFXZ-fAJ08eJAvknApohQT0K8FCMoiH2LkncjeOcPSb36-4xnAraW4CgE1V_iY1jXc1AfakHSGiDZG6Kps7TgSEXMaB50J7WmOT-XkTVeXPkYgSpdaM_rcf4ld7Ol03-ICsPUCgN2/w1200-h630-p-k-no-nu/Velodrome+Conceptual+%2527Prototype+0%2527.jpg" alt="Saco de boxeo">
+        <h3>fixied Pro Training</h3>
+        <p>la bicicleta mas rapida del siglo 22.</p>
+        <span class="precio">$10.499.000</span>
+        <button class="btn-comprar" data-id="box-3" data-name="Saco de Boxeo Pro Training" data-price="499000" data-image="https://cdnx.jumpseller.com/fightcenter/image/26173069/bag.jpg?1690044579">Añadir al carrito</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://imagenes.elpais.com/resizer/v2/6P3CINRSJZF5LD7PZTFYAGZOJA.jpg?auth=cffba30e876f66a1da48d35fc0ab0373e01af8384285ead255b3334d96a4485f&width=1960&height=1103&smart=true" alt="Casco de protección">
+        <h3>Casco warrer Protex v2</h3>
+        <p>Protección total, visibilidad completa y ajuste ergonómico y aerodinamico.</p>
+        <span class="precio">$2.289.000</span>
+        <button class="btn-comprar" data-id="box-4" data-name="Casco Everlast Protex 2" data-price="289000" data-image="https://m.media-amazon.com/images/I/71UtgB9Z0xL.AC_SL1500.jpg">Añadir al carrito</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://www.cyclewear.com.co/cdn/shop/files/61020-5541-1-60c8cbd0-9d01-4116-8325-506287528170_47d5d7af-9166-444a-8015-79e2eb093784_1880x.jpg?v=1738248460">
+        <h3>zapatillas Rin Pro</h3>
+        <p>lo mejor en zapatillas de ciclismo aerodinamico Material impermeable.</p>
+        <span class="precio">$99.900</span>
+        <button class="btn-comprar" data-id="box-5" data-name="Bolso RingBag Pro" data-price="99900" data-image="https://contents.mediadecathlon.com/p2267952/k$b8f0f7e5ac78aeb2c1c9c30ebf10ad98/bolsa-de-gimnasio.jpg?format=auto&quality=70&f=650x0">Añadir al carrito</button>
+      </article>
+
+      <article class="producto">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA682VsMqoo3qZt6x9zm__agYQx_GuGVYpkQ&s" alt="Guantes de boxeo">
+        <h3>medias deportivas de ciclicsmo alto rendimeitno </h3>
+        <p>las medias mas retroaspiradas del mercado .</p>
+        <span class="precio">$6.259.900</span>
+        <button class="btn-comprar" data-id="box-1" data-name="Guantes Everlast Elite" data-price="259900" data-image="https://m.media-amazon.com/images/I/71bZAC1tMYL.AC_SL1500.jpg">Añadir al carrito</button>
+      </article>
+
+    </section>
+  </main>
+
+  <section id="newsletter">
+    <h2>Suscríbete al Boletín de Energy–Boxing</h2>
+    <p>Recibe noticias de peleas, nuevos productos y promociones exclusivas.</p>
+    <form id="form-newsletter">
+      <input type="email" id="email" placeholder="Tu correo electrónico" required>
+      <button type="submit">Suscribirse</button>
+    </form>
+  </section>
+
+  <a href="LOGIN.HTML" class="boton-login">Iniciar sesión</a>
+</body>
+</html>
