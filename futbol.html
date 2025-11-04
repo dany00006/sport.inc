@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    .contenido {
+
+.contenido {
       position: relative;
       z-index: 1;
       color: white;
@@ -16,7 +17,20 @@
       padding: 10% 20px;
     }
 
-    section.futbol-layout {
+    .seccion-productos {
+  padding: 3rem 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+
+    section.tenis-layout {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 40px;
@@ -24,7 +38,7 @@
       padding: 0 40px;
     }
 
-    section.futbol-layout li {
+    section.tenis-layout li {
       list-style: none;
       background: rgba(0, 0, 0, 0.7);
       border-radius: 10px;
@@ -33,29 +47,29 @@
       transition: transform 0.3s ease;
     }
 
-    section.futbol-layout li:hover {
+    section.tenis-layout li:hover {
       transform: scale(1.05);
       background: rgba(0, 255, 136, 0.2);
     }
 
-    section.futbol-layout img {
+    section.tenis-layout img {
       width: 100%;
       border-radius: 8px;
       margin-bottom: 15px;
     }
 
-    section.futbol-layout h3 {
+    section.tenis-layout h3 {
       margin-bottom: 10px;
       font-size: 1.3em;
     }
 
-    section.futbol-layout p {
+    section.tenis-layout p {
       font-size: 0.95em;
       line-height: 1.4em;
     }
 
     @media (max-width: 768px) {
-      section.futbol-layout {
+      section.tenis-layout {
         grid-template-columns: 1fr;
       }
     }
@@ -101,36 +115,119 @@
     <li><a href="#">Tienda</a></li>
   </ul>
 </nav>
+<section id="productos-futbol" class="seccion-productos">
+    
+ <h2>Productos de Fútbol</h2>
+  <article class="producto">
+    <img src="https://media.falabella.com/falabellaCO/73398815_1/w=800,h=800,fit=pad" alt="Balón de fútbol">
+    <h3>Balón Oficial FIFA</h3>
+    <p>Certificación FIFA Quality Pro. Ideal para partidos y entrenamientos.</p>
+    <span class="precio">$350.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
 
-  <main class="contenido">
-    <h1>Fútbol</h1>
-    <p>Explora las ligas nacionales, copas internacionales, fútbol femenino y selecciones del mundo. Vive la pasión del deporte rey.</p>
+  <article class="producto">
+    <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/712f61b0a88247b0a35f6d983644e4e6_9366/Camiseta_Aniversario_100_Anos_Seleccion_Colombia_Blanco_IT2743_HM1.jpg" alt="Camiseta de fútbol">
+    <h3>Camiseta Selección Colombia</h3>
+    <p>Edición 2025 con tecnología ClimaCool. Tallas S a XL.</p>
+    <span class="precio">$129.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
 
-    <section class="futbol-layout">
-      <ul>
-        <li>
-          <img src="ligas.jpg" alt="Ligas Nacionales">
-          <h3>Ligas Nacionales</h3>
-          <p>Las ligas locales como La Liga, Premier League, Serie A y Bundesliga reúnen a los mejores clubes de cada país.</p>
-        </li>
-        <li>
-          <img src="copas.jpg" alt="Copas Internacionales">
-          <h3>Copas Internacionales</h3>
-          <p>La UEFA Champions League, Copa Libertadores y otras copas enfrentan a los campeones en torneos de alto nivel.</p>
-        </li>
-        <li>
-          <img src="femenino.jpg" alt="Fútbol Femenino">
-          <h3>Fútbol Femenino</h3>
-          <p>El fútbol femenino crece con fuerza, destacando ligas como la NWSL, Liga F y torneos como el Mundial Femenino.</p>
-        </li>
-        <li>
-          <img src="selecciones.jpg" alt="Selecciones">
-          <h3>Selecciones</h3>
-          <p>Las selecciones nacionales compiten en torneos como la Copa Mundial, Eurocopa, Copa América y clasificatorias regionales.</p>
-        </li>
-      </ul>
-    </section>
-  </main>
+  <article class="producto">
+    <img src="https://cdnx.jumpseller.com/portel1te/image/26835344/zapatilla-adidas-mundial-goal-black-1.jpg?https://unitedstorecolombia.com/cdn/shop/products/565a28d1.jpg?v=1680381277&width=1445" alt="Zapatillas de fútbol">
+    <h3>Zapatillas Predator</h3>
+    <p>Para césped natural y sintético. Máximo agarre y control.</p>
+    <span class="precio">$260.000</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
 
+  <article class="producto">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZkXcy4hS3HE8itLxnztTh4zNV8mMFWJeIMA&s" alt="Guantes de arquero">
+    <h3>Guantes Puma Pro</h3>
+    <p>Protección reforzada y agarre superior. Usados por profesionales.</p>
+    <span class="precio">$99.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+  
+  <article class="producto">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsQHRFaIxNSOiZ8IaZ8R4zY8fXaI9DCtas3A&s">
+    <h3>Espinilleras Nike Shield</h3>
+    <p>Ligereza y protección para juego intenso. Diseño ergonómico.</p>
+    <span class="precio">$49.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+  <article class="producto">
+    <img src="https://http2.mlstatic.com/D_NQ_NP_930823-MLA80779010895_112024-O.webp" alt="Bolso deportivo">
+    <h3>Bolso Deportivo Umbro</h3>
+    <p>Compartimentos para ropa, calzado y accesorios. Resistente al agua.</p>
+    <span class="precio">$79.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+  <article class="producto">
+    <img src="https://sportfitness.co/cdn/shop/files/807530_7_1400x.jpg?v=1723565158" alt="Termo de hidratación">
+    <h3>Termo Hidratación 1L</h3>
+    <p>Material térmico. Mantiene frío o calor hasta 12 horas.</p>
+    <span class="precio">$39.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+  <article class="producto">
+    <img src="https://img.kwcdn.com/product/fancy/4b40f3ff-b805-45a0-89a0-28002ac48a4d.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp" alt="Red portátil">
+    <h3>Red Portátil de Entrenamiento</h3>
+    <p>Fácil de montar. Ideal para prácticas en casa o parque.</p>
+    <span class="precio">$149.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+
+  <article class="producto">
+    <img src="https://http2.mlstatic.com/D_NQ_NP_668226-MCO75464861042_042024-O.webp" alt="Conos de entrenamiento">
+    <h3>Conos de Entrenamiento</h3>
+    <p>Set de 20 conos flexibles. Mejora agilidad y coordinación.</p>
+    <span class="precio">$34.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+  <article class="producto">
+    <img src="https://m.media-amazon.com/images/I/51sZHvawT4L._AC_SL1000_.jpg" alt="Cronómetro digital">
+    <h3>Cronómetro Digital</h3>
+    <p>Precisión milimétrica. Ideal para entrenadores y rutinas.</p>
+    <span class="precio">$29.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+  <article class="producto">
+    <img src="https://http2.mlstatic.com/D_780325-MLA77570850592_072024-O.jpg" alt="Cinta de capitán">
+    <h3>Cinta de Capitán</h3>
+    <p>Elástica y ajustable. Disponible en varios colores.</p>
+    <span class="precio">$19.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+  <article class="producto">
+    <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/2c34142b98194827a8c057b18a433400_9366/Peto_Training_24_Amarillo_JF3244_21_model.jpg" alt="Peto de entrenamiento">
+    <h3>Peto de Entrenamiento</h3>
+    <p>Material transpirable. Colores para diferenciar equipos.</p>
+    <span class="precio">$24.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+</section>
+
+<section id="newsletter" style="position:relative; z-index:1; padding:40px; background:rgba(0,0,0,0.85); color:white; text-align:center;">
+  <h2>Suscríbete al Boletín </h2>
+  <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
+  <form id="form-newsletter">
+    <input type="email" id="email" placeholder="Tu correo electrónico" required style="padding:10px; width:250px;">
+    <button type="submit" style="padding:10px 20px; margin-left:10px;">Suscribirse</button>
+  </form>
+  <div id="mensaje-newsletter" style="margin-top:20px;"></div>
+
+</section>
+<a href="LOGIN.HTML" class="boton-login" title="Iniciar sesión">Iniciar sesión</a>
 </body>
 </html>

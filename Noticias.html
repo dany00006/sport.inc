@@ -6,6 +6,58 @@
   <title>Energy-Noticias</title>
   <link href="STYLE.css" rel="stylesheet" />
   <style>
+    .boletin {
+  grid-column: 1 / -1;
+  margin-top: 4rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  color: #fff;
+  text-align: center;
+}
+
+.boletin h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.boletin p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #e0e0e0;
+}
+
+.noticia {
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.noticia img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.noticia h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #000000;
+}
+
+.noticia p {
+  font-size: 0.95rem;
+  color: #f0f0f0;
+}
+
+.noticia a {
+  text-decoration: none;
+  color: inherit;
+}
     .contenido {
       position: relative;
       z-index: 1;
@@ -67,7 +119,7 @@
       padding: 10px 20px;
       margin-left: 10px;
       border: none;
-      background: #00ff88;
+      background: #b2beb8;
       color: #111;
       border-radius: 5px;
       cursor: pointer;
@@ -120,38 +172,67 @@
     <li><a href="#">Tienda</a></li>
   </ul>
 </nav>
+<section class="boletin">
+  <h2>Noticias deportivas recientes</h2>
+  <p>Actualidad del deporte colombiano e internacional en fútbol, baloncesto, motor y tenis:</p>
 
-  <main class="contenido">
-    <h1>Noticias Deportivas 📰</h1>
-    <p>Entérate de lo último en fútbol, baloncesto, tenis, motor y más. Actualizaciones globales, eventos destacados y curiosidades del deporte.</p>
+  <article class="noticia">
+    <a href="https://www.eltiempo.com/deportes/futbol-internacional/seleccion-colombia-y-su-dificil-debut-en-el-mundial-sub-17-de-qatar-contra-alemania-dia-hora-y-por-donde-ver-el-partido-3505579" target="_blank">
+      <img src="https://imagenes2.eltiempo.com/files/image_1200_535/uploads/2025/11/03/6908bb64a4a1a.jpeg" alt="Colombia Sub-17 en Qatar">
+      <h3>Colombia Sub-17 debuta ante Alemania en el Mundial</h3>
+    </a>
+    <p>La selección juvenil enfrenta a los campeones del mundo en su primer partido en Qatar 2025.</p>
+    <p><em>Fuente: El Tiempo</em></p>
+  </article>
 
-    <section class="noticias-layout">
-      <ul>
-        <article>
-          <img src="noticia1.jpg" alt="Noticia fútbol">
-          <h3>Final épica en la Champions League</h3>
-          <p>El Real Madrid se coronó campeón tras vencer al Manchester City en un partido lleno de emoción y goles.</p>
-        </article>
-        <article>
-          <img src="noticia2.jpg" alt="Noticia tenis">
-          <h3>Swiatek domina Roland Garros</h3>
-          <p>La tenista polaca retiene su título en París con una actuación impecable frente a Coco Gauff.</p>
-        </article>
-        <article>
-          <img src="noticia3.jpg" alt="Noticia motor">
-          <h3>Verstappen gana en Mónaco</h3>
-          <p>El piloto neerlandés se impone en las calles del Principado y amplía su ventaja en el campeonato de F1.</p>
-        </article>
-      </ul>
-    </section>
+  <article class="noticia">
+    <a href="https://www.hsbnoticias.com/en-la-liga-profesional-colombiana-de-baloncesto/" target="_blank">
+      <img src="https://www.hsbnoticias.com/wp-content/uploads/2025/11/2-4.png" alt="Toros del Valle lideran la LBP">
+      <h3>Toros del Valle lideran la Liga Profesional de Baloncesto</h3>
+    </a>
+    <p>Con siete victorias, Toros se consolidan como líderes del torneo nacional 2025-II.</p>
+    <p><em>Fuente: HSB Noticias</em></p>
+  </article>
 
-    <h2 style="margin-top:60px;">Suscríbete al Boletín</h2>
-    <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
-    <form>
-      <input type="email" placeholder="Tu correo electrónico" required>
-      <button type="submit">Suscribirse</button>
-    </form>
-  </main>
+  <article class="noticia">
+    <a href="https://www.motogp.com/es/news/2025/10/31/bulega-sustituira-a-marquez-en-portugal-y-valencia/488765" target="_blank">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuT4aKmFUgCCoHxaPiTjAbA9Fhz2Hyhsxzig&s" alt="Bulega reemplaza a Márquez">
+      <h3>Bulega reemplazará a Marc Márquez en las últimas fechas</h3>
+    </a>
+    <p>El piloto italiano tomará el lugar de Márquez en Portugal y Valencia por lesión.</p>
+    <p><em>Fuente: MotoGP.com</em></p>
+  </article>
 
+  <article class="noticia">
+    <a href="https://www.diariomotor.com/competicion/noticia/previo-rally-de-japon-2025/" target="_blank">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-TJDkNYCJ3CJPABkwa9GC6aJc1JHAz5sqEw&s" alt="Rally de Japón 2025">
+      <h3>Rally de Japón: penúltima cita del WRC 2025</h3>
+    </a>
+    <p>Cuatro equipos luchan por el título en uno de los tramos más exigentes del calendario.</p>
+    <p><em>Fuente: Diariomotor</em></p>
+  </article>
+
+  <article class="noticia">
+    <a href="https://canaltenis.com/category/noticias/" target="_blank">
+      <img src="https://canaltenis.com/wp-content/uploads/2025/11/donde-ver-Djokovic-Tabilo-ATP-Atenas-2025-990x658.webp" alt="Masters 1000 París">
+      <h3>Dimitrov sorprende en el Masters 1000 de París</h3>
+    </a>
+    <p>El búlgaro eliminó a uno de los favoritos locales en su regreso tras lesión.</p>
+    <p><em>Fuente: Canal Tenis</em></p>
+  </article>
+</section>
+
+<section id="newsletter" style="position:relative; z-index:1; padding:40px; background:rgba(0,0,0,0.85); color:white; text-align:center;">
+  <h2>Suscríbete al Boletín</h2>
+  <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
+
+  <form id="form-newsletter">
+    <input type="email" id="email" placeholder="Tu correo electrónico" required style="padding:10px; width:250px;">
+    <button type="submit" style="padding:10px 20px; margin-left:10px;">Suscribirse</button>
+  </form>
+
+  <output id="mensaje-newsletter" style="margin-top:20px;"></output>
+</section>
+<a href="LOGIN.HTML" class="boton-login" title="Iniciar sesión">Iniciar sesión</a>
 </body>
 </html>

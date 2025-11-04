@@ -6,7 +6,63 @@
   <title>EnergySports</title>
   <link href="STYLE.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .seccion-calendarios {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 3rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
 
+.seccion-calendarios h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #0040ff;
+  text-align: center;
+}
+
+.seccion-calendarios p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #e0e0e0;
+}
+
+.seccion-calendarios section {
+  margin-bottom: 2rem;
+}
+
+.seccion-calendarios h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #c4c4c4;
+}
+
+.seccion-calendarios ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.seccion-calendarios li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.95rem;
+  color: #d6d9d9;
+}
+
+.seccion-calendarios a {
+  color: #0080ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.seccion-calendarios a:hover {
+  text-decoration: underline;
+}
+  </style>
 </head>
 <body>
   
@@ -21,7 +77,7 @@
 
 <nav style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
   
- 
+
   <a href="INDEX.HTML" style="color: #00ff88; font-weight: 700; font-size: 1.6em; text-decoration: none;">
     Energy~Sports
   </a>
@@ -51,64 +107,98 @@
 </nav>
 
   <main>
-    <h1>Catálogo Deportivo</h1>
+  <h1>Catálogo Deportivo</h1>
 
-    <h1>ADIDAS</h1>
-    <section>
-      <article class="producto">
-        <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto/4229e87f23044869a5218fbc64c4fd71_9366/Balon_Trionda_Pro_Copa_Mundial_de_la_FIFA_26tm_Blanco_JD8021_HM1.jpg" alt="">
-        <h2>Balón Trionda Pro Copa Mundial de la FIFA 26</h2>
-        <p>Control preciso y gran durabilidad, ideal para partidos intensos.</p>
-        <p class="precio">$350.000 COP</p>
-        <button>Comprar</button>
-      </article>
+  <section class="productos">
+    <article class="producto">
+      <a href="futbol.html">
+        <img src="https://media.falabella.com/falabellaCO/73398815_1/w=800,h=800,fit=pad" alt="Balón Trionda Pro">
+      </a>
+      <h2>Balón Trionda Pro</h2>
+      <p>Balón oficial Copa Mundial FIFA 2026. Precisión, durabilidad y diseño profesional.</p>
+      <p class="precio">$350.900 COP</p>
+      <a href="futbol.html" class="btn-carrito">Añadir al carrito</a>
+      <button class="btn-comprar">Añadir al carrito</button>
+    </article>
 
-      <article class="producto">
-        <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/2301d0c0b0db4c9f8779b07fb7e9127c_9366/Camiseta_de_local_autentica_del_Real_Madrid_temporada_2025-2026_Blanco_JV5918_HM1.jpg" alt="">
-        <h2>Camiseta Real Madrid 2025</h2>
-        <p>Oficial con tecnología AeroReady para mayor comodidad.</p>
-        <p class="precio">$280.000 COP</p>
-        <button>Comprar</button>
-      </article>
+    <article class="producto">
+      <a href="baloncesto.html">
+        <img src="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/9f2c2e7f-9c2e-4e7e-9b6a-0f6e3e7e2f2e/nike-lebron-xxi.jpg" alt="Zapatillas LeBron XXI">
+      </a>
+      <h2>Zapatillas nike air zoom</h2>
+      <p>Diseño ligero y amortiguación Zoom Air para máximo rendimiento en cancha.</p>
+      <p class="precio">$689.000 COP</p>
+      <a href="baloncesto.html" class="btn-carrito">Añadir al carrito</a>
+      <button class="btn-comprar">Añadir al carrito</button>
+    </article>
 
-      <article class="producto">
-        <img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/15dbd44e1eeb4190afa1d1490e26752f_9366/Camiseta_Local_Seleccion_Colombia_24_Version_Jugador_Amarillo_IP8280_21_model.jpg" alt="">
-        <h2>Camiseta Selección Colombia</h2>
-        <p>Versión oficial para apoyar a la tricolor con orgullo.</p>
-        <p class="precio">$260.000 COP</p>
-        <button>Comprar</button>
-      </article>
-    </section>
+    <article class="producto">
+      <a href="tenis.html">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xLqtL-M-yEfkaVmC4TWV5RX9klWq96AYKg&s" alt="Raqueta Wilson Blade 98">
+      </a>
+      <h2>Raqueta Wilson Pro Staff</h2>
+      <p>Control y potencia para jugadores competitivos. Tecnología FeelFlex y diseño ergonómico.</p>
+      <p class="precio">$499.900 COP</p>
+      <a href="tenis.html" class="btn-carrito">Añadir al carrito</a>
+      <button class="btn-comprar">Añadir al carrito</button>
+    </article>
 
-    <h1>NIKE</h1>
-    <section>
-      <article class="producto">
-        <img src="https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/f53b3bffd4894e9b83ad4fc3a86451ce_9366/guayos-predator-pro-lengueta-plegable-terreno-firme.jpg" alt="Guayos Predator Club con calcetín">
-        <h2>Guayos Predator Club con calcetín</h2>
-        <p>Estos guayos de fútbol Club tienen un exterior de material sintético ajustado para mayor estabilidad y un recubrimiento de Strikeprint con agarre para un mejor control del balón.</p>
-        <p class="precio">$499.900</p>
-        <button>Comprar</button>
-      </article>
+    <article class="producto">
+      <a href="motor.html">
+        <img src="https://virtualed.com.co/cdn/shop/files/IMG-9235.jpg?v=1701362653&width=1445" alt="Casco HJC RPHA 11 Pro">
+      </a>
+      <h2>Casco HJC RPHA 11 Pro</h2>
+      <p>Casco deportivo de alto rendimiento. Aerodinámica avanzada y ventilación optimizada.</p>
+      <p class="precio">$1.250.000 COP</p>
+      <a href="motor.html" class="btn-carrito">Añadir al carrito</a>
+      <button class="btn-comprar">Añadir al carrito</button>
+    </article>
+  </section>
 
-      <article class="producto">
-        <img src="https://nikeco.vtexassets.com/arquivos/ids/907251-500-500?v=638906044613700000" alt="Camiseta Nike Dri-Fit">
-        <h2>Camiseta Dri-Fit</h2>
-        <p>Tecnología que absorbe el sudor, ideal para entrenamientos.</p>
-        <p class="precio">$149.900</p>
-        <button>Comprar</button>
-      </article>
+  <section class="seccion-calendarios">
+  <h2>Calendarios y Partidos</h2>
+  <p>Consulta los próximos encuentros y accede a los portales deportivos más visitados en Colombia.</p>
 
-      <article class="producto">
-        <img src="https://static.nike.com/a/images/t_default/8ddca2ae-a169-471f-a53e-167ded1d739d/NK+FLIGHT+-+FA23.png" alt="Balón Nike Flight">
-        <h2>Balón Nike Flight</h2>
-        <p>Balón oficial de alto rendimiento, con diseño aerodinámico.</p>
-        <p class="precio">$299.900</p>
-        <button>Comprar</button>
-      </article>
-    </section>
-  </main>
+  <section>
+    <h3>Fútbol</h3>
+    <ul>
+      <li>Colombia vs Alemania – Mundial Sub-17 (5 Nov, 14:00)</li>
+      <li>Millonarios vs Nacional – Liga BetPlay (8 Nov, 19:30)</li>
+      <li><a href="https://www.elinformador.com.co/index.php/tendencias/215-mas-populares/329825-el-deporte-colombiano-en-este-2025" target="_blank">Ver más en El Informador</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Baloncesto</h3>
+    <ul>
+      <li>Toros del Valle vs Titanes – LBP (6 Nov, 18:00)</li>
+      <li>Lakers vs Warriors – NBA (7 Nov, 21:00)</li>
+      <li><a href="https://www.calendariodecolombia.com/fechas/calendario-de-eventos-deportivos-2025-en-colombia" target="_blank">Calendario completo en CalendarioDeColombia</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Tenis</h3>
+    <ul>
+      <li>Masters 1000 París – Cuartos de final (6–9 Nov)</li>
+      <li>ATP Finals – Inicio (12 Nov)</li>
+      <li><a href="https://rentifyexperience.com/colombia-2025-eventos-deportivos-imperdibles-en-bogota-medellin-cali-cartagena-y-barranquilla/" target="_blank">Eventos destacados en Rentify Experience</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Motor</h3>
+    <ul>
+      <li>MotoGP Valencia – Gran Premio final (10 Nov)</li>
+      <li>WRC Japón – Etapa decisiva (9–12 Nov)</li>
+      <li><a href="https://www.calendariodecolombia.com/fechas/calendario-de-eventos-deportivos-2025-en-colombia" target="_blank">Ver agenda completa</a></li>
+    </ul>
+  </section>
+</section>
+</main>
+
 <section id="newsletter" style="position:relative; z-index:1; padding:40px; background:rgba(0,0,0,0.85); color:white; text-align:center;">
-  <h2>Suscríbete al Boletín 📰</h2>
+  <h2>Suscríbete al Boletín</h2>
   <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
   <form id="form-newsletter">
     <input type="email" id="email" placeholder="Tu correo electrónico" required style="padding:10px; width:250px;">
@@ -117,17 +207,9 @@
   <div id="mensaje-newsletter" style="margin-top:20px;"></div>
 </section>
 
-<script>
-  const formNewsletter = document.getElementById("form-newsletter");
-  const mensaje = document.getElementById("mensaje-newsletter");
 
-  formNewsletter.addEventListener("submit", function(e) {
-    e.preventDefault();
-    const email = document.getElementById("email").value;
 
-    mensaje.innerHTML = `¡Gracias por suscribirte, ${email}! 🏅`;
-    formNewsletter.reset();
-  });
-</script>
+<a href="LOGIN.HTML" class="boton-login" title="Iniciar sesión">Iniciar sesión</a>
+
 </body>
 </html>

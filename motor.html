@@ -16,6 +16,18 @@
       padding: 10% 20px;
     }
 
+      .seccion-productos {
+  padding: 3rem 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
     section.motor-layout {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -64,12 +76,12 @@
 <body>
 
   <video class="video-fondo" autoplay muted loop playsinline>
-    <source src="https://cdn.pixabay.com/video/2015/11/09/1295-145209438_large.mp4" type="video/mp4">
+    <source src="https://www.pexels.com/es-es/download/video/5803089/" type="video/mp4">
     Tu navegador no soporta video HTML5.
   </video>
   
-  <nav>...</nav>
-  <main>...</main>
+  <nav>.                                 ..</nav>
+  <main>.                               ..</main>
 
   <nav style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
   
@@ -102,30 +114,90 @@
   </ul>
 </nav>
 
-  <main class="contenido">
-    <h1>Motor</h1>
-    <p>Velocidad, estrategia y adrenalina. Explora las principales disciplinas del automovilismo y motociclismo mundial.</p>
+<main class="seccion-productos">
+  <h2>Productos de Motor</h2>
 
-    <section class="motor-layout">
-      <ul>
-        <li>
-          <img src="f1.jpg" alt="Fórmula 1">
-          <h3>Fórmula 1</h3>
-          <p>La máxima categoría del automovilismo. Escuderías legendarias, circuitos icónicos y pilotos de élite compiten por la gloria.</p>
-        </li>
-        <li>
-          <img src="motogp.jpg" alt="MotoGP">
-          <h3>MotoGP</h3>
-          <p>La velocidad sobre dos ruedas. Las mejores motos y los pilotos más audaces del mundo en una batalla por milésimas de segundo.</p>
-        </li>
-        <li>
-          <img src="rally.jpg" alt="Rally">
-          <h3>Rally</h3>
-          <p>Competencias extremas en tierra, nieve y asfalto. El WRC y el Dakar desafían a los conductores en condiciones impredecibles.</p>
-        </li>
-      </ul>
-    </section>
-  </main>
+  <article class="producto">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRstirarT7zh4AHGSp9rynpEvAo0BJwLa836A&s" alt="Casco Integral HJC">
+    <h3>Casco Integral HJC</h3>
+    <p>Protección total con ventilación avanzada. Certificación DOT y diseño aerodinámico.</p>
+    <span class="precio">$399.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+  
+  <article class="producto">
+    <img src="https://m.media-amazon.com/images/I/71n1VL-xmzL._AC_SL1200_.jpg" alt="Casco Integral HJC">
+    <h3>Casco HJC RPHA 11 Pro</h3>
+    <p>Casco deportivo de alto rendimiento. Aerodinámica avanzada y ventilación optimizada.</p>
+    <span class="precio">$1.250.000 COP</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
 
+  <article class="producto">
+    <img src="https://virtualed.com.co/cdn/shop/files/D_NQ_NP_615766-MPE45445500271_042021-O.webp?v=1696264990" alt="Guantes Alpinestars GP">
+    <h3>Guantes Alpinestars GP</h3>
+    <p>Cuero reforzado con protección en nudillos. Agarre y comodidad para largas rutas.</p>
+    <span class="precio">$149.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+  <article class="producto">
+    <img src="https://cf-cdn.motocard.com/cdn-cgi/image/w=400,h=400,q=91,fit=cover,f=auto/products/images/20005/revit-defender_pro_gtx_grey_red_3520-1-M-200055411.jpg?v=3b386ed1253de12cb983c26c8941b9d8" alt="Chaqueta Revit Defender">
+    <h3>Chaqueta Revit Defender</h3>
+    <p>Impermeable, con protecciones en hombros y espalda. Ideal para touring y ciudad.</p>
+    <span class="precio">$499.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+  <article class="producto">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwhnJGWSy53o9_PfC_G1aOqJDa-d4M1r_ODw&s" alt="Botas Dainese Torque">
+    <h3>Botas Dainese Torque</h3>
+    <p>Diseño racing con refuerzo en tobillo y suela antideslizante. Máxima seguridad.</p>
+    <span class="precio">$359.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+  <article class="producto">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMdFCd3XeMy-kwUselSIxOZKavekgSN87MaQ&s">
+    <p>Ergonómica y resistente al agua. Compartimentos para herramientas y accesorios.</p>
+    <span class="precio">$199.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+  <article class="producto">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvuAiI17SgUoOcMYvDYLf60-Wjv43eBa_tw&s" alt="Gafas Oakley Wind Jacket">
+    <h3>Gafas Oakley Wind Jacket</h3>
+    <p>Protección contra viento y rayos UV. Lentes polarizados y marco envolvente.</p>
+    <span class="precio">$129.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+  <article class="producto">
+    <img src="https://i.ebayimg.com/images/g/~1gAAOSwMpRlTVVG/s-l1200.jpg" alt="Traje Impermeable Oxford">
+    <h3>Traje Impermeable Oxford</h3>
+    <p>Resistente al agua y al viento. Fácil de guardar y transportar.</p>
+    <span class="precio">$99.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+
+  <article class="producto">
+    <img src="https://http2.mlstatic.com/D_NQ_NP_757829-MCO27862588474_072018-O.webp" alt="Soporte Celular Givi">
+    <h3>Soporte Celular Givi</h3>
+    <p>Montaje universal con protección contra lluvia. Ideal para navegación GPS.</p>
+    <span class="precio">$59.900</span>
+    <button class="btn-comprar">Añadir al carrito</button>
+  </article>
+</main>
+
+<section id="newsletter" style="position:relative; z-index:1; padding:40px; background:rgba(0,0,0,0.85); color:white; text-align:center;">
+  <h2>Suscríbete al Boletín </h2>
+  <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
+  <form id="form-newsletter">
+    <input type="email" id="email" placeholder="Tu correo electrónico" required style="padding:10px; width:250px;">
+    <button type="submit" style="padding:10px 20px; margin-left:10px;">Suscribirse</button>
+  </form>
+  <div id="mensaje-newsletter" style="margin-top:20px;"></div>
+</section>
+<a href="LOGIN.HTML" class="boton-login" title="Iniciar sesión">Iniciar sesión</a>
 </body>
 </html>
