@@ -193,6 +193,39 @@
       transform: scale(1.05);
     }
 
+    #newsletter {
+      position: relative;
+      z-index: 1;
+      padding: 40px;
+      background: rgba(0,0,0,0.85);
+      color: rgb(35, 19, 184);
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    #newsletter h2 {
+      color: #371dcee7;
+      margin-bottom: 1rem;
+    }
+
+    #newsletter input {
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    #newsletter button {
+      padding: 10px 20px;
+      background: #c9c3c3;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
@@ -224,3 +257,6 @@
         width: 90%;
       }
     }
+
+
+    
