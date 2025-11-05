@@ -13,7 +13,7 @@
       box-sizing: border-box;
       font-family: 'Poppins', sans-serif;
     }
-
+   
     body {
       background-color: #0a0a0a;
       color: #fff;
@@ -33,7 +33,7 @@
     }
 
     nav {
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(224, 213, 213, 0.85);
       backdrop-filter: blur(8px);
       padding: 15px 40px;
       display: flex;
@@ -72,7 +72,7 @@
     }
 
     nav a:hover {
-      color: #3022f5;
+      color: #e2e2ec;
     }
 
     nav ul ul {
@@ -234,13 +234,13 @@
       z-index: 1;
       padding: 40px;
       background: rgba(0, 0, 0, 0.85);
-      color: rgb(255, 255, 255);
+      color: rgb(221, 221, 221);
       text-align: center;
       margin-top: 3rem;
     }
 
     #newsletter h2 {
-      color: #ffffffe7;
+      color: #2c6bcae7;
       margin-bottom: 1rem;
     }
 
@@ -262,19 +262,6 @@
       cursor: pointer;
     }
 
-    .boton-login {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #2216c791;
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      z-index: 100;
-      transition: all 0.3s;
-    }
 
     .boton-login:hover {
       background: #9c9dac;
@@ -290,7 +277,7 @@
     }
 
     .cart-button {
-      background-color: #e06b279f;
+      background-color: #27e0b89f;
       color: #000;
       width: 70px;
       height: 70px;
@@ -299,7 +286,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4);
+      box-shadow: 0 6px 20px rgba(27, 172, 104, 0.4);
       transition: all 0.3s ease;
       border: none;
       font-size: 1.5rem;
@@ -308,14 +295,14 @@
 
     .cart-button:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(45, 68, 197, 0.5);
+      box-shadow: 0 8px 25px rgba(41, 248, 179, 0.89);
     }
 
     .cart-count {
       position: absolute;
       top: -5px;
       right: -5px;
-      background-color: #ff4444;
+      background-color: #d42929;
       color: white;
       border-radius: 50%;
       width: 26px;
@@ -375,7 +362,7 @@
     }
 
     .close-cart:hover {
-      color: #ff4444;
+      color: a#44ff92;
     }
 
     .cart-items {
@@ -414,7 +401,7 @@
     }
 
     .item-price {
-      color: #ff5100;
+      color: #e44343;
       font-weight: 600;
     }
 
@@ -453,7 +440,7 @@
     .remove-item {
       background: none;
       border: none;
-      color: #ff4444;
+      color: #f3ff44;
       cursor: pointer;
       font-size: 1.2rem;
       margin-left: 0.5rem;
@@ -490,7 +477,7 @@
     }
 
     .checkout-btn:hover {
-      background-color: #f18810d0;
+      background-color: #17b6e6d0;
     }
 
     .empty-cart {
@@ -553,12 +540,12 @@
 
 
   <nav
-    style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    style="background: rgba(0, 0, 0, 0.685); backdrop-filter: blur(8px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
 
 
-    <a href="INDEX.HTML" style="color: #2a7bf5be; font-weight: 700; font-size: 1.6em; text-decoration: none;">
-      Energy~Sports
-    </a>
+    <a href="INDEX.HTML" class="logo">
+    <img src="logo3.png" alt="Energy Sports Logo" style="height:40px;">
+  </a>
 
 
     <ul style="list-style: none; display: flex; flex-wrap: wrap; margin: 0; padding: 0;">
@@ -582,7 +569,10 @@
 
       <li><a href="Noticias.html">Noticias</a></li>
     </ul>
+
   </nav>
+
+
 
   <main>
     <h1>Catálogo Deportivo</h1>
@@ -601,15 +591,13 @@
 
       <article class="producto">
         <a href="baloncesto.html">
-          <img
-            src="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/9f2c2e7f-9c2e-4e7e-9b6a-0f6e3e7e2f2e/nike-lebron-xxi.jpg"
-            alt="Zapatillas LeBron XXI">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdiTMkI4hdWaXA3v8_omHDmOIs37EBX21n5g&s" alt="Zapatillas LeBron XXI">
         </a>
         <h2>Zapatillas Nike Air Zoom</h2>
         <p>Diseño ligero y amortiguación Zoom Air para máximo rendimiento en cancha.</p>
         <p class="precio">$689.000 COP</p>
         <button class="btn-comprar" data-id="2" data-name="Zapatillas Nike Air Zoom" data-price="689000"
-          data-image="https://static.nike.com/a/images/t_prod_ss/w_640,c_limit,f_auto/9f2c2e7f-9c2e-4e7e-9b6a-0f6e3e7e2f2e/nike-lebron-xxi.jpg">Añadir
+          data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdiTMkI4hdWaXA3v8_omHDmOIs37EBX21n5g&s">Añadir
           al carrito</button>
       </article>
 
@@ -689,16 +677,16 @@
   </main>
 
   <section id="newsletter">
-    <h2>Suscríbete al Boletín</h2>
+    <h2>Suscríbete al Boletín y recibe toda la Energy</h2>
     <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
     <form id="form-newsletter">
       <input type="email" id="email" placeholder="Tu correo electrónico" required>
       <button type="submit">Suscribirse</button>
     </form>
-    <div id="mensaje-newsletter"></div>
+    <section id="mensaje-newsletter"></section>
   </section>
 
-  <a href="LOGIN.HTML" class="boton-login" title="Iniciar sesión">Iniciar sesión</a>
+  <a href="LOGIN.HTML" class="boton-login">Iniciar sesión</a>
 
   <!-- Carrito Flotante -->
   <section class="floating-cart">
@@ -937,9 +925,9 @@
   <!-- 🌐 Redes Sociales - Versión Neon Minimal -->
   <section id="redes-sociales"
     style="padding:50px 0; text-align:center; background:radial-gradient(circle at center, rgba(66, 63, 63, 0.9) 0%, rgba(0,0,0,1) 100%); color:#fff; border-top:2px solid #00ff88;">
-    <h2 style="font-size:1.8em; margin-bottom:25px; color:#ffffff; letter-spacing:1px;">Conéctate con Energy~Sports</h2>
+    <h2 style="font-size:1.8em; margin-bottom:25px; color:#ffffff; letter-spacing:1px;">Conéctate con Energy</h2>
 
-    <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
+    <section style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
 
       <a href="https://facebook.com" target="_blank" title="Facebook" style="
       width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
@@ -991,7 +979,7 @@
         <i class="fab fa-tiktok"></i>
       </a>
 
-    </div>
+    </section>
   </section>
 
   <!-- 💡 Librería de iconos -->
