@@ -364,16 +364,16 @@
       cart.forEach(item => {
         total += item.price * item.qty;
         count += item.qty;
-        const el = document.createElement('div');
+        const el = document.createElement('section');
         el.innerHTML = `
-          <div style="display:flex;align-items:center;margin-bottom:10px;">
+          <section style="display:flex;align-items:center;margin-bottom:10px;">
             <img src="${item.image}" width="50" height="50" style="border-radius:6px;margin-right:10px;">
-            <div style="flex:1;">
+            <section style="flex:1;">
               <strong>${item.name}</strong><br>
               <small>$${item.price.toLocaleString('es-CO')}</small>
-            </div>
+            </section>
             <span>x${item.qty}</span>
-          </div>`;
+          </section>`;
         cartItems.appendChild(el);
       });
       totalAmount.textContent = '$' + total.toLocaleString('es-CO');
@@ -389,7 +389,7 @@
     style="padding:50px 0; text-align:center; background:radial-gradient(circle at center, rgba(66, 63, 63, 0.9) 0%, rgba(0,0,0,1) 100%); color:#fff; border-top:2px solid #00ff88;">
     <h2 style="font-size:1.8em; margin-bottom:25px; color:#ffffff; letter-spacing:1px;">Conéctate con Energy</h2>
 
-    <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
+    <section style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
 
       <a href="https://facebook.com" target="_blank" title="Facebook" style="
       width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
@@ -441,7 +441,7 @@
         <i class="fab fa-tiktok"></i>
       </a>
 
-    </div>
+    </section>
   </section>
 
   <!-- 💡 Librería de iconos -->
