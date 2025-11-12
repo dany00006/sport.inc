@@ -8,6 +8,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="formulario.js">
   <style>
+
+    footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 25px 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  border-top: 2px solid #ffcc00;
+}
+
+footer h3 {
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+footer p {
+  margin: 5px 0;
+  color: #ccc;
+}
+
+
+
     * {
       margin: 0;
       padding: 0;
@@ -677,291 +700,257 @@
     </section>
   </main>
 
-  <section id="newsletter">
-    <h2>Suscríbete al Boletín y recibe toda la Energy</h2>
-    <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
-    <form id="form-newsletter">
-      <input type="email" id="email" placeholder="Tu correo electrónico" required>
-      <button type="submit">Suscribirse</button>
-    </form>
-    
-    <section id="mensaje-newsletter"></section>
-  </section>
-  <script type="module">
-  // Inicializa Supabase
+<section id="newsletter">
+  <h2>Suscríbete al Boletín y recibe toda la Energy</h2>
+  <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
 
-  console.log("Supabase conectado:", supabase);
- 
-import { createClient } from '@supabase/supabase-js';
+  <form id="form-newsletter">
+    <input type="email" id="email" placeholder="Tu correo electrónico" required>
+    <button type="submit">Suscribirse</button>
+  </form>
 
+  <section id="mensaje-newsletter"></section>
+</section>
 
-  const supabaseUrl = "https://kvptoadhqhtoynxlniwh.supabase.co";
-  const supabaseKey = "TeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt2cHRvYWRocWh0b3lueGxuaXdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5MDY0MjMsImV4cCI6MjA3ODQ4MjQyM30._oHDdnYKe02ak2svVG-W1gDaQ2JUKrFOmzDIKe3iruEUeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt2cHRvYWRocWh0b3lueGxuaXdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5MDY0MjMsImV4cCI6MjA3ODQ4MjQyM30._oHDdnYKe02ak2svVG-W1gDaQ2JUKrFOmzDIKe3iruE";
-  const supabase = createClient(supabaseUrl, supabaseKey);
+<!-- Cargar el script de conexión con Supabase -->
+<script type="module" src="boletin.js"></script>
 
-  // Captura el formulario
-  const form = document.getElementById("form-newsletter");
-  const mensaje = document.getElementById("mensaje-newsletter");
+<!-- Carrito Flotante -->
+<section class="floating-cart">
+  <button class="cart-button" id="cartButton">
+    🛒
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
 
- form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const email = document.getElementById("email").value;
-
-  try {
-    const { error } = await supabase
-      .from("newsletter")
-      .insert([{ email }]);
-
-    if (error) {
-      console.error(error);
-      mensaje.innerHTML = `<p style="color:red;">Error: ${error.message}</p>`;
-    } else {
-      mensaje.innerHTML = `<p style="color:green;">¡Gracias por suscribirte!</p>`;
-      form.reset();
-    }
-  } catch (err) {
-    console.error("Error de conexión:", err);
-    mensaje.innerHTML = `<p style="color:red;">No se pudo conectar a Supabase.</p>`;
-  }
-});
-
-</script>
-
-
-  <!-- Carrito Flotante -->
-  <section class="floating-cart">
-    <button class="cart-button" id="cartButton">
-      🛒
-      <span class="cart-count" id="cartCount">0</span>
-    </button>
-    <section class="cart-panel" id="cartPanel">
-      <section class="cart-header">
-        <h2 class="cart-title">Tu Carrito</h2>
-        <button class="close-cart" id="closeCart">×</button>
-      </section>
-      <section class="cart-items" id="cartItems">
-        <!-- Los elementos del carrito se añadirán aquí -->
-      </section>
-      <section class="cart-total">
-        <span>Total:</span>
-        <span id="totalAmount">$0</span>
-      </section>
-      <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+  <section class="cart-panel" id="cartPanel">
+    <section class="cart-header">
+      <h2 class="cart-title">Tu Carrito</h2>
+      <button class="close-cart" id="closeCart">×</button>
     </section>
+
+    <section class="cart-items" id="cartItems">
+      <!-- Los elementos del carrito se añadirán aquí -->
+    </section>
+
+    <section class="cart-total">
+      <span>Total:</span>
+      <span id="totalAmount">$0</span>
+    </section>
+
+    <!-- BOTÓN FINALIZAR COMPRA (redirige al formulario) -->
+    <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
   </section>
+</section>
 
-  <script>
-    // Estado del carrito
-    let cart = [];
-    let cartCount = 0;
-    let totalAmount = 0;
+<script>
+  // Estado del carrito
+  let cart = [];
+  let cartCount = 0;
+  let totalAmount = 0;
 
-    // Elementos del DOM
-    const cartButton = document.getElementById('cartButton');
-    const cartPanel = document.getElementById('cartPanel');
-    const closeCart = document.getElementById('closeCart');
-    const cartItems = document.getElementById('cartItems');
-    const cartCountElement = document.getElementById('cartCount');
-    const totalAmountElement = document.getElementById('totalAmount');
-    const checkoutBtn = document.getElementById('checkoutBtn');
+  // Elementos del DOM
+  const cartButton = document.getElementById('cartButton');
+  const cartPanel = document.getElementById('cartPanel');
+  const closeCart = document.getElementById('closeCart');
+  const cartItems = document.getElementById('cartItems');
+  const cartCountElement = document.getElementById('cartCount');
+  const totalAmountElement = document.getElementById('totalAmount');
+  const checkoutBtn = document.getElementById('checkoutBtn');
 
-    // Inicializar la tienda
-    function initStore() {
-      loadCartFromStorage();
-      updateCartUI();
+  // Inicializar la tienda
+  function initStore() {
+    loadCartFromStorage();
+    updateCartUI();
 
-      // Event listeners
-      cartButton.addEventListener('click', toggleCart);
-      closeCart.addEventListener('click', toggleCart);
-      checkoutBtn.addEventListener('click', checkout);
+    // Event listeners
+    cartButton.addEventListener('click', toggleCart);
+    closeCart.addEventListener('click', toggleCart);
+    checkoutBtn.addEventListener('click', checkout);
 
-      // Añadir event listeners a los botones de compra
-      document.querySelectorAll('.btn-comprar').forEach(button => {
-        button.addEventListener('click', (e) => {
-          const productId = parseInt(e.target.getAttribute('data-id'));
-          const productName = e.target.getAttribute('data-name');
-          const productPrice = parseInt(e.target.getAttribute('data-price'));
-          const productImage = e.target.getAttribute('data-image');
+    // Añadir event listeners a los botones de compra
+    document.querySelectorAll('.btn-comprar').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const productId = parseInt(e.target.getAttribute('data-id'));
+        const productName = e.target.getAttribute('data-name');
+        const productPrice = parseInt(e.target.getAttribute('data-price'));
+        const productImage = e.target.getAttribute('data-image');
 
-          addToCart(productId, productName, productPrice, productImage);
-        });
+        addToCart(productId, productName, productPrice, productImage);
       });
+    });
 
-      // Cerrar carrito al hacer clic fuera de él
-      document.addEventListener('click', (e) => {
-        if (!cartPanel.contains(e.target) && !cartButton.contains(e.target) && cartPanel.classList.contains('active')) {
-          toggleCart();
-        }
-      });
-    }
-
-    // Añadir producto al carrito
-    function addToCart(productId, productName, productPrice, productImage) {
-      const existingItem = cart.find(item => item.id === productId);
-
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cart.push({
-          id: productId,
-          name: productName,
-          price: productPrice,
-          image: productImage,
-          quantity: 1
-        });
-      }
-
-      // Animación del botón del carrito
-      cartButton.classList.add('animate-add');
-      setTimeout(() => {
-        cartButton.classList.remove('animate-add');
-      }, 500);
-
-      updateCartUI();
-      saveCartToStorage();
-
-      // Abrir el carrito automáticamente
-      if (!cartPanel.classList.contains('active')) {
+    // Cerrar carrito al hacer clic fuera de él
+    document.addEventListener('click', (e) => {
+      if (!cartPanel.contains(e.target) && !cartButton.contains(e.target) && cartPanel.classList.contains('active')) {
         toggleCart();
       }
+    });
+  }
+
+  // Añadir producto al carrito
+  function addToCart(productId, productName, productPrice, productImage) {
+    const existingItem = cart.find(item => item.id === productId);
+
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({
+        id: productId,
+        name: productName,
+        price: productPrice,
+        image: productImage,
+        quantity: 1
+      });
     }
 
-    // Eliminar producto del carrito
-    function removeFromCart(productId) {
-      cart = cart.filter(item => item.id !== productId);
+    // Animación del botón del carrito
+    cartButton.classList.add('animate-add');
+    setTimeout(() => {
+      cartButton.classList.remove('animate-add');
+    }, 500);
+
+    updateCartUI();
+    saveCartToStorage();
+
+    // Abrir el carrito automáticamente
+    if (!cartPanel.classList.contains('active')) {
+      toggleCart();
+    }
+  }
+
+  // Eliminar producto del carrito
+  function removeFromCart(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    updateCartUI();
+    saveCartToStorage();
+  }
+
+  // Actualizar cantidad
+  function updateQuantity(productId, change) {
+    const item = cart.find(item => item.id === productId);
+    if (!item) return;
+
+    item.quantity += change;
+
+    if (item.quantity <= 0) {
+      removeFromCart(productId);
+    } else {
       updateCartUI();
       saveCartToStorage();
     }
+  }
 
-    // Actualizar cantidad de un producto en el carrito
-    function updateQuantity(productId, change) {
-      const item = cart.find(item => item.id === productId);
-      if (!item) return;
+  // Actualizar la interfaz del carrito
+  function updateCartUI() {
+    cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
-      item.quantity += change;
+    const formattedTotal = new Intl.NumberFormat('es-CO', {
+      style: 'currency',
+      currency: 'COP',
+      minimumFractionDigits: 0
+    }).format(totalAmount);
 
-      if (item.quantity <= 0) {
-        removeFromCart(productId);
-      } else {
-        updateCartUI();
-        saveCartToStorage();
-      }
+    cartCountElement.textContent = cartCount;
+    totalAmountElement.textContent = formattedTotal;
+
+    cartItems.innerHTML = '';
+
+    if (cart.length === 0) {
+      cartItems.innerHTML = `
+        <section class="empty-cart">
+          <section>🛒</section>
+          <p>Tu carrito está vacío</p>
+        </section>
+      `;
+      return;
     }
 
-    // Actualizar la interfaz del carrito
-    function updateCartUI() {
-      // Calcular totales
-      cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-      totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-
-      // Formatear el total como moneda colombiana
-      const formattedTotal = new Intl.NumberFormat('es-CO', {
+    cart.forEach(item => {
+      const formattedPrice = new Intl.NumberFormat('es-CO', {
         style: 'currency',
         currency: 'COP',
         minimumFractionDigits: 0
-      }).format(totalAmount);
+      }).format(item.price);
 
-      // Actualizar elementos del DOM
-      cartCountElement.textContent = cartCount;
-      totalAmountElement.textContent = formattedTotal;
-
-      // Renderizar elementos del carrito
-      cartItems.innerHTML = '';
-
-      if (cart.length === 0) {
-        cartItems.innerHTML = `
-          <section class="empty-cart">
-            <section>🛒</section>
-            <p>Tu carrito está vacío</p>
+      const cartItem = document.createElement('section');
+      cartItem.className = 'cart-item';
+      cartItem.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" class="item-image">
+        <section class="item-details">
+          <section class="item-name">${item.name}</section>
+          <section class="item-price">${formattedPrice}</section>
+          <section class="item-quantity">
+            <button class="quantity-btn minus" data-id="${item.id}">-</button>
+            <span class="quantity-value">${item.quantity}</span>
+            <button class="quantity-btn plus" data-id="${item.id}">+</button>
+            <button class="remove-item" data-id="${item.id}">🗑️</button>
           </section>
-        `;
-        return;
-      }
+        </section>
+      `;
 
-      cart.forEach(item => {
-        const formattedPrice = new Intl.NumberFormat('es-CO', {
-          style: 'currency',
-          currency: 'COP',
-          minimumFractionDigits: 0
-        }).format(item.price);
+      cartItems.appendChild(cartItem);
+    });
 
-        const cartItem = document.createElement('section');
-        cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
-          <img src="${item.image}" alt="${item.name}" class="item-image">
-          <section class="item-details">
-            <section class="item-name">${item.name}</section>
-            <section class="item-price">${formattedPrice}</section>
-            <section class="item-quantity">
-              <button class="quantity-btn minus" data-id="${item.id}">-</button>
-              <span class="quantity-value">${item.quantity}</span>
-              <button class="quantity-btn plus" data-id="${item.id}">+</button>
-              <button class="remove-item" data-id="${item.id}">🗑️</button>
-            </section>
-          </section>
-        `;
-
-        cartItems.appendChild(cartItem);
+    document.querySelectorAll('.quantity-btn.minus').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const productId = parseInt(e.target.getAttribute('data-id'));
+        updateQuantity(productId, -1);
       });
+    });
 
-      // Añadir event listeners a los botones de cantidad y eliminar
-      document.querySelectorAll('.quantity-btn.minus').forEach(button => {
-        button.addEventListener('click', (e) => {
-          const productId = parseInt(e.target.getAttribute('data-id'));
-          updateQuantity(productId, -1);
-        });
+    document.querySelectorAll('.quantity-btn.plus').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const productId = parseInt(e.target.getAttribute('data-id'));
+        updateQuantity(productId, 1);
       });
+    });
 
-      document.querySelectorAll('.quantity-btn.plus').forEach(button => {
-        button.addEventListener('click', (e) => {
-          const productId = parseInt(e.target.getAttribute('data-id'));
-          updateQuantity(productId, 1);
-        });
+    document.querySelectorAll('.remove-item').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const productId = parseInt(e.target.getAttribute('data-id'));
+        removeFromCart(productId);
       });
+    });
+  }
 
-      document.querySelectorAll('.remove-item').forEach(button => {
-        button.addEventListener('click', (e) => {
-          const productId = parseInt(e.target.getAttribute('data-id'));
-          removeFromCart(productId);
-        });
-      });
+  // Alternar visibilidad del carrito
+  function toggleCart() {
+    cartPanel.classList.toggle('active');
+  }
+
+  // Redirección al formulario de pago
+  function checkout() {
+    if (cart.length === 0) {
+      alert('Tu carrito está vacío. Añade algunos productos antes de finalizar la compra.');
+      return;
     }
 
-    // Alternar visibilidad del carrito
-    function toggleCart() {
-      cartPanel.classList.toggle('active');
+    // Guardamos el carrito por si lo necesitas en la siguiente página
+    saveCartToStorage();
+
+    // Redirige al formulario de pago
+    window.location.href = "finalizar_compra.html"; // Cambia por tu nombre de archivo si es diferente
+  }
+
+  // Guardar carrito
+  function saveCartToStorage() {
+    localStorage.setItem('energySportsCart', JSON.stringify(cart));
+  }
+
+  // Cargar carrito
+  function loadCartFromStorage() {
+    const savedCart = localStorage.getItem('energySportsCart');
+    if (savedCart) {
+      cart = JSON.parse(savedCart);
     }
+  }
 
-    // Finalizar compra
-    function checkout() {
-      if (cart.length === 0) {
-        alert('Tu carrito está vacío. Añade algunos productos antes de finalizar la compra.');
-        return;
-      }
+  // Iniciar
+  document.addEventListener('DOMContentLoaded', initStore);
+</script>
 
-      alert(`¡Gracias por tu compra! Total: ${totalAmountElement.textContent}\n\nTu pedido ha sido procesado.`);
-      cart = [];
-      updateCartUI();
-      saveCartToStorage();
-      toggleCart();
-    }
 
-    // Guardar carrito en localStorage
-    function saveCartToStorage() {
-      localStorage.setItem('energySportsCart', JSON.stringify(cart));
-    }
-
-    // Cargar carrito desde localStorage
-    function loadCartFromStorage() {
-      const savedCart = localStorage.getItem('energySportsCart');
-      if (savedCart) {
-        cart = JSON.parse(savedCart);
-      }
-    }
-
-    // Inicializar la aplicación
-    document.addEventListener('DOMContentLoaded', initStore);
-  </script>
   <!-- 🌐 Redes Sociales - Versión Neon Minimal -->
   <section id="redes-sociales"
     style="padding:50px 0; text-align:center; background:radial-gradient(circle at center, rgba(66, 63, 63, 0.9) 0%, rgba(0,0,0,1) 100%); color:#fff; border-top:2px solid #00ff88;">
@@ -1025,8 +1014,17 @@ import { createClient } from '@supabase/supabase-js';
   <!-- 💡 Librería de iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-</body>
 
-</html>
+<footer>
+  <h3>Energy Sports</h3>
+  <p>Email: energysports@gmail.com</p>
+  <p>Teléfono: +57 320 555 8899</p>
+  <p>Bogotá, Colombia</p>
+  <p>&copy; 2025 Energy Sports - Todos los derechos reservados ⚡</p>
+</footer>
+
+<script type="module" src="boletin.js"></script>
+
+</body>
 
 </html>
