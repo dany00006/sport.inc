@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login Deportivo</title>
+  <title>Login - Energy Sports</title>
   <style>
     * {
       box-sizing: border-box;
@@ -58,7 +58,8 @@
     }
 
     .login-container input[type="text"],
-    .login-container input[type="password"] {
+    .login-container input[type="password"],
+    .login-container input[type="email"] {
       background-color: #222;
       color: white;
     }
@@ -83,6 +84,7 @@
       font-size: 0.9rem;
     }
 
+    /* Botón lateral para volver al inicio */
     .boton-inicio {
       position: fixed;
       top: 50%;
@@ -121,19 +123,21 @@
     Tu navegador no soporta video HTML5.
   </video>
 
+  <a href="INDEX.HTML" class="boton-inicio">Inicio</a>
+
   <section class="login-container">
-    <h1>Inicio de Sesión</h1>
+    <h1>Energy</h1>
 
     <form id="formLogin">
-  <h2>Iniciar Sesión</h2>
-  <input type="email" id="correo" placeholder="Correo electrónico" required>
-  <input type="password" id="contrasena" placeholder="Contraseña" required>
-  <input type="submit" value="Entrar">
-</form>
+      <h2>Iniciar Sesión</h2>
+      <input type="email" id="correo" placeholder="Correo electrónico" required>
+      <input type="password" id="contrasena" placeholder="Contraseña" required>
+      <input type="submit" value="Entrar">
+    </form>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="./login.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="./login.js"></script>
 
 </body>
 </html>

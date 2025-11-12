@@ -14,11 +14,12 @@
 
     body {
       height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #000;
+      overflow-x: hidden;
     }
 
     video.fondo-video {
@@ -31,64 +32,82 @@
       z-index: -1;
     }
 
-    .pago-container {
-      background: rgba(0, 0, 0, 0.6);
+    .container {
+      background: rgba(0, 0, 0, 0.7);
       backdrop-filter: blur(10px);
+      margin-top: 80px;
       padding: 40px;
       border-radius: 15px;
-      width: 100%;
-      max-width: 420px;
-      text-align: center;
+      width: 90%;
+      max-width: 500px;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
-    .pago-container h1 {
-      margin-bottom: 20px;
-      font-size: 2rem;
-      color: #0059ffb6;
+    h1 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 25px;
     }
 
-    .pago-container p {
-      margin-bottom: 15px;
-      color: #ccc;
+    form {
+      display: flex;
+      flex-direction: column;
     }
 
-    .pago-container input,
-    .pago-container select {
+    input, select, button {
       width: 100%;
-      padding: 12px;
-      margin: 10px 0;
+      padding: 10px;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    input, select {
       background-color: #222;
       color: white;
     }
 
-    .pago-container input[type="submit"] {
-      background-color: #2c17a5;
+    button {
+      background-color: #00bcd4;
       color: #000;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
 
-    .pago-container input[type="submit"]:hover {
-      background-color: #091870f1;
+    button:hover {
+      background-color: #0288d1;
     }
 
-    .pago-container a {
-      color: #ffffff;
+    /* Botón de WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 999;
+      transition: transform 0.2s ease-in-out;
       text-decoration: none;
-      display: block;
-      margin-top: 15px;
-      font-size: 0.9rem;
     }
 
-    @media (max-width: 480px) {
-      .pago-container {
-        width: 90%;
-        padding: 25px;
-      }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .botones {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
     }
   </style>
 </head>
@@ -99,27 +118,72 @@
     Tu navegador no soporta video HTML5.
   </video>
 
-  <section class="pago-container">
+  <section class="container">
     <h1>Finalizar Compra</h1>
-    <p>Completa tus datos para procesar el pago de tus productos.</p>
 
-    <form action="confirmacion.html" method="post">
+    <form id="form-pago">
       <input type="text" placeholder="Nombre completo" required>
       <input type="email" placeholder="Correo electrónico" required>
       <input type="text" placeholder="Dirección de envío" required>
-      <input type="tel" placeholder="Número de teléfono" required>
-      <select required>
-        <option value="">Método de pago</option>
-        <option value="tarjeta">Tarjeta de crédito / débito</option>
-        <option value="nequi">Nequi</option>
-        <option value="daviplata">Daviplata</option>
-        <option value="efectivo">Pago contra entrega</option>
-      </select>
-      <input type="submit" value="Confirmar y Pagar">
-    </form>
 
-    <a href="INDEX.HTML">Volver al carrito</a>
+      <label for="metodo">Método de pago:</label>
+      <select id="metodo" required>
+        <option value="">Selecciona un método</option>
+        <option value="tarjeta">Tarjeta de crédito / débito</option>
+        <option value="pse">PSE (Transferencia)</option>
+        <option value="nequi">Nequi</option>
+        <option value="paypal">PayPal</option>
+      </select>
+
+      <div class="botones">
+        <button type="button" id="btn-volver">Volver al carrito</button>
+        <button type="submit" id="btn-pagar">Finalizar compra</button>
+      </div>
+    </form>
   </section>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/573001234567?text=¡Hola!%20Tengo%20una%20pregunta%20sobre%20mi%20compra%20en%20Energy%20Sports" 
+     class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+     💬
+  </a>
+
+  <script>
+    // Redirección simulada a pasarela de pago
+    document.getElementById("form-pago").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const metodo = document.getElementById("metodo").value;
+
+      if (!metodo) {
+        alert("Por favor selecciona un método de pago.");
+        return;
+      }
+
+      alert("Redirigiendo a la pasarela de pago...");
+      
+      switch (metodo) {
+        case "tarjeta":
+          window.location.href = "https://www.mercadopago.com.co";
+          break;
+        case "pse":
+          window.location.href = "https://www.pse.com.co";
+          break;
+        case "nequi":
+          window.location.href = "https://www.nequi.com.co";
+          break;
+        case "paypal":
+          window.location.href = "https://www.paypal.com";
+          break;
+        default:
+          window.location.href = "https://www.mercadopago.com.co";
+      }
+    });
+
+    // Botón de volver al carrito
+    document.getElementById("btn-volver").addEventListener("click", () => {
+      window.location.href = "INDEX.HTML"; // redirige a tu carrito o página principal
+    });
+  </script>
 
 </body>
 </html>
