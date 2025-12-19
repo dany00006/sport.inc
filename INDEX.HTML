@@ -1,1029 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EnergySports</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="formulario.js">
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>the NBA corner | Baloncesto</title>
 
-  footer {
-  background-color: #111;
-  color: #fff;
-  text-align: center;
-  padding: 25px 10px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  border-top: 2px solid #00ffff94;
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0a0a0a;color:#fff;min-height:100vh}
+.video-fondo{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;z-index:-1}
+
+nav{
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(8px);
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:10
+}
+nav ul{list-style:none;display:flex;gap:15px}
+nav a{color:#fff;text-decoration:none}
+nav a:hover{color:#00ffff}
+
+main{max-width:1200px;margin:auto;padding:2rem}
+h1{text-align:center;color:#00ffff;margin-bottom:2rem}
+
+.productos{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+gap:2rem
 }
 
-footer h3 {
-  color: #00aeff;
-  margin-bottom: 10px;
+.producto{
+background:rgba(255,255,255,.06);
+padding:1.5rem;
+border-radius:12px;
+text-align:center;
+transition:.3s
+}
+.producto:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,255,255,.3)}
+.producto img{width:100%;height:200px;object-fit:cover;border-radius:8px}
+
+.precio{font-size:1.4rem;font-weight:700;color:#00ffff}
+
+.btn-comprar{
+width:100%;
+padding:12px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#ffffff,#0c4da3);
+font-weight:600;
+cursor:pointer
 }
 
-footer p {
-  margin: 5px 0;
-  color: #ccc;
+.seccion-calendarios{
+margin-top:3rem;
+background:rgba(255,255,255,.06);
+padding:2rem;
+border-radius:12px
 }
-
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-   
-    body {
-      background-color: #0a0a0a;
-      color: #fff;
-      position: relative;
-      min-height: 100vh;
-    }
- 
-    .video-fondo {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      opacity: 0.4;
-    }
-
-    nav {
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 10;
-    }
-
-    .logo {
-      color: #1230b8;
-      font-weight: 700;
-      font-size: 1.6em;
-      text-decoration: none;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav li {
-      position: relative;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 15px;
-      display: block;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #e2e2ec;
-    }
-
-    nav ul ul {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: rgba(0, 0, 0, 0.9);
-      display: none;
-      min-width: 200px;
-      border-radius: 5px;
-      z-index: 10;
-    }
-
-    nav li:hover>ul {
-      display: block;
-    }
-
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #2a27df;
-      font-size: 2.5rem;
-    }
-
-    .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .producto {
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .producto:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
-    }
-
-    .producto img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .producto h2 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
-
-    .producto p {
-      color: #ccc;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-    }
-
-    .precio {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #8694d3;
-      margin-bottom: 1rem;
-    }
-
-    .btn-comprar {
-      background: linear-gradient(45deg, #ffffff, #e0e0e0);
-      color: #000;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-      width: 100%;
-      font-size: 1rem;
-    }
-
-    .btn-comprar:hover {
-      background: linear-gradient(45deg, #ffffff, #0624cf);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
-    }
-
-    .seccion-calendarios {
-      background-color: rgba(255, 255, 255, 0.06);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-top: 3rem;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-      color: #fff;
-      backdrop-filter: blur(10px);
-    }
-
-    .seccion-calendarios h2 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      color: #122dc5d0;
-      text-align: center;
-    }
-
-    .seccion-calendarios p {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: #e0e0e0;
-    }
-
-    .seccion-calendarios section {
-      margin-bottom: 2rem;
-    }
-
-    .seccion-calendarios h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #c4c4c4;
-    }
-
-    .seccion-calendarios ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .seccion-calendarios li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 0.95rem;
-      color: #d6d9d9;
-    }
-
-    .seccion-calendarios a {
-      color: #0080ff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .seccion-calendarios a:hover {
-      text-decoration: underline;
-    }
-
-    #newsletter {
-      position: relative;
-      z-index: 1;
-      padding: 40px;
-      background: rgba(0, 0, 0, 0.85);
-      color: rgb(221, 221, 221);
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    #newsletter h2 {
-      color: #2c6bcae7;
-      margin-bottom: 1rem;
-    }
-
-    #newsletter input {
-      padding: 10px;
-      width: 250px;
-      border: none;
-      border-radius: 5px;
-      margin-right: 10px;
-    }
-
-    #newsletter button {
-      padding: 10px 20px;
-      background: #c9c3c3;
-      color: #000;
-      border: none;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-
-    .boton-login:hover {
-      background: #9c9dac;
-      transform: translateY(-2px);
-    }
-
-    /* Carrito Flotante */
-    .floating-cart {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 1000;
-    }
-
-    .cart-button {
-      background-color: #27e0b89f;
-      color: #000;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(27, 172, 104, 0.4);
-      transition: all 0.3s ease;
-      border: none;
-      font-size: 1.5rem;
-      position: relative;
-    }
-
-    .cart-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(41, 248, 179, 0.89);
-    }
-
-    .cart-count {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      background-color: #d42929;
-      color: white;
-      border-radius: 50%;
-      width: 26px;
-      height: 26px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: bold;
-    }
-
-    .cart-panel {
-      position: absolute;
-      bottom: 85px;
-      right: 0;
-      width: 350px;
-      background: rgba(0, 0, 0, 0.95);
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      padding: 1.5rem;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(20px);
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-    }
-
-    .cart-panel.active {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .cart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .cart-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #0026ff;
-    }
-
-    .close-cart {
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #ccc;
-      transition: color 0.3s ease;
-    }
-
-    .close-cart:hover {
-      color: a#44ff92;
-    }
-
-    .cart-items {
-      max-height: 300px;
-      overflow-y: auto;
-      margin-bottom: 1.5rem;
-    }
-
-    .cart-item {
-      display: flex;
-      align-items: center;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .cart-item:last-child {
-      border-bottom: none;
-    }
-
-    .item-image {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-right: 1rem;
-    }
-
-    .item-details {
-      flex: 1;
-    }
-
-    .item-name {
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-      color: #fff;
-    }
-
-    .item-price {
-      color: #e44343;
-      font-weight: 600;
-    }
-
-    .item-quantity {
-      display: flex;
-      align-items: center;
-      margin-top: 0.5rem;
-    }
-
-    .quantity-btn {
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.3s ease;
-      color: #fff;
-    }
-
-    .quantity-btn:hover {
-      background: #0077ff93;
-      color: #000;
-    }
-
-    .quantity-value {
-      margin: 0 0.75rem;
-      font-weight: 600;
-      color: #fff;
-    }
-
-    .remove-item {
-      background: none;
-      border: none;
-      color: #f3ff44;
-      cursor: pointer;
-      font-size: 1.2rem;
-      margin-left: 0.5rem;
-      transition: transform 0.3s ease;
-    }
-
-    .remove-item:hover {
-      transform: scale(1.2);
-    }
-
-    .cart-total {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 1.25rem;
-      font-weight: 700;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      margin-bottom: 1.5rem;
-      color: #fff;
-    }
-
-    .checkout-btn {
-      background-color: #959c9c;
-      color: #000;
-      border: none;
-      padding: 1rem;
-      border-radius: 50px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      width: 100%;
-      font-size: 1rem;
-    }
-
-    .checkout-btn:hover {
-      background-color: #17b6e6d0;
-    }
-
-    .empty-cart {
-      text-align: center;
-      padding: 2rem 0;
-      color: #ccc;
-    }
-
-    /* Animación de añadir al carrito */
-    @keyframes addToCart {
-      0% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.2);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    .animate-add {
-      animation: addToCart 0.5s ease;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .cart-panel {
-        width: 300px;
-        right: -50px;
-      }
-
-      .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      }
-    }
-
-    @media (max-width: 480px) {
-      .cart-panel {
-        width: 280px;
-        right: -80px;
-      }
-
-      .floating-cart {
-        bottom: 1rem;
-        right: 1rem;
-      }
-    }
-  </style>
+.seccion-calendarios h2{text-align:center;color:#00ffff;margin-bottom:1rem}
+
+#newsletter{
+margin-top:3rem;
+padding:40px;
+background:rgba(0,0,0,.85);
+text-align:center
+}
+#newsletter input{padding:10px;border-radius:5px;border:none;width:250px}
+#newsletter button{padding:10px 20px;border:none;border-radius:5px;font-weight:600}
+
+footer{
+background:#111;
+text-align:center;
+padding:25px;
+border-top:2px solid #00ffff94
+}
+footer h3{color:#00aeff}
+footer p{color:#ccc;font-size:14px}
+</style>
 </head>
 
 <body>
-  <video class="video-fondo" autoplay muted loop playsinline>
-    <source src="FONDOLOGIN.mp4" type="video/mp4">
-    Tu navegador no soporta video HTML5.
-  </video>
 
+<video class="video-fondo" autoplay muted loop>
+<source src="FONDOLOGIN.mp4" type="video/mp4">
+</video>
 
+<nav>
+<a href="INDEX.HTML">
+<img src="logo3.png" height="40">
+</a>
 
-  <nav
-    style="background: rgba(0, 0, 0, 0.685); backdrop-filter: blur(8px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+<ul>
+<li><a href="baloncesto.html">Baloncesto</a></li>
+<li><a href="Noticias.html">Noticias NBA</a></li>
+</ul>
+</nav>
 
+<main>
+<h1>Catálogo NBA</h1>
 
-    <a href="INDEX.HTML" class="logo">
-    <img src="logo3.png" alt="Energy Sports Logo" style="height:40px;">
-  </a>
+<section class="productos">
 
+<article class="producto">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdiTMkI4hdWaXA3v8_omHDmOIs37EBX21n5g&s">
+<h2>Zapatillas Nike Air Zoom</h2>
+<p>Amortiguación profesional para alto rendimiento en la cancha.</p>
+<div class="precio">$689.000 COP</div>
+<button class="btn-comprar" data-id="1" data-name="Nike Air Zoom" data-price="689000"
+data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdiTMkI4hdWaXA3v8_omHDmOIs37EBX21n5g&s">
+Añadir al carrito
+</button>
+</article>
 
-    <ul style="list-style: none; display: flex; flex-wrap: wrap; margin: 0; padding: 0;">
-      <li><a href="INDEX.HTML">Inicio</a></li>
+</section>
 
-      <li><a href="futbol.html">Fútbol</a></li>
-      <li><a href="baloncesto.html">Baloncesto</a></li>
-      <li><a href="tenis.html">Tenis</a></li>
-      <li><a href="motor.html">Motor</a></li>
-
-
-      <li>
-        <a href="#">Más Deportes</a>
-        <ul>
-          <li><a href="boxeo.html">Boxeo / MMA</a></li>
-          <li><a href="ciclismo.html">Ciclismo</a></li>
-          <li><a href="atletismo.html">Atletismo</a></li>
-          <li><a href="e">E-Sports</a></li>
-        </ul>
-      </li>
-
-      <li><a href="Noticias.html">Noticias</a></li>
-    </ul>
-
-  </nav>
-
-
-
-  <main>
-    <h1>Catálogo Deportivo</h1>
-
-    <section class="productos">
-      <article class="producto">
-        <a href="futbol.html">
-          <img src="https://media.falabella.com/falabellaCO/73398815_1/w=800,h=800,fit=pad" alt="Balón Trionda Pro">
-        </a>
-        <h2>Balón Trionda Pro</h2>
-        <p>Balón oficial Copa Mundial FIFA 2026. Precisión, durabilidad y diseño profesional.</p>
-        <p class="precio">$350.900 COP</p>
-        <button class="btn-comprar" data-id="1" data-name="Balón Trionda Pro" data-price="350900"
-          data-image="https://media.falabella.com/falabellaCO/73398815_1/w=800,h=800,fit=pad">Añadir al carrito</button>
-      </article>
-
-      <article class="producto">
-        <a href="baloncesto.html">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdiTMkI4hdWaXA3v8_omHDmOIs37EBX21n5g&s" alt="Zapatillas LeBron XXI">
-        </a>
-        <h2>Zapatillas Nike Air Zoom</h2>
-        <p>Diseño ligero y amortiguación Zoom Air para máximo rendimiento en cancha.</p>
-        <p class="precio">$689.000 COP</p>
-        <button class="btn-comprar" data-id="2" data-name="Zapatillas Nike Air Zoom" data-price="689000"
-          data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdiTMkI4hdWaXA3v8_omHDmOIs37EBX21n5g&s">Añadir
-          al carrito</button>
-      </article>
-
-      <article class="producto">
-        <a href="tenis.html">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xLqtL-M-yEfkaVmC4TWV5RX9klWq96AYKg&s"
-            alt="Raqueta Wilson Blade 98">
-        </a>
-        <h2>Raqueta Wilson Pro Staff</h2>
-        <p>Control y potencia para jugadores competitivos. Tecnología FeelFlex y diseño ergonómico.</p>
-        <p class="precio">$499.900 COP</p>
-        <button class="btn-comprar" data-id="3" data-name="Raqueta Wilson Pro Staff" data-price="499900"
-          data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xLqtL-M-yEfkaVmC4TWV5RX9klWq96AYKg&s">Añadir
-          al carrito</button>
-      </article>
-
-      <article class="producto">
-        <a href="motor.html">
-          <img src="https://virtualed.com.co/cdn/shop/files/IMG-9235.jpg?v=1701362653&width=1445"
-            alt="Casco HJC RPHA 11 Pro">
-        </a>
-        <h2>Casco HJC RPHA 11 Pro</h2>
-        <p>Casco deportivo de alto rendimiento. Aerodinámica avanzada y ventilación optimizada.</p>
-        <p class="precio">$1.250.000 COP</p>
-        <button class="btn-comprar" data-id="4" data-name="Casco HJC RPHA 11 Pro" data-price="1250000"
-          data-image="https://virtualed.com.co/cdn/shop/files/IMG-9235.jpg?v=1701362653&width=1445">Añadir al
-          carrito</button>
-      </article>
-    </section>
-
-    <section class="seccion-calendarios">
-      <h2>Calendarios y Partidos</h2>
-      <p>Consulta los próximos encuentros y accede a los portales deportivos más visitados en Colombia.</p>
-
-      <section>
-        <h3>Fútbol</h3>
-        <ul>
-          <li>Colombia vs Alemania – Mundial Sub-17 (5 Nov, 14:00)</li>
-          <li>Millonarios vs Nacional – Liga BetPlay (8 Nov, 19:30)</li>
-          <li><a
-              href="https://www.elinformador.com.co/index.php/tendencias/215-mas-populares/329825-el-deporte-colombiano-en-este-2025"
-              target="_blank">Ver más en El Informador</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Baloncesto</h3>
-        <ul>
-          <li>Toros del Valle vs Titanes – LBP (6 Nov, 18:00)</li>
-          <li>Lakers vs Warriors – NBA (7 Nov, 21:00)</li>
-          <li><a href="https://www.calendariodecolombia.com/fechas/calendario-de-eventos-deportivos-2025-en-colombia"
-              target="_blank">Calendario completo en CalendarioDeColombia</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Tenis</h3>
-        <ul>
-          <li>Masters 1000 París – Cuartos de final (6–9 Nov)</li>
-          <li>ATP Finals – Inicio (12 Nov)</li>
-          <li><a
-              href="https://rentifyexperience.com/colombia-2025-eventos-deportivos-imperdibles-en-bogota-medellin-cali-cartagena-y-barranquilla/"
-              target="_blank">Eventos destacados en Rentify Experience</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Motor</h3>
-        <ul>
-          <li>MotoGP Valencia – Gran Premio final (10 Nov)</li>
-          <li>WRC Japón – Etapa decisiva (9–12 Nov)</li>
-          <li><a href="https://www.calendariodecolombia.com/fechas/calendario-de-eventos-deportivos-2025-en-colombia"
-              target="_blank">Ver agenda completa</a></li>
-        </ul>
-      </section>
-    </section>
-  </main>
+<section class="seccion-calendarios">
+<h2>Próximos Partidos NBA</h2>
+<ul>
+<li>Lakers vs Warriors – 7 Nov (21:00)</li>
+<li>Bulls vs Celtics – 8 Nov (19:30)</li>
+<li>Heat vs Knicks – 9 Nov (20:00)</li>
+</ul>
+</section>
+</main>
 
 <section id="newsletter">
-  <h2>Suscríbete al Boletín y recibe toda la Energy</h2>
-  <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
-
-  <form id="form-newsletter">
-    <input type="email" id="email" placeholder="Tu correo electrónico" required>
-    <button type="submit">Suscribirse</button>
-  </form>
-
-  <section id="mensaje-newsletter"></section>
+<h2>Boletín NBA</h2>
+<p>Recibe noticias, resultados y lanzamientos exclusivos</p>
+<form id="form-newsletter">
+<input type="email" placeholder="Tu correo" required>
+<button>Suscribirse</button>
+</form>
 </section>
-
-<!-- Cargar el script de conexión con Supabase -->
-<script type="module" src="boletin.js"></script>
-
-<!-- Carrito Flotante -->
-<section class="floating-cart">
-  <button class="cart-button" id="cartButton">
-    🛒
-    <span class="cart-count" id="cartCount">0</span>
-  </button>
-
-  <section class="cart-panel" id="cartPanel">
-    <section class="cart-header">
-      <h2 class="cart-title">Tu Carrito</h2>
-      <button class="close-cart" id="closeCart">×</button>
-    </section>
-
-    <section class="cart-items" id="cartItems">
-      <!-- Los elementos del carrito se añadirán aquí -->
-    </section>
-
-    <section class="cart-total">
-      <span>Total:</span>
-      <span id="totalAmount">$0</span>
-    </section>
-
-    <!-- BOTÓN FINALIZAR COMPRA (redirige al formulario) -->
-    <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
-  </section>
-</section>
-
-<script>
-  // Estado del carrito
-  let cart = [];
-  let cartCount = 0;
-  let totalAmount = 0;
-
-  // Elementos del DOM
-  const cartButton = document.getElementById('cartButton');
-  const cartPanel = document.getElementById('cartPanel');
-  const closeCart = document.getElementById('closeCart');
-  const cartItems = document.getElementById('cartItems');
-  const cartCountElement = document.getElementById('cartCount');
-  const totalAmountElement = document.getElementById('totalAmount');
-  const checkoutBtn = document.getElementById('checkoutBtn');
-
-  // Inicializar la tienda
-  function initStore() {
-    loadCartFromStorage();
-    updateCartUI();
-
-    // Event listeners
-    cartButton.addEventListener('click', toggleCart);
-    closeCart.addEventListener('click', toggleCart);
-    checkoutBtn.addEventListener('click', checkout);
-
-    // Añadir event listeners a los botones de compra
-    document.querySelectorAll('.btn-comprar').forEach(button => {
-      button.addEventListener('click', (e) => {
-        const productId = parseInt(e.target.getAttribute('data-id'));
-        const productName = e.target.getAttribute('data-name');
-        const productPrice = parseInt(e.target.getAttribute('data-price'));
-        const productImage = e.target.getAttribute('data-image');
-
-        addToCart(productId, productName, productPrice, productImage);
-      });
-    });
-
-    // Cerrar carrito al hacer clic fuera de él
-    document.addEventListener('click', (e) => {
-      if (!cartPanel.contains(e.target) && !cartButton.contains(e.target) && cartPanel.classList.contains('active')) {
-        toggleCart();
-      }
-    });
-  }
-
-  // Añadir producto al carrito
-  function addToCart(productId, productName, productPrice, productImage) {
-    const existingItem = cart.find(item => item.id === productId);
-
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      cart.push({
-        id: productId,
-        name: productName,
-        price: productPrice,
-        image: productImage,
-        quantity: 1
-      });
-    }
-
-    // Animación del botón del carrito
-    cartButton.classList.add('animate-add');
-    setTimeout(() => {
-      cartButton.classList.remove('animate-add');
-    }, 500);
-
-    updateCartUI();
-    saveCartToStorage();
-
-    // Abrir el carrito automáticamente
-    if (!cartPanel.classList.contains('active')) {
-      toggleCart();
-    }
-  }
-
-  // Eliminar producto del carrito
-  function removeFromCart(productId) {
-    cart = cart.filter(item => item.id !== productId);
-    updateCartUI();
-    saveCartToStorage();
-  }
-
-  // Actualizar cantidad
-  function updateQuantity(productId, change) {
-    const item = cart.find(item => item.id === productId);
-    if (!item) return;
-
-    item.quantity += change;
-
-    if (item.quantity <= 0) {
-      removeFromCart(productId);
-    } else {
-      updateCartUI();
-      saveCartToStorage();
-    }
-  }
-
-  // Actualizar la interfaz del carrito
-  function updateCartUI() {
-    cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-    totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-
-    const formattedTotal = new Intl.NumberFormat('es-CO', {
-      style: 'currency',
-      currency: 'COP',
-      minimumFractionDigits: 0
-    }).format(totalAmount);
-
-    cartCountElement.textContent = cartCount;
-    totalAmountElement.textContent = formattedTotal;
-
-    cartItems.innerHTML = '';
-
-    if (cart.length === 0) {
-      cartItems.innerHTML = `
-        <section class="empty-cart">
-          <section>🛒</section>
-          <p>Tu carrito está vacío</p>
-        </section>
-      `;
-      return;
-    }
-
-    cart.forEach(item => {
-      const formattedPrice = new Intl.NumberFormat('es-CO', {
-        style: 'currency',
-        currency: 'COP',
-        minimumFractionDigits: 0
-      }).format(item.price);
-
-      const cartItem = document.createElement('section');
-      cartItem.className = 'cart-item';
-      cartItem.innerHTML = `
-        <img src="${item.image}" alt="${item.name}" class="item-image">
-        <section class="item-details">
-          <section class="item-name">${item.name}</section>
-          <section class="item-price">${formattedPrice}</section>
-          <section class="item-quantity">
-            <button class="quantity-btn minus" data-id="${item.id}">-</button>
-            <span class="quantity-value">${item.quantity}</span>
-            <button class="quantity-btn plus" data-id="${item.id}">+</button>
-            <button class="remove-item" data-id="${item.id}">🗑️</button>
-          </section>
-        </section>
-      `;
-
-      cartItems.appendChild(cartItem);
-    });
-
-    document.querySelectorAll('.quantity-btn.minus').forEach(button => {
-      button.addEventListener('click', (e) => {
-        const productId = parseInt(e.target.getAttribute('data-id'));
-        updateQuantity(productId, -1);
-      });
-    });
-
-    document.querySelectorAll('.quantity-btn.plus').forEach(button => {
-      button.addEventListener('click', (e) => {
-        const productId = parseInt(e.target.getAttribute('data-id'));
-        updateQuantity(productId, 1);
-      });
-    });
-
-    document.querySelectorAll('.remove-item').forEach(button => {
-      button.addEventListener('click', (e) => {
-        const productId = parseInt(e.target.getAttribute('data-id'));
-        removeFromCart(productId);
-      });
-    });
-  }
-
-  // Alternar visibilidad del carrito
-  function toggleCart() {
-    cartPanel.classList.toggle('active');
-  }
-
-  // Redirección al formulario de pago
-  function checkout() {
-    if (cart.length === 0) {
-      alert('Tu carrito está vacío. Añade algunos productos antes de finalizar la compra.');
-      return;
-    }
-
-    // Guardamos el carrito por si lo necesitas en la siguiente página
-    saveCartToStorage();
-
-    // Redirige al formulario de pago
-    window.location.href = "finalizar_compra.html"; // Cambia por tu nombre de archivo si es diferente
-  }
-
-  // Guardar carrito
-  function saveCartToStorage() {
-    localStorage.setItem('energySportsCart', JSON.stringify(cart));
-  }
-
-  // Cargar carrito
-  function loadCartFromStorage() {
-    const savedCart = localStorage.getItem('energySportsCart');
-    if (savedCart) {
-      cart = JSON.parse(savedCart);
-    }
-  }
-
-  // Iniciar
-  document.addEventListener('DOMContentLoaded', initStore);
-</script>
-
-
-  <!-- 🌐 Redes Sociales - Versión Neon Minimal -->
-  <section id="redes-sociales"
-    style="padding:50px 0; text-align:center; background:radial-gradient(circle at center, rgba(66, 63, 63, 0.9) 0%, rgba(0,0,0,1) 100%); color:#fff; border-top:2px solid #00ff88;">
-    <h2 style="font-size:1.8em; margin-bottom:25px; color:#ffffff; letter-spacing:1px;">Conéctate con Energy</h2>
-
-    <section style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
-
-      <a href="https://facebook.com" target="_blank" title="Facebook" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#00ff88; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(0,255,136,0.4), inset 0 0 10px rgba(0,255,136,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#00ff88'; this.style.color='black'; this.style.boxShadow='0 0 20px #00ff88';"
-        onmouseout="this.style.background='#111'; this.style.color='#00ff88'; this.style.boxShadow='0 0 10px rgba(0,255,136,0.4), inset 0 0 10px rgba(0,255,136,0.2)';">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-
-      <a href="https://instagram.com" target="_blank" title="Instagram" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#ff00ff; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(255,0,255,0.4), inset 0 0 10px rgba(255,0,255,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#ff00ff'; this.style.color='white'; this.style.boxShadow='0 0 20px #ff00ff';"
-        onmouseout="this.style.background='#111'; this.style.color='#ff00ff'; this.style.boxShadow='0 0 10px rgba(255,0,255,0.4), inset 0 0 10px rgba(255,0,255,0.2)';">
-        <i class="fab fa-instagram"></i>
-      </a>
-
-      <a href="https://twitter.com" target="_blank" title="Twitter" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#1da1f2; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(29,161,242,0.4), inset 0 0 10px rgba(29,161,242,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#1da1f2'; this.style.color='black'; this.style.boxShadow='0 0 20px #1da1f2';"
-        onmouseout="this.style.background='#111'; this.style.color='#1da1f2'; this.style.boxShadow='0 0 10px rgba(29,161,242,0.4), inset 0 0 10px rgba(29,161,242,0.2)';">
-        <i class="fab fa-x-twitter"></i>
-      </a>
-
-      <a href="https://youtube.com" target="_blank" title="YouTube" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#ff0000; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(255,0,0,0.4), inset 0 0 10px rgba(255,0,0,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#ff0000'; this.style.color='white'; this.style.boxShadow='0 0 20px #ff0000';"
-        onmouseout="this.style.background='#111'; this.style.color='#ff0000'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.4), inset 0 0 10px rgba(255,0,0,0.2)';">
-        <i class="fab fa-youtube"></i>
-      </a>
-
-      <a href="https://tiktok.com" target="_blank" title="TikTok" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#00ffff; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(0,255,255,0.4), inset 0 0 10px rgba(0,255,255,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#00ffff'; this.style.color='black'; this.style.boxShadow='0 0 20px #00ffff';"
-        onmouseout="this.style.background='#111'; this.style.color='#00ffff'; this.style.boxShadow='0 0 10px rgba(0,255,255,0.4), inset 0 0 10px rgba(0,255,255,0.2)';">
-        <i class="fab fa-tiktok"></i>
-      </a>
-
-    </section>
-  </section>
-
-  <!-- 💡 Librería de iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 
 <footer>
-  <h3>Energy Sports</h3>
-  <p>Email: energysports@gmail.com</p>
-  <p>Teléfono: +57 320 555 8899</p>
-  <p>Bogotá, Colombia</p>
-  <p>&copy; 2025 Energy Sports - Todos los derechos reservados ⚡</p>
+<h3>the NBA corner</h3>
+<p>Email: baloncesto@gmail.com</p>
+<p>Bogotá, Colombia</p>
+<p>&copy; 2025 the NBA corner</p>
 </footer>
 
 <script type="module" src="boletin.js"></script>
 
 </body>
-
 </html>

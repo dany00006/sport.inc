@@ -1,911 +1,194 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Energy Sports - Panel</title>
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="formulario.js">
-  <link href="STYLE.css" rel="stylesheet">
- <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel NBA | the NBA corner</title>
 
- /* Fondo y contenido según tu style */
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
-    body { background-color:#0a0a0a; color:#fff; min-height:100vh; position:relative; }
-    .video-fondo { position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1; opacity:0.4; }
-    main { max-width:1200px; margin:0 auto; padding:2rem; }
-    h1 { text-align:center; margin-bottom:2rem; color:#2a27df; font-size:2.5rem; }
-    p { text-align:center; color:#ccc; font-size:1.1rem; }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="STYLE.css" rel="stylesheet">
 
-    /* Drop-down básico para "Más Deportes" del nav original */
-    nav ul li { position:relative; }
-    nav ul li ul {
-      position:absolute; top:100%; left:0;
-      background:rgba(0,0,0,0.9); display:none; min-width:200px; border-radius:5px; z-index:999;
-      list-style:none; padding:8px 0;
-    }
-    nav ul li:hover > ul { display:block; }
-    nav ul li ul li a { padding:10px 15px; color:#fff; text-decoration:none; display:block; }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0a0a0a;color:#fff;min-height:100vh}
+.video-fondo{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;z-index:-1}
 
-    /* Chip de usuario + botón logout a la derecha del nav */
-    .usuario-wrap {
-      display:flex; align-items:center; gap:10px;
-    }
-    .usuario-chip {
-      background: rgba(255,255,255,0.12);
-      color:#fff; padding:8px 14px; border-radius:20px; font-weight:600;
-      border:1px solid rgba(255,255,255,0.15);
-    }
-    .logout-btn {
-      background:#d42929; color:#fff; border:none; padding:8px 12px; border-radius:12px;
-      cursor:pointer; font-size:0.9rem; transition:background 0.25s ease;
-    }
-    .logout-btn:hover { background:#a31d1d; }
+nav{
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(8px);
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:10
+}
+nav ul{list-style:none;display:flex;gap:15px}
+nav a{color:#fff;text-decoration:none;font-weight:500}
+nav a:hover{color:#00ffff}
 
+.usuario-chip{
+background:rgba(255,255,255,.15);
+padding:8px 15px;
+border-radius:20px;
+cursor:pointer
+}
+.usuario-menu{
+display:none;
+position:absolute;
+right:0;
+background:#000;
+border-radius:8px;
+overflow:hidden
+}
+.usuario-menu a, .usuario-menu button{
+display:block;
+padding:10px 15px;
+color:#fff;
+background:none;
+border:none;
+width:100%;
+text-align:left;
+cursor:pointer
+}
+.usuario-box:hover .usuario-menu{display:block}
 
+main{max-width:1200px;margin:auto;padding:3rem 2rem}
 
+h1,h2{text-align:center;color:#00ffff;margin-bottom:1.5rem}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-   
-    body {
-      background-color: #0a0a0a;
-      color: #fff;
-      position: relative;
-      min-height: 100vh;
-    }
- 
-    .video-fondo {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      opacity: 0.4;
-    }
+.productos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:2rem
+}
 
-    nav {
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(8px);
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 10;
-    }
+.producto{
+background:rgba(255,255,255,.08);
+padding:1.5rem;
+border-radius:12px;
+text-align:center;
+transition:.3s
+}
+.producto:hover{transform:translateY(-6px);box-shadow:0 10px 25px rgba(0,255,255,.3)}
+.producto img{width:100%;height:200px;object-fit:cover;border-radius:8px}
 
-    .logo {
-      color: #1230b8;
-      font-weight: 700;
-      font-size: 1.6em;
-      text-decoration: none;
-    }
+.precio{color:#00ffff;font-size:1.4rem;font-weight:700}
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-    }
+.btn-comprar{
+width:100%;
+padding:12px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#e6e6e6,#0c4da3);
+font-weight:600;
+cursor:pointer
+}
 
-    nav li {
-      position: relative;
-    }
+.seccion-calendarios{
+margin-top:4rem;
+background:rgba(0,0,0,.7);
+padding:2rem;
+border-radius:12px
+}
 
-    nav a {
-      color: #070606b8;
-      text-decoration: none;
-      padding: 10px 15px;
-      display: block;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #e2e2ec;
-    }
-
-    nav ul ul {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: rgba(0, 0, 0, 0.84);
-      display: none;
-      min-width: 200px;
-      border-radius: 5px;
-      z-index: 10;
-    }
-
-    nav li:hover>ul {
-      display: block;
-    }
-
-    main {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #24229f;
-      font-size: 2.5rem;
-    }
-
-    .productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .producto {
-      background: rgba(255, 255, 255, 0.06);
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .producto:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 255, 136, 0.2);
-    }
-
-    .producto img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .producto h2 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
-
-    .producto p {
-      color: #ccc;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-    }
-
-    .precio {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #8694d3;
-      margin-bottom: 1rem;
-    }
-
-    .btn-comprar {
-      background: linear-gradient(45deg, #ffffff, #e0e0e0);
-      color: #000;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-      width: 100%;
-      font-size: 1rem;
-    }
-
-    .btn-comprar:hover {
-      background: linear-gradient(45deg, #ffffff, #0624cf);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
-    }
-
-    .seccion-calendarios {
-      background-color: rgba(255, 255, 255, 0.06);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-top: 3rem;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-      color: #fff;
-      backdrop-filter: blur(10px);
-    }
-
-    .seccion-calendarios h2 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      color: #122dc5d0;
-      text-align: center;
-    }
-
-    .seccion-calendarios p {
-      font-size: 1rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: #e0e0e0;
-    }
-
-    .seccion-calendarios section {
-      margin-bottom: 2rem;
-    }
-
-    .seccion-calendarios h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      color: #c4c4c4;
-    }
-
-    .seccion-calendarios ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .seccion-calendarios li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 0.95rem;
-      color: #d6d9d9;
-    }
-
-    .seccion-calendarios a {
-      color: #0080ff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .seccion-calendarios a:hover {
-      text-decoration: underline;
-    }
-
-    #newsletter {
-      position: relative;
-      z-index: 1;
-      padding: 40px;
-      background: rgba(0, 0, 0, 0.85);
-      color: rgb(221, 221, 221);
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    #newsletter h2 {
-      color: #2c6bcae7;
-      margin-bottom: 1rem;
-    }
-
-    #newsletter input {
-      padding: 10px;
-      width: 250px;
-      border: none;
-      border-radius: 5px;
-      margin-right: 10px;
-    }
-
-    #newsletter button {
-      padding: 10px 20px;
-      background: #c9c3c3;
-      color: #000;
-      border: none;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-
-    .boton-login:hover {
-      background: #9c9dac;
-      transform: translateY(-2px);
-    }
-
-  
-    /* Responsive */
-    @media (max-width: 768px) {
-      .cart-panel {
-        width: 300px;
-        right: -50px;
-      }
-
-      .products-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      }
-    }
-
-    @media (max-width: 480px) {
-      .cart-panel {
-        width: 280px;
-        right: -80px;
-      }
-
-      .floating-cart {
-        bottom: 1rem;
-        right: 1rem;
-      }
-    }
-
-
-
-    /* Caja desplegable del usuario */
-    .usuario-box {
-      position: relative;
-      cursor: pointer;
-    }
-    .usuario-chip {
-      background: rgba(255,255,255,0.12);
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    .usuario-chip:hover { background: rgba(255,255,255,0.25); }
-
-    .usuario-menu {
-      position: absolute;
-      top: 120%;
-      right: 0;
-      background: rgba(0,0,0,0.9);
-      border-radius: 8px;
-      min-width: 180px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: all 0.3s ease;
-      pointer-events: none;
-    }
-    .usuario-menu.active {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-    .usuario-menu ul { list-style:none; margin:0; padding:0; }
-    .usuario-menu li a, .usuario-menu li button {
-      display:block;
-      padding:10px 15px;
-      color:#fff;
-      text-decoration:none;
-      background:none;
-      border:none;
-      width:100%;
-      text-align:left;
-      cursor:pointer;
-      transition: background 0.3s;
-    }
-    .usuario-menu li a:hover, .usuario-menu li button:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
-    </style>
+#newsletter{
+margin-top:4rem;
+padding:40px;
+background:#000;
+text-align:center
+}
+#newsletter input{padding:10px;border-radius:5px;border:none;width:250px}
+#newsletter button{padding:10px 20px;background:#00ffff;border:none;border-radius:5px;font-weight:600}
+</style>
 </head>
+
 <body>
 
-  <!-- Video de fondo -->
-  <video class="video-fondo" autoplay muted loop playsinline>
-    <source src="FONDOLOGIN.mp4" type="video/mp4">
-    Tu navegador no soporta video HTML5.
-  </video>
+<video class="video-fondo" autoplay muted loop>
+<source src="FONDOLOGIN.mp4" type="video/mp4">
+</video>
 
-  <!-- NAV -->
- <nav>
-    <a href="INDEX.HTML" class="logo">
-      <img src="logo3.png" alt="Energy Sports Logo" style="height:40px;">
-    </a>
+<nav>
+<a href="INDEX.HTML">
+<img src="logo3.png" height="40">
+</a>
 
-    <ul>
-      <li><a href="INDEX.HTML">Inicio</a></li>
-      <li><a href="futbol.html">Fútbol</a></li>
-      <li><a href="baloncesto.html">Baloncesto</a></li>
-      <li><a href="tenis.html">Tenis</a></li>
-      <li><a href="motor.html">Motor</a></li>
-      <li>
-        <a href="#">Más Deportes</a>
-        <ul>
-          <li><a href="boxeo.html">Boxeo / MMA</a></li>
-          <li><a href="ciclismo.html">Ciclismo</a></li>
-          <li><a href="atletismo.html">Atletismo</a></li>
-          <li><a href="esports.html">E-Sports</a></li>
-        </ul>
-      </li>
-      <li><a href="Noticias.html">Noticias</a></li>
-    </ul>
+<ul>
+<li><a href="baloncesto.html">Baloncesto</a></li>
+<li><a href="Noticias.html">Noticias NBA</a></li>
+</ul>
 
-    <!-- Caja desplegable del usuario -->
-    <div class="usuario-box" id="usuario-box">
-      <span class="usuario-chip" id="usuario-nav">Usuario</span>
-      <div class="usuario-menu" id="usuario-menu">
-        <ul>
-          <li><a href="perfil.html">Perfil</a></li>
-          <li><a href="configuracion.html">Configuración</a></li>
-          <li><button id="logout">Cerrar sesión</button></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <main>
-    <h1>Bienvenido al Panel Deportivo</h1>
-    <p>Has iniciado sesión como <span id="usuario-main">Invitado</span>.</p>
-  </main>
-
-  <script>
-    // Recuperar usuario desde localStorage
-    const usuario = localStorage.getItem("usuario") || "Invitado";
-    document.getElementById("usuario-nav").textContent = usuario;
-    document.getElementById("usuario-main").textContent = usuario;
-
-    // Toggle desplegable
-    const usuarioBox = document.getElementById("usuario-box");
-    const usuarioMenu = document.getElementById("usuario-menu");
-    usuarioBox.addEventListener("click", () => {
-      usuarioMenu.classList.toggle("active");
-    });
-
-    // Cerrar sesión
-    document.getElementById("logout").addEventListener("click", () => {
-      localStorage.removeItem("usuario");
-      alert("Sesión cerrada correctamente");
-      window.location.href = "INDEX.HTML";
-    });
-  </script>
-
+<div class="usuario-box">
+<span class="usuario-chip" id="usuario-nav">Usuario</span>
+<div class="usuario-menu">
+<a href="perfil.html">Perfil</a>
+<button id="logout">Cerrar sesión</button>
+</div>
+</div>
+</nav>
 
 <main>
-    <h1>Catálogo Deportivo</h1>
+<h1>Panel de Baloncesto NBA</h1>
+<p style="text-align:center;color:#ccc">Sesión iniciada como <strong id="usuario-main"></strong></p>
 
-    <section class="productos">
-      <article class="producto">
-        <a href="futbol.html">
-          <img src="https://media.falabella.com/falabellaCO/73398815_1/w=800,h=800,fit=pad" alt="Balón Trionda Pro">
-        </a>
-        <h2>Balón Trionda Pro</h2>
-        <p>Balón oficial Copa Mundial FIFA 2026. Precisión, durabilidad y diseño profesional.</p>
-        <p class="precio">$350.900 COP</p>
-        <button class="btn-comprar" data-id="1" data-name="Balón Trionda Pro" data-price="350900"
-          data-image="https://media.falabella.com/falabellaCO/73398815_1/w=800,h=800,fit=pad">Añadir al carrito</button>
-      </article>
+<h2>Catálogo NBA</h2>
+<section class="productos">
 
-      <article class="producto">
-        <a href="baloncesto.html">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdiTMkI4hdWaXA3v8_omHDmOIs37EBX21n5g&s" alt="Zapatillas LeBron XXI">
-        </a>
-        <h2>Zapatillas Nike Air Zoom</h2>
-        <p>Diseño ligero y amortiguación Zoom Air para máximo rendimiento en cancha.</p>
-        <p class="precio">$689.000 COP</p>
-        <button class="btn-comprar" data-id="2" data-name="Zapatillas Nike Air Zoom" data-price="689000"
-          data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdiTMkI4hdWaXA3v8_omHDmOIs37EBX21n5g&s">Añadir
-          al carrito</button>
-      </article>
+<article class="producto">
+<img src="https://images.unsplash.com/photo-1517649763962-0c623066013b">
+<h3>Balón Oficial NBA</h3>
+<p>Balón profesional usado en competiciones oficiales.</p>
+<div class="precio">$299.000 COP</div>
+<button class="btn-comprar">Añadir al carrito</button>
+</article>
 
-      <article class="producto">
-        <a href="tenis.html">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xLqtL-M-yEfkaVmC4TWV5RX9klWq96AYKg&s"
-            alt="Raqueta Wilson Blade 98">
-        </a>
-        <h2>Raqueta Wilson Pro Staff</h2>
-        <p>Control y potencia para jugadores competitivos. Tecnología FeelFlex y diseño ergonómico.</p>
-        <p class="precio">$499.900 COP</p>
-        <button class="btn-comprar" data-id="3" data-name="Raqueta Wilson Pro Staff" data-price="499900"
-          data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xLqtL-M-yEfkaVmC4TWV5RX9klWq96AYKg&s">Añadir
-          al carrito</button>
-      </article>
+<article class="producto">
+<img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6">
+<h3>Zapatillas NBA</h3>
+<p>Máximo agarre y amortiguación para la cancha.</p>
+<div class="precio">$689.000 COP</div>
+<button class="btn-comprar">Añadir al carrito</button>
+</article>
 
-      <article class="producto">
-        <a href="motor.html">
-          <img src="https://virtualed.com.co/cdn/shop/files/IMG-9235.jpg?v=1701362653&width=1445"
-            alt="Casco HJC RPHA 11 Pro">
-        </a>
-        <h2>Casco HJC RPHA 11 Pro</h2>
-        <p>Casco deportivo de alto rendimiento. Aerodinámica avanzada y ventilación optimizada.</p>
-        <p class="precio">$1.250.000 COP</p>
-        <button class="btn-comprar" data-id="4" data-name="Casco HJC RPHA 11 Pro" data-price="1250000"
-          data-image="https://virtualed.com.co/cdn/shop/files/IMG-9235.jpg?v=1701362653&width=1445">Añadir al
-          carrito</button>
-      </article>
-    </section>
+<article class="producto">
+<img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d">
+<h3>Camiseta NBA</h3>
+<p>Replica oficial de tu equipo favorito.</p>
+<div class="precio">$199.000 COP</div>
+<button class="btn-comprar">Añadir al carrito</button>
+</article>
 
-    <section class="seccion-calendarios">
-      <h2>Calendarios y Partidos</h2>
-      <p>Consulta los próximos encuentros y accede a los portales deportivos más visitados en Colombia.</p>
+</section>
 
-      <section>
-        <h3>Fútbol</h3>
-        <ul>
-          <li>Colombia vs Alemania – Mundial Sub-17 (5 Nov, 14:00)</li>
-          <li>Millonarios vs Nacional – Liga BetPlay (8 Nov, 19:30)</li>
-          <li><a
-              href="https://www.elinformador.com.co/index.php/tendencias/215-mas-populares/329825-el-deporte-colombiano-en-este-2025"
-              target="_blank">Ver más en El Informador</a></li>
-        </ul>
-      </section>
+<section class="seccion-calendarios">
+<h2>Calendario NBA</h2>
+<ul>
+<li>Lakers vs Warriors – 7 Nov (21:00)</li>
+<li>Bulls vs Celtics – 8 Nov (19:30)</li>
+<li>Heat vs Knicks – 9 Nov (20:00)</li>
+</ul>
+</section>
+</main>
 
-      <section>
-        <h3>Baloncesto</h3>
-        <ul>
-          <li>Toros del Valle vs Titanes – LBP (6 Nov, 18:00)</li>
-          <li>Lakers vs Warriors – NBA (7 Nov, 21:00)</li>
-          <li><a href="https://www.calendariodecolombia.com/fechas/calendario-de-eventos-deportivos-2025-en-colombia"
-              target="_blank">Calendario completo en CalendarioDeColombia</a></li>
-        </ul>
-      </section>
+<section id="newsletter">
+<h2>Boletín NBA</h2>
+<p>Noticias, resultados y lanzamientos exclusivos</p>
+<form id="form-newsletter">
+<input type="email" placeholder="Tu correo" required>
+<button>Suscribirse</button>
+</form>
+</section>
 
-      <section>
-        <h3>Tenis</h3>
-        <ul>
-          <li>Masters 1000 París – Cuartos de final (6–9 Nov)</li>
-          <li>ATP Finals – Inicio (12 Nov)</li>
-          <li><a
-              href="https://rentifyexperience.com/colombia-2025-eventos-deportivos-imperdibles-en-bogota-medellin-cali-cartagena-y-barranquilla/"
-              target="_blank">Eventos destacados en Rentify Experience</a></li>
-        </ul>
-      </section>
+<script>
+const usuario = localStorage.getItem("usuario") || "Invitado";
+document.getElementById("usuario-nav").textContent = usuario;
+document.getElementById("usuario-main").textContent = usuario;
 
-      <section>
-        <h3>Motor</h3>
-        <ul>
-          <li>MotoGP Valencia – Gran Premio final (10 Nov)</li>
-          <li>WRC Japón – Etapa decisiva (9–12 Nov)</li>
-          <li><a href="https://www.calendariodecolombia.com/fechas/calendario-de-eventos-deportivos-2025-en-colombia"
-              target="_blank">Ver agenda completa</a></li>
-        </ul>
-      </section>
-    </section>
-  </main>
-
-  <section id="newsletter">
-    <h2>Suscríbete al Boletín y recibe toda la Energy</h2>
-    <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
-    <form id="form-newsletter">
-      <input type="email" id="email" placeholder="Tu correo electrónico" required>
-      <button type="submit">Suscribirse</button>
-    </form>
-    
-    <section id="mensaje-newsletter"></section>
-  </section>
-  <script type="module">
-  // Inicializa Supabase
-
-  console.log("Supabase conectado:", supabase);
- 
-import { createClient } from '@supabase/supabase-js';
-
-
-  const supabaseUrl = "https://kvptoadhqhtoynxlniwh.supabase.co";
-  const supabaseKey = "TeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt2cHRvYWRocWh0b3lueGxuaXdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5MDY0MjMsImV4cCI6MjA3ODQ4MjQyM30._oHDdnYKe02ak2svVG-W1gDaQ2JUKrFOmzDIKe3iruEUeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt2cHRvYWRocWh0b3lueGxuaXdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI5MDY0MjMsImV4cCI6MjA3ODQ4MjQyM30._oHDdnYKe02ak2svVG-W1gDaQ2JUKrFOmzDIKe3iruE";
-  const supabase = createClient(supabaseUrl, supabaseKey);
-
-  // Captura el formulario
-  const form = document.getElementById("form-newsletter");
-  const mensaje = document.getElementById("mensaje-newsletter");
-
- form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const email = document.getElementById("email").value;
-
-  try {
-    const { error } = await supabase
-      .from("newsletter")
-      .insert([{ email }]);
-
-    if (error) {
-      console.error(error);
-      mensaje.innerHTML = `<p style="color:red;">Error: ${error.message}</p>`;
-    } else {
-      mensaje.innerHTML = `<p style="color:green;">¡Gracias por suscribirte!</p>`;
-      form.reset();
-    }
-  } catch (err) {
-    console.error("Error de conexión:", err);
-    mensaje.innerHTML = `<p style="color:red;">No se pudo conectar a Supabase.</p>`;
-  }
-});
-
+document.getElementById("logout").onclick = ()=>{
+localStorage.removeItem("usuario");
+location.href="INDEX.HTML";
+}
 </script>
-
-
-  <!-- Carrito Flotante -->
-  <section class="floating-cart">
-    <button class="cart-button" id="cartButton">
-      🛒
-      <span class="cart-count" id="cartCount">0</span>
-    </button>
-    <section class="cart-panel" id="cartPanel">
-      <section class="cart-header">
-        <h2 class="cart-title">Tu Carrito</h2>
-        <button class="close-cart" id="closeCart">×</button>
-      </section>
-      <section class="cart-items" id="cartItems">
-        <!-- Los elementos del carrito se añadirán aquí -->
-      </section>
-      <section class="cart-total">
-        <span>Total:</span>
-        <span id="totalAmount">$0</span>
-      </section>
-      <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
-    </section>
-  </section>
-
-  <script>
-    // Estado del carrito
-    let cart = [];
-    let cartCount = 0;
-    let totalAmount = 0;
-
-    // Elementos del DOM
-    const cartButton = document.getElementById('cartButton');
-    const cartPanel = document.getElementById('cartPanel');
-    const closeCart = document.getElementById('closeCart');
-    const cartItems = document.getElementById('cartItems');
-    const cartCountElement = document.getElementById('cartCount');
-    const totalAmountElement = document.getElementById('totalAmount');
-    const checkoutBtn = document.getElementById('checkoutBtn');
-
-    // Inicializar la tienda
-    function initStore() {
-      loadCartFromStorage();
-      updateCartUI();
-
-      // Event listeners
-      cartButton.addEventListener('click', toggleCart);
-      closeCart.addEventListener('click', toggleCart);
-      checkoutBtn.addEventListener('click', checkout);
-
-      // Añadir event listeners a los botones de compra
-      document.querySelectorAll('.btn-comprar').forEach(button => {
-        button.addEventListener('click', (e) => {
-          const productId = parseInt(e.target.getAttribute('data-id'));
-          const productName = e.target.getAttribute('data-name');
-          const productPrice = parseInt(e.target.getAttribute('data-price'));
-          const productImage = e.target.getAttribute('data-image');
-
-          addToCart(productId, productName, productPrice, productImage);
-        });
-      });
-
-      // Cerrar carrito al hacer clic fuera de él
-      document.addEventListener('click', (e) => {
-        if (!cartPanel.contains(e.target) && !cartButton.contains(e.target) && cartPanel.classList.contains('active')) {
-          toggleCart();
-        }
-      });
-    }
-
-    // Añadir producto al carrito
-    function addToCart(productId, productName, productPrice, productImage) {
-      const existingItem = cart.find(item => item.id === productId);
-
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cart.push({
-          id: productId,
-          name: productName,
-          price: productPrice,
-          image: productImage,
-          quantity: 1
-        });
-      }
-
-      // Animación del botón del carrito
-      cartButton.classList.add('animate-add');
-      setTimeout(() => {
-        cartButton.classList.remove('animate-add');
-      }, 500);
-
-      updateCartUI();
-      saveCartToStorage();
-
-      // Abrir el carrito automáticamente
-      if (!cartPanel.classList.contains('active')) {
-        toggleCart();
-      }
-    }
-
-    // Eliminar producto del carrito
-    function removeFromCart(productId) {
-      cart = cart.filter(item => item.id !== productId);
-      updateCartUI();
-      saveCartToStorage();
-    }
-
-    // Actualizar cantidad de un producto en el carrito
-    function updateQuantity(productId, change) {
-      const item = cart.find(item => item.id === productId);
-      if (!item) return;
-
-      item.quantity += change;
-
-      if (item.quantity <= 0) {
-        removeFromCart(productId);
-      } else {
-        updateCartUI();
-        saveCartToStorage();
-      }
-    }
-
-    // Actualizar la interfaz del carrito
-    function updateCartUI() {
-      // Calcular totales
-      cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-      totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-
-      // Formatear el total como moneda colombiana
-      const formattedTotal = new Intl.NumberFormat('es-CO', {
-        style: 'currency',
-        currency: 'COP',
-        minimumFractionDigits: 0
-      }).format(totalAmount);
-
-      // Actualizar elementos del DOM
-      cartCountElement.textContent = cartCount;
-      totalAmountElement.textContent = formattedTotal;
-
-      // Renderizar elementos del carrito
-      cartItems.innerHTML = '';
-
-      if (cart.length === 0) {
-        cartItems.innerHTML = `
-          <section class="empty-cart">
-            <section>🛒</section>
-            <p>Tu carrito está vacío</p>
-          </section>
-        `;
-        return;
-      }
-
-      cart.forEach(item => {
-        const formattedPrice = new Intl.NumberFormat('es-CO', {
-          style: 'currency',
-          currency: 'COP',
-          minimumFractionDigits: 0
-        }).format(item.price);
-
-        const cartItem = document.createElement('section');
-        cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
-          <img src="${item.image}" alt="${item.name}" class="item-image">
-          <section class="item-details">
-            <section class="item-name">${item.name}</section>
-            <section class="item-price">${formattedPrice}</section>
-            <section class="item-quantity">
-              <button class="quantity-btn minus" data-id="${item.id}">-</button>
-              <span class="quantity-value">${item.quantity}</span>
-              <button class="quantity-btn plus" data-id="${item.id}">+</button>
-              <button class="remove-item" data-id="${item.id}">🗑️</button>
-            </section>
-          </section>
-        `;
-
-        cartItems.appendChild(cartItem);
-      });
-
-      // Añadir event listeners a los botones de cantidad y eliminar
-      document.querySelectorAll('.quantity-btn.minus').forEach(button => {
-        button.addEventListener('click', (e) => {
-          const productId = parseInt(e.target.getAttribute('data-id'));
-          updateQuantity(productId, -1);
-        });
-      });
-
-      document.querySelectorAll('.quantity-btn.plus').forEach(button => {
-        button.addEventListener('click', (e) => {
-          const productId = parseInt(e.target.getAttribute('data-id'));
-          updateQuantity(productId, 1);
-        });
-      });
-
-      document.querySelectorAll('.remove-item').forEach(button => {
-        button.addEventListener('click', (e) => {
-          const productId = parseInt(e.target.getAttribute('data-id'));
-          removeFromCart(productId);
-        });
-      });
-    }
-
-    // Alternar visibilidad del carrito
-    function toggleCart() {
-      cartPanel.classList.toggle('active');
-    }
-
-    // Finalizar compra
-    function checkout() {
-      if (cart.length === 0) {
-        alert('Tu carrito está vacío. Añade algunos productos antes de finalizar la compra.');
-        return;
-      }
-
-      alert(`¡Gracias por tu compra! Total: ${totalAmountElement.textContent}\n\nTu pedido ha sido procesado.`);
-      cart = [];
-      updateCartUI();
-      saveCartToStorage();
-      toggleCart();
-    }
-
-    // Guardar carrito en localStorage
-    function saveCartToStorage() {
-      localStorage.setItem('energySportsCart', JSON.stringify(cart));
-    }
-
-    // Cargar carrito desde localStorage
-    function loadCartFromStorage() {
-      const savedCart = localStorage.getItem('energySportsCart');
-      if (savedCart) {
-        cart = JSON.parse(savedCart);
-      }
-    }
-
-    // Inicializar la aplicación
-    document.addEventListener('DOMContentLoaded', initStore);
-  </script>
-  <!-- 🌐 Redes Sociales - Versión Neon Minimal -->
-  <section id="redes-sociales"
-    style="padding:50px 0; text-align:center; background:radial-gradient(circle at center, rgba(66, 63, 63, 0.9) 0%, rgba(0,0,0,1) 100%); color:#fff; border-top:2px solid #00ff88;">
-    <h2 style="font-size:1.8em; margin-bottom:25px; color:#ffffff; letter-spacing:1px;">Conéctate con Energy</h2>
-
-    <section style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
-
-      <a href="https://facebook.com" target="_blank" title="Facebook" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#00ff88; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(0,255,136,0.4), inset 0 0 10px rgba(0,255,136,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#00ff88'; this.style.color='black'; this.style.boxShadow='0 0 20px #00ff88';"
-        onmouseout="this.style.background='#111'; this.style.color='#00ff88'; this.style.boxShadow='0 0 10px rgba(0,255,136,0.4), inset 0 0 10px rgba(0,255,136,0.2)';">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-
-      <a href="https://instagram.com" target="_blank" title="Instagram" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#ff00ff; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(255,0,255,0.4), inset 0 0 10px rgba(255,0,255,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#ff00ff'; this.style.color='white'; this.style.boxShadow='0 0 20px #ff00ff';"
-        onmouseout="this.style.background='#111'; this.style.color='#ff00ff'; this.style.boxShadow='0 0 10px rgba(255,0,255,0.4), inset 0 0 10px rgba(255,0,255,0.2)';">
-        <i class="fab fa-instagram"></i>
-      </a>
-
-      <a href="https://twitter.com" target="_blank" title="Twitter" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#1da1f2; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(29,161,242,0.4), inset 0 0 10px rgba(29,161,242,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#1da1f2'; this.style.color='black'; this.style.boxShadow='0 0 20px #1da1f2';"
-        onmouseout="this.style.background='#111'; this.style.color='#1da1f2'; this.style.boxShadow='0 0 10px rgba(29,161,242,0.4), inset 0 0 10px rgba(29,161,242,0.2)';">
-        <i class="fab fa-x-twitter"></i>
-      </a>
-
-      <a href="https://youtube.com" target="_blank" title="YouTube" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#ff0000; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(255,0,0,0.4), inset 0 0 10px rgba(255,0,0,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#ff0000'; this.style.color='white'; this.style.boxShadow='0 0 20px #ff0000';"
-        onmouseout="this.style.background='#111'; this.style.color='#ff0000'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.4), inset 0 0 10px rgba(255,0,0,0.2)';">
-        <i class="fab fa-youtube"></i>
-      </a>
-
-      <a href="https://tiktok.com" target="_blank" title="TikTok" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#00ffff; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(0,255,255,0.4), inset 0 0 10px rgba(0,255,255,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#00ffff'; this.style.color='black'; this.style.boxShadow='0 0 20px #00ffff';"
-        onmouseout="this.style.background='#111'; this.style.color='#00ffff'; this.style.boxShadow='0 0 10px rgba(0,255,255,0.4), inset 0 0 10px rgba(0,255,255,0.2)';">
-        <i class="fab fa-tiktok"></i>
-      </a>
-
-    </section>
-  </section>
-
-  <!-- 💡 Librería de iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 
 </body>
 </html>

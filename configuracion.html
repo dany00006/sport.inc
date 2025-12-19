@@ -3,184 +3,189 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Configuración - Energy Sports</title>
+  <title>Configuración NBA | the NBA corner</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
-    body { background-color:#0a0a0a; color:#fff; min-height:100vh; position:relative; }
-    .video-fondo { position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1; opacity:0.4; }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+    body{background:#0a0a0a;color:#fff;min-height:100vh}
+    .video-fondo{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4;z-index:-1}
 
-    nav {
-      background: rgba(0,0,0,0.685);
-      backdrop-filter: blur(8px);
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 10;
+    nav{
+      background:rgba(0,0,0,.75);
+      backdrop-filter:blur(8px);
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:10
     }
-    nav ul { list-style:none; display:flex; margin:0; padding:0; }
-    nav ul li { position:relative; }
-    nav ul li a { color:#fff; text-decoration:none; padding:10px 15px; display:block; transition:color 0.3s; }
-    nav ul li a:hover { color:#e2e2ec; }
-    nav ul li ul { position:absolute; top:100%; left:0; background:rgba(0,0,0,0.9); display:none; min-width:200px; border-radius:5px; }
-    nav ul li:hover>ul { display:block; }
+    nav ul{list-style:none;display:flex;gap:15px}
+    nav a{color:#fff;text-decoration:none}
+    nav a:hover{color:#00ffff}
 
-    .usuario-box { position:relative; cursor:pointer; }
-    .usuario-chip {
-      background: rgba(255,255,255,0.12);
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-weight: 600;
-      transition: background 0.3s;
+    .usuario-box{position:relative;cursor:pointer}
+    .usuario-chip{
+      background:rgba(255,255,255,.15);
+      padding:8px 14px;
+      border-radius:20px;
+      font-weight:600
     }
-    .usuario-chip:hover { background: rgba(255,255,255,0.25); }
-    .usuario-menu {
-      position:absolute; top:120%; right:0;
-      background:rgba(0,0,0,0.9);
+    .usuario-menu{
+      position:absolute;
+      top:120%;
+      right:0;
+      background:#000;
       border-radius:8px;
       min-width:180px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.5);
-      opacity:0; transform:translateY(-10px);
-      transition:all 0.3s ease;
+      opacity:0;
       pointer-events:none;
+      transform:translateY(-10px);
+      transition:.3s
     }
-    .usuario-menu.active { opacity:1; transform:translateY(0); pointer-events:auto; }
-    .usuario-menu ul { list-style:none; margin:0; padding:0; }
-    .usuario-menu li a, .usuario-menu li button {
-      display:block; padding:10px 15px; color:#fff;
-      text-decoration:none; background:none; border:none;
-      width:100%; text-align:left; cursor:pointer;
-      transition:background 0.3s;
+    .usuario-menu.active{
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0)
     }
-    .usuario-menu li a:hover, .usuario-menu li button:hover { background:rgba(255,255,255,0.1); }
+    .usuario-menu a,
+    .usuario-menu button{
+      display:block;
+      padding:10px 15px;
+      color:#fff;
+      background:none;
+      border:none;
+      width:100%;
+      text-align:left;
+      cursor:pointer
+    }
+    .usuario-menu a:hover,
+    .usuario-menu button:hover{background:rgba(255,255,255,.1)}
 
-    main { max-width:900px; margin:0 auto; padding:2rem; position:relative; z-index:1; }
-    h1 { text-align:center; margin-bottom:2rem; color:#2a27df; font-size:2.5rem; }
+    main{max-width:900px;margin:auto;padding:2rem}
+    h1{text-align:center;color:#00ffff;margin-bottom:2rem}
 
-    .config-card {
-      background:rgba(255,255,255,0.06);
+    .config-card{
+      background:rgba(255,255,255,.07);
       border-radius:12px;
       padding:2rem;
       backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,0.1);
-      box-shadow:0 10px 25px rgba(0,255,136,0.2);
-      animation:fadeIn 0.8s ease;
+      box-shadow:0 10px 25px rgba(0,255,255,.25)
     }
-    .config-card h2 { font-size:1.6rem; margin-bottom:1rem; color:#fff; text-align:center; }
-    .config-option { margin-bottom:1.5rem; }
-    .config-option label { display:block; margin-bottom:0.5rem; font-weight:600; color:#ccc; }
-    .config-option input, .config-option select {
-      width:100%; padding:10px; border:none;
-      border-radius:8px; background:#222; color:#fff;
-    }
-    .btn-save {
-      background:linear-gradient(45deg,#ffffff,#0624cf);
-      color:#000; border:none; padding:0.8rem 1.5rem;
-      border-radius:50px; font-weight:600; cursor:pointer;
-      transition:all 0.3s; font-size:1rem; display:block; margin:0 auto;
-    }
-    .btn-save:hover {
-      transform:translateY(-2px);
-      box-shadow:0 5px 15px rgba(0,255,136,0.4);
+    .config-card h2{text-align:center;margin-bottom:1.5rem}
+
+    .config-option{margin-bottom:1.5rem}
+    .config-option label{display:block;margin-bottom:.5rem;color:#ccc}
+    .config-option select{
+      width:100%;
+      padding:10px;
+      background:#222;
+      color:#fff;
+      border:none;
+      border-radius:8px
     }
 
-    @keyframes fadeIn {
-      from { opacity:0; transform:translateY(20px); }
-      to { opacity:1; transform:translateY(0); }
+    .btn-save{
+      display:block;
+      margin:auto;
+      padding:.8rem 1.5rem;
+      border:none;
+      border-radius:50px;
+      background:linear-gradient(45deg,#ffffff,#0c4da3);
+      font-weight:600;
+      cursor:pointer
+    }
+    .btn-save:hover{
+      transform:translateY(-2px);
+      box-shadow:0 5px 15px rgba(0,255,255,.4)
     }
   </style>
 </head>
+
 <body>
 
-  <video class="video-fondo" autoplay muted loop playsinline>
-    <source src="https://cdn.pixabay.com/video/2024/04/18/208442_large.mp4" type="video/mp4">
-  </video>
+<video class="video-fondo" autoplay muted loop>
+  <source src="https://cdn.pixabay.com/video/2024/04/18/208442_large.mp4" type="video/mp4">
+</video>
 
-  <!-- NAV ORIGINAL -->
-  <nav>
-    <a href="INDEX.HTML" class="logo">
-      <img src="logo3.png" alt="Energy Sports Logo" style="height:40px;">
-    </a>
+<!-- NAV BALONCESTO -->
+<nav>
+  <a href="INDEX.HTML">
+    <img src="logo3.png" height="40">
+  </a>
 
-    <ul>
-      <li><a href="INDEX.HTML">Inicio</a></li>
-      <li><a href="futbol.html">Fútbol</a></li>
-      <li><a href="baloncesto.html">Baloncesto</a></li>
-      <li><a href="tenis.html">Tenis</a></li>
-      <li><a href="motor.html">Motor</a></li>
-      <li>
-        <a href="#">Más Deportes</a>
-        <ul>
-          <li><a href="boxeo.html">Boxeo / MMA</a></li>
-          <li><a href="ciclismo.html">Ciclismo</a></li>
-          <li><a href="atletismo.html">Atletismo</a></li>
-          <li><a href="esports.html">E-Sports</a></li>
-        </ul>
-      </li>
-      <li><a href="Noticias.html">Noticias</a></li>
-    </ul>
+  <ul>
+    <li><a href="baloncesto.html">Baloncesto</a></li>
+    <li><a href="Noticias.html">Noticias NBA</a></li>
+  </ul>
 
-    <!-- Usuario + menú -->
-    <div class="usuario-box" id="usuario-box">
-      <span class="usuario-chip" id="usuario-nav">Usuario</span>
-      <div class="usuario-menu" id="usuario-menu">
-        <ul>
-          <li><a href="perfil.html">Perfil</a></li>
-          <li><a href="configuracion.html">Configuración</a></li>
-          <li><button id="logout">Cerrar sesión</button></li>
-        </ul>
-      </div>
+  <div class="usuario-box" id="usuario-box">
+    <span class="usuario-chip" id="usuario-nav">Usuario</span>
+    <div class="usuario-menu" id="usuario-menu">
+      <a href="perfil.html">Perfil</a>
+      <a href="configuracion.html">Configuración</a>
+      <button id="logout">Cerrar sesión</button>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- CONTENIDO CONFIGURACIÓN -->
-  <main>
-    <h1>Configuración de Usuario</h1>
-    <section class="config-card">
-      <h2>Preferencias</h2>
-      <div class="config-option">
-        <label for="tema">Tema de la interfaz</label>
-        <select id="tema">
-          <option value="oscuro">Oscuro</option>
-          <option value="claro">Claro</option>
-        </select>
-      </div>
-      <div class="config-option">
-        <label for="notificaciones">Notificaciones</label>
-        <select id="notificaciones">
-          <option value="activadas">Activadas</option>
-          <option value="desactivadas">Desactivadas</option>
-        </select>
-      </div>
-      <div class="config-option">
-        <label for="idioma">Idioma</label>
-        <select id="idioma">
-          <option value="es">Español</option>
-          <option value="en">English</option>
-        </select>
-      </div>
-      <button class="btn-save" id="guardar">Guardar Cambios</button>
-    </section>
-  </main>
+<!-- CONTENIDO -->
+<main>
+  <h1>Configuración NBA</h1>
 
-  <script>
-    // Recuperar usuario desde localStorage
-    const usuario = localStorage.getItem("usuario") || "Invitado";
-    document.getElementById("usuario-nav").textContent = usuario;
+  <section class="config-card">
+    <h2>Preferencias de Baloncesto</h2>
 
-    // Toggle menú usuario
-    const usuarioBox = document.getElementById("usuario-box");
-    const usuarioMenu = document.getElementById("usuario-menu");
-    usuarioBox.addEventListener("click", () => {
-      usuarioMenu.classList.toggle("active");
-    });
+    <div class="config-option">
+      <label for="equipo">Equipo favorito NBA</label>
+      <select id="equipo">
+        <option>Lakers</option>
+        <option>Warriors</option>
+        <option>Celtics</option>
+        <option>Bulls</option>
+        <option>Heat</option>
+      </select>
+    </div>
 
-    // Logout
-    document.getElementById("logout").addEventListener("click", () => {
-      localStorage.removeItem("usuario");
-      localStorage.removeItem("email");
-      alert("Sesión cerrada correctamente");
-      window.location.href = "INDEX.HTML";
-    });
+    <div class="config-option">
+      <label for="notificaciones">Notificaciones de partidos</label>
+      <select id="notificaciones">
+        <option>Activadas</option>
+        <option>Desactivadas</option>
+      </select>
+    </div>
+
+    <div class="config-option">
+      <label for="idioma">Idioma de noticias NBA</label>
+      <select id="idioma">
+        <option>Español</option>
+        <option>English</option>
+      </select>
+    </div>
+
+    <button class="btn-save" id="guardar">Guardar Cambios</button>
+  </section>
+</main>
+
+<script>
+const usuario = localStorage.getItem("usuario") || "Invitado";
+document.getElementById("usuario-nav").textContent = usuario;
+
+const usuarioBox = document.getElementById("usuario-box");
+const usuarioMenu = document.getElementById("usuario-menu");
+
+usuarioBox.addEventListener("click", () => {
+  usuarioMenu.classList.toggle("active");
+});
+
+document.getElementById("logout").addEventListener("click", () => {
+  localStorage.removeItem("usuario");
+  localStorage.removeItem("email");
+  alert("Sesión cerrada correctamente");
+  window.location.href = "INDEX.HTML";
+});
+</script>
+
+</body>
+</html>

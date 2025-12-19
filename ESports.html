@@ -3,31 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Energy-E-Sports</title>
-  <link href="STYLE.css" rel="stylesheet" />
+  <title>Baloncesto | the NBA corner</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
-    footer {
-  background-color: #111;
-  color: #fff;
-  text-align: center;
-  padding: 25px 10px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  border-top: 2px solid #ffcc00;
-}
-
-footer h3 {
-  color: #ffcc00;
-  margin-bottom: 10px;
-}
-
-footer p {
-  margin: 5px 0;
-  color: #ccc;
-}
-
     * {
       margin: 0;
       padding: 0;
@@ -38,19 +18,17 @@ footer p {
     body {
       background-color: #0a0a0a;
       color: #fff;
-      position: relative;
       min-height: 100vh;
     }
 
     .video-fondo {
       position: fixed;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       z-index: -1;
-      opacity: 0.4;
+      opacity: 0.35;
     }
 
     nav {
@@ -61,35 +39,18 @@ footer p {
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      position: relative;
-      z-index: 10;
-    }
-
-    .logo {
-      color: #00ffff;
-      font-weight: 700;
-      font-size: 1.6em;
-      text-decoration: none;
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav li {
-      position: relative;
+      gap: 15px;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
-      padding: 10px 15px;
-      display: block;
-      transition: color 0.3s;
+      font-weight: 500;
     }
 
     nav a:hover {
@@ -98,39 +59,34 @@ footer p {
 
     main {
       max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-      position: relative;
-      z-index: 1;
+      margin: auto;
+      padding: 3rem 2rem;
     }
 
     h1, h2 {
       text-align: center;
-      margin-bottom: 2rem;
       color: #00ffff;
-      font-size: 2.5rem;
+      margin-bottom: 2rem;
     }
 
     .productos {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      margin-bottom: 3rem;
     }
 
     .producto {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255,255,255,0.07);
       border-radius: 12px;
       padding: 1.5rem;
       text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: 0.3s;
     }
 
     .producto:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,255,255,0.3);
     }
 
     .producto img {
@@ -141,320 +97,163 @@ footer p {
       margin-bottom: 1rem;
     }
 
-    .producto h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      color: #fff;
-    }
-
-    .producto p {
-      color: #ccc;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-    }
-
     .precio {
+      color: #00ffff;
       font-size: 1.4rem;
       font-weight: 700;
-      color: #00ffff;
-      margin-bottom: 1rem;
+      margin: 10px 0;
     }
 
     .btn-comprar {
-      background: linear-gradient(45deg, #d6dbdb, #0c4da3);
-      color: #000;
+      width: 100%;
+      padding: 12px;
       border: none;
-      padding: 0.8rem 1.5rem;
       border-radius: 50px;
+      background: linear-gradient(45deg, #d6dbdb, #0c4da3);
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s;
-      width: 100%;
-      font-size: 1rem;
     }
 
     .btn-comprar:hover {
       background: linear-gradient(45deg, #00cccc, #00ffff);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5);
     }
 
     #newsletter {
-      position: relative;
-      z-index: 1;
+      margin-top: 4rem;
       padding: 40px;
-      background: rgba(0,0,0,0.85);
-      color: white;
       text-align: center;
-      margin-top: 3rem;
-    }
-
-    #newsletter h2 {
-      color: #00ffff;
-      margin-bottom: 1rem;
+      background: rgba(0,0,0,0.85);
     }
 
     #newsletter input {
       padding: 10px;
       width: 250px;
-      border: none;
       border-radius: 5px;
-      margin-right: 10px;
+      border: none;
     }
 
     #newsletter button {
       padding: 10px 20px;
+      margin-left: 10px;
       background: #00ffff;
-      color: #000;
       border: none;
       border-radius: 5px;
       font-weight: 600;
       cursor: pointer;
     }
 
-  
-
-    .boton-login:hover {
-      background: #00cccc;
-      transform: translateY(-2px);
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 25px;
+      border-top: 2px solid #ffcc00;
+      font-size: 14px;
     }
 
-    .floating-cart {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 1000;
-    }
-
-    .cart-button {
-      background-color: #00ffffa2;
-      color: #000;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4);
-      transition: all 0.3s ease;
-      border: none;
-      font-size: 1.5rem;
-      position: relative;
-    }
-
-    .cart-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(0, 255, 255, 0.5);
-    }
-
-    .cart-count {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      background-color: #ff4444;
-      color: white;
-      border-radius: 50%;
-      width: 26px;
-      height: 26px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      font-weight: bold;
+    footer h3 {
+      color: #ffcc00;
     }
   </style>
 </head>
 
 <body>
 
+  <!-- 🎥 Video fondo -->
   <video class="video-fondo" autoplay muted loop playsinline>
-    <source src="https://cdn.pixabay.com/video/2021/07/25/82659-580974597_tiny.mp4" type="video/mp4">
-    Tu navegador no soporta video HTML5.
+    <source src="https://cdn.pixabay.com/video/2019/03/05/21658-321651476_tiny.mp4" type="video/mp4">
   </video>
 
- <nav style="background: rgba(0, 0, 0, 0.753); backdrop-filter: blur(8px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-  
+  <!-- 🔝 Navegación -->
+  <nav>
+    <a href="INDEX.HTML">
+      <img src="logo3.png" alt="the NBA corner" style="height:40px;">
+    </a>
 
-  <a href="INDEX.HTML" class="logo">
-    <img src="logo3.png" alt="Energy Sports Logo" style="height:40px;">
-  </a>
-  
-  <ul style="list-style: none; display: flex; flex-wrap: wrap; margin: 0; padding: 0;">
-    <li><a href="INDEX.HTML">Inicio</a></li>
-
-    <li><a href="futbol.html">Fútbol</a></li>
-    <li><a href="baloncesto.html">Baloncesto</a></li>
-    <li><a href="tenis.html">Tenis</a></li>
-    <li><a href="motor.html">Motor</a></li>
-
-
-      <li>
-        <a href="#">Más Deportes</a>
-        <ul>
-          <li><a href="boxeo.html">Boxeo / MMA</a></li>
-          <li><a href="ciclismo.html">Ciclismo</a></li>
-          <li><a href="atletismo.html">Atletismo</a></li>
-          <li><a href="ESports.html">E-Sports</a></li>
-        </ul>
-      </li>
-
+    <ul>
+      <li><a href="INDEX.HTML">Inicio</a></li>
+      <li><a href="baloncesto.html">Baloncesto</a></li>
       <li><a href="Noticias.html">Noticias</a></li>
+      <li><a href="LOGIN.HTML">Iniciar sesión</a></li>
     </ul>
   </nav>
 
+  <!-- 🏀 Contenido -->
   <main>
-    <h2>Productos E-Sports</h2>
+    <h1>Baloncesto NBA</h1>
 
     <section class="productos">
 
       <article class="producto">
-        <img src="https://tse4.mm.bing.net/th/id/OIP.DuK4xt69gdCkkj-HbpAA0gHaHa?pid=Api&P=0&h=180" alt="Auriculares gaming RGB">
-        <h3>Auriculares RGB Pro</h3>
-        <p>Sonido envolvente 7.1, micrófono retráctil y luces RGB dinámicas.</p>
-        <span class="precio">$189.900</span>
-        <button class="btn-comprar">Añadir al carrito</button>
+        <img src="https://cdn.runrepeat.com/storage/gallery/product_primary/40225/under-armour-curry-11-main-21810718-720.jpg" alt="Balón NBA">
+        <h3>Under Armour Curry 11</h3>
+        <p></p>
+        <div class="precio">$350.000</div>
+        <button class="btn-comprar">Comprar</button>
       </article>
 
       <article class="producto">
-        <img src="https://tse2.mm.bing.net/th/id/OIP._fPN5bnNobc7CHRWUgDR2wHaEw?pid=Api&P=0&h=180" alt="Teclado mecánico gamer">
-        <h3>Teclado Mecánico Gamer</h3>
-        <p>Switches rojos silenciosos, retroiluminación RGB y cable trenzado.</p>
-        <span class="precio">$249.900</span>
-        <button class="btn-comprar">Añadir al carrito</button>
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSbv0bH2guo7ptxAnmRE1aeKqc72K3v3t6ZL1kFh-4UaNBCadqqVCLf-s-sbjiNLlk8sx4UJabiwrT_F4g1Uzqe2SYFr1bOsGMDmAAglY6bzlHELozFJMEj" alt="Zapatillas NBA">
+        <h3>adidas Anthony Edwards 2 Tenis</h3>
+        <p></p>
+        <div class="precio">$549.000</div>
+        <button class="btn-comprar">Comprar</button>
       </article>
 
       <article class="producto">
-        <img src="https://tse1.mm.bing.net/th/id/OIP.Q8vIjYSnxDY5XnjAAijqUAHaE2?pid=Api&P=0&h=180" alt="Mouse gamer">
-        <h3>Mouse RGB 16000 DPI</h3>
-        <p>Sensor óptico de alta precisión y personalización total de botones.</p>
-        <span class="precio">$139.900</span>
-        <button class="btn-comprar">Añadir al carrito</button>
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSFgrbKWmeDzQzWuLCLAS7KmmhzFTYQFKQN3Sa59x_oxc8Lna8XtxDaEbP18wBHIBBJ9zrSzpqXUHUSn9m3ilsRtXQ9mPe5" alt="Camiseta NBA">
+        <h3>Nike Kyrie Infinity Zapatillas</h3>
+        <p></p>
+        <div class="precio">$400.000</div>
+        <button class="btn-comprar">Comprar</button>
       </article>
 
+      
       <article class="producto">
-        <img src="https://tse2.mm.bing.net/th/id/OIP.DtjoPO2rpPLQvDpjA5ZDQAHaHa?pid=Api&P=0&h=180" alt="Silla gamer">
-        <h3>Silla Gamer Energy</h3>
-        <p>Diseño ergonómico, reposabrazos ajustables y soporte lumbar incluido.</p>
-        <span class="precio">$499.900</span>
-        <button class="btn-comprar">Añadir al carrito</button>
+        <img src="https://images.footballfanatics.com/chicago-bulls/chicago-bulls-nike-icon-swingman-jersey-custom-unisex_ss4_p-13304098+u-1bnmvuu775wdjk6j9fp8+v-e858b561236249d684c0e5486cb1440a.jpg?_hv=2&w=600" alt="Camiseta NBA">
+        <h3>camiseta de los Bulls</h3>
+        <p></p>
+        <div class="precio">$110.000</div>
+        <button class="btn-comprar">Comprar</button>
       </article>
 
+
+      
       <article class="producto">
-        <img src="https://tse4.mm.bing.net/th/id/OIP.khjazvhSUpPi4gvDo0ruBAHaHa?pid=Api&P=0&h=180" alt="Monitor gaming">
-        <h3>Monitor Curvo 144Hz</h3>
-        <p>Resolución Full HD con 1ms de respuesta. Ideal para shooters y MOBA.</p>
-        <span class="precio">$899.900</span>
-        <button class="btn-comprar">Añadir al carrito</button>
+        <img src="https://www.nbastore.com.mx/medias/-DN2009-733-1.jpg?context=bWFzdGVyfGltYWdlc3wxODczOTh8aW1hZ2UvanBlZ3xhVzFoWjJWekwyaGpNQzlvTjJFdk1USXlNREV6TlRjNE5qa3dPRFl1YW5Cbnw3YTAxZTY1ZmNhOTIzNmY0ZjAwNzhhMGE5NjhkNzViNDJlOGEwNmEzOTgyYTVjNmNiZWEzODgwNDExZGQzZDFj" alt="Camiseta NBA">
+        <h3>Camiseta de los Lakers</h3>
+        <p></p>
+        <div class="precio">$150.000</div>
+        <button class="btn-comprar">Comprar</button>
       </article>
 
+      
       <article class="producto">
-        <img src="https://tse4.mm.bing.net/th/id/OIP.9JTe_jTcy4oBS81Ab1pGlAHaFL?pid=Api&P=0&h=180" alt="Control Xbox Series">
-        <h3>Control Xbox Series</h3>
-        <p>Compatible con PC, Xbox y móvil. Conexión inalámbrica y gatillos hápticos.</p>
-        <span class="precio">$319.900</span>
-        <button class="btn-comprar">Añadir al carrito</button>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJtw7eGHux7NQSqNl9gxAPrzN3yTov2FoqTg&s" alt="Camiseta NBA">
+        <h3>Miami heat</h3>
+        <p></p>
+        <div class="precio">$130.000</div>
+        <button class="btn-comprar">Comprar</button>
       </article>
-
-      <article class="producto">
-        <img src="https://tse3.mm.bing.net/th/id/OIP.inYe_zEe5uRWPe0KOm6QsgHaHa?pid=Api&P=0&h=180" alt="Micrófono streaming">
-        <h3>Micrófono Streaming</h3>
-        <p>Sonido profesional con filtro antipop y brazo ajustable. Ideal para Twitch o YouTube.</p>
-        <span class="precio">$269.900</span>
-        <button class="btn-comprar">Añadir al carrito</button>
-      </article>
-
-      <article class="producto">
-        <img src="https://tse4.mm.bing.net/th/id/OIP.SyIS9LTeq7tCF9n0igo5YQHaEK?pid=Api&P=0&h=180" alt="Luz LED para setup">
-        <h3>Luz LED RGB de Escritorio</h3>
-        <p>Iluminación ambiental dinámica con control remoto. 16 millones de colores.</p>
-        <span class="precio">$89.900</span>
-        <button class="btn-comprar">Añadir al carrito</button>
-      </article>
-
     </section>
   </main>
 
+  <!-- 📩 Newsletter -->
   <section id="newsletter">
-    <h2>Suscríbete al Boletín</h2>
-    <p>Recibe noticias, descuentos y novedades del mundo gamer directamente en tu correo.</p>
-    <form id="form-newsletter">
-      <input type="email" id="email" placeholder="Tu correo electrónico" required>
+    <h2>Boletín NBA</h2>
+    <p>Recibe noticias, resultados y lanzamientos exclusivos.</p>
+    <form>
+      <input type="email" placeholder="Tu correo electrónico" required>
       <button type="submit">Suscribirse</button>
     </form>
   </section>
 
-  <a href="LOGIN.HTML" class="boton-login" title="Iniciar sesión">Iniciar sesión</a>
-
-    <section id="redes-sociales"
-    style="padding:50px 0; text-align:center; background:radial-gradient(circle at center, rgba(66, 63, 63, 0.9) 0%, rgba(0,0,0,1) 100%); color:#fff; border-top:2px solid #00ff88;">
-    <h2 style="font-size:1.8em; margin-bottom:25px; color:#ffffff; letter-spacing:1px;">Conéctate con Energy</h2>
-
-    <section style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
-
-      <a href="https://facebook.com" target="_blank" title="Facebook" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#00ff88; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(0,255,136,0.4), inset 0 0 10px rgba(0,255,136,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#00ff88'; this.style.color='black'; this.style.boxShadow='0 0 20px #00ff88';"
-        onmouseout="this.style.background='#111'; this.style.color='#00ff88'; this.style.boxShadow='0 0 10px rgba(0,255,136,0.4), inset 0 0 10px rgba(0,255,136,0.2)';">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-
-      <a href="https://instagram.com" target="_blank" title="Instagram" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#ff00ff; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(255,0,255,0.4), inset 0 0 10px rgba(255,0,255,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#ff00ff'; this.style.color='white'; this.style.boxShadow='0 0 20px #ff00ff';"
-        onmouseout="this.style.background='#111'; this.style.color='#ff00ff'; this.style.boxShadow='0 0 10px rgba(255,0,255,0.4), inset 0 0 10px rgba(255,0,255,0.2)';">
-        <i class="fab fa-instagram"></i>
-      </a>
-
-      <a href="https://twitter.com" target="_blank" title="Twitter" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#1da1f2; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(29,161,242,0.4), inset 0 0 10px rgba(29,161,242,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#1da1f2'; this.style.color='black'; this.style.boxShadow='0 0 20px #1da1f2';"
-        onmouseout="this.style.background='#111'; this.style.color='#1da1f2'; this.style.boxShadow='0 0 10px rgba(29,161,242,0.4), inset 0 0 10px rgba(29,161,242,0.2)';">
-        <i class="fab fa-x-twitter"></i>
-      </a>
-
-      <a href="https://youtube.com" target="_blank" title="YouTube" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#ff0000; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(255,0,0,0.4), inset 0 0 10px rgba(255,0,0,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#ff0000'; this.style.color='white'; this.style.boxShadow='0 0 20px #ff0000';"
-        onmouseout="this.style.background='#111'; this.style.color='#ff0000'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.4), inset 0 0 10px rgba(255,0,0,0.2)';">
-        <i class="fab fa-youtube"></i>
-      </a>
-
-      <a href="https://tiktok.com" target="_blank" title="TikTok" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#00ffff; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(0,255,255,0.4), inset 0 0 10px rgba(0,255,255,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#00ffff'; this.style.color='black'; this.style.boxShadow='0 0 20px #00ffff';"
-        onmouseout="this.style.background='#111'; this.style.color='#00ffff'; this.style.boxShadow='0 0 10px rgba(0,255,255,0.4), inset 0 0 10px rgba(0,255,255,0.2)';">
-        <i class="fab fa-tiktok"></i>
-      </a>
-
-    </section>
-  </section>
-
-  <!-- 💡 Librería de iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<footer>
-  <h3>Energy Sports</h3>
-  <p>Email: energysports@gmail.com</p>
-  <p>Teléfono: +57 320 555 8899</p>
-  <p>Bogotá, Colombia</p>
-  <p>&copy; 2025 Energy Sports - Todos los derechos reservados ⚡</p>
-</footer>
-
+  <!-- 🔚 Footer -->
+  <footer>
+    <h3>the NBA corner</h3>
+    <p>Email: baloncesto@gmail.com</p>
+    <p>Bogotá, Colombia</p>
+    <p>&copy; 2025 the NBA corner</p>
+  </footer>
 
 </body>
 </html>

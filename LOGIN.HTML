@@ -3,119 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Energy Sports</title>
+  <title>Login | the NBA corner</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Poppins", sans-serif;
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+      font-family:"Poppins",sans-serif;
     }
 
-    body {
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
+    body{
+      height:100vh;
+      overflow:hidden;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+      background:#000;
     }
 
-    video.fondo-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
+    video.fondo-video{
+      position:fixed;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      z-index:-1;
+      opacity:.45;
     }
 
-    .login-container {
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(10px);
-      padding: 40px;
-      border-radius: 15px;
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    .login-container{
+      background:rgba(0,0,0,.75);
+      backdrop-filter:blur(12px);
+      padding:40px;
+      border-radius:18px;
+      width:100%;
+      max-width:420px;
+      text-align:center;
+      box-shadow:0 0 30px rgba(0,255,255,.25);
+      border:1px solid rgba(255,255,255,.1);
     }
 
-    .login-container h1 {
-      margin-bottom: 20px;
-      font-size: 2rem;
-      color: #838488;
+    .login-container h1{
+      font-size:2.2rem;
+      margin-bottom:10px;
+      color:#00ffff;
+      font-weight:700;
+      letter-spacing:1px;
     }
 
-    .login-container input {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
+    .login-container h2{
+      font-size:1.2rem;
+      margin-bottom:20px;
+      color:#dcdcdc;
+      font-weight:500;
     }
 
-    .login-container input[type="text"],
-    .login-container input[type="password"],
-    .login-container input[type="email"] {
-      background-color: #222;
-      color: white;
+    .login-container input{
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+      border:none;
+      border-radius:8px;
+      background:#1c1c1c;
+      color:#fff;
+      font-size:.95rem;
     }
 
-    .login-container input[type="submit"] {
-      background-color: #2528b9;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
+    .login-container input::placeholder{
+      color:#aaa;
     }
 
-    .login-container input[type="submit"]:hover {
-      background-color: #2369ec69;
+    .login-container input[type="submit"]{
+      background:linear-gradient(45deg,#ffffff,#0c4da3);
+      color:#000;
+      font-weight:700;
+      cursor:pointer;
+      margin-top:15px;
+      transition:.3s;
     }
 
-    .login-container a {
-      color: #ffffff;
-      text-decoration: none;
-      display: block;
-      margin-top: 15px;
-      font-size: 0.9rem;
+    .login-container input[type="submit"]:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 20px rgba(0,255,255,.5);
     }
 
-    /* Botón lateral para volver al inicio */
-    .boton-inicio {
-      position: fixed;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      background-color: rgba(11, 8, 182, 0.8);
-      color: #c0bfbf;
-      padding: 12px 20px;
-      border-top-right-radius: 8px;
-      border-bottom-right-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 0 12px rgba(0,0,0,0.4);
-      backdrop-filter: blur(6px);
-      z-index: 1000;
-      transition: background 0.3s ease, transform 0.3s ease;
+    .login-container a{
+      display:block;
+      margin-top:15px;
+      font-size:.9rem;
+      color:#00ffff;
+      text-decoration:none;
     }
 
-    .boton-inicio:hover {
-      background-color: rgba(15, 53, 177, 0.9);
-      transform: translateY(-50%) scale(1.05);
+    .login-container a:hover{
+      text-decoration:underline;
     }
 
-    @media (max-width: 480px) {
-      .login-container {
-        width: 90%;
-        padding: 25px;
+    /* Botón volver */
+    .boton-inicio{
+      position:fixed;
+      top:50%;
+      left:0;
+      transform:translateY(-50%);
+      background:rgba(0,0,0,.85);
+      color:#00ffff;
+      padding:14px 22px;
+      border-top-right-radius:10px;
+      border-bottom-right-radius:10px;
+      font-weight:600;
+      text-decoration:none;
+      box-shadow:0 0 15px rgba(0,255,255,.4);
+      transition:.3s;
+      z-index:1000;
+    }
+
+    .boton-inicio:hover{
+      background:#00ffff;
+      color:#000;
+      transform:translateY(-50%) scale(1.05);
+    }
+
+    @media(max-width:480px){
+      .login-container{
+        width:90%;
+        padding:28px;
       }
     }
   </style>
 </head>
+
 <body>
 
   <video class="fondo-video" autoplay muted loop playsinline>
@@ -123,19 +143,22 @@
     Tu navegador no soporta video HTML5.
   </video>
 
-  <a href="INDEX.HTML" class="boton-inicio">Inicio</a>
+  <a href="baloncesto.html" class="boton-inicio">🏀 Baloncesto</a>
 
   <section class="login-container">
-    <h1>Energy</h1>
+    <h1>the NBA corner</h1>
+    <h2>Acceso de usuarios</h2>
 
     <form id="formLogin">
-      <h2>Iniciar Sesión</h2>
       <input type="email" id="correo" placeholder="Correo electrónico" required>
       <input type="password" id="contrasena" placeholder="Contraseña" required>
       <input type="submit" value="Entrar">
     </form>
+
+    <a href="registro.html">¿No tienes cuenta? Regístrate</a>
   </section>
 
+  <!-- Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="./login.js"></script>
 

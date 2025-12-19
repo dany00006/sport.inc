@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baloncesto - EnergySports</title>
+  <title>Baloncesto - the NBA corner</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -607,32 +607,24 @@
   </video>
 
   <nav>
-    <a href="INDEX.HTML" class="logo">Energy~Sports</a>
+    <a href="INDEX.HTML" class="logo">the NBA corner</a>
     
     <ul>
       <li><a href="INDEX.HTML">Inicio</a></li>
-      <li><a href="futbol.html">Fútbol</a></li>
       <li><a href="baloncesto.html">Baloncesto</a></li>
-      <li><a href="tenis.html">Tenis</a></li>
-      <li><a href="motor.html">Motor</a></li>
-
       <li>
         <a href="#">Más Deportes</a>
         <ul>
-          <li><a href="#">Boxeo / MMA</a></li>
-          <li><a href="#">Ciclismo</a></li>
-          <li><a href="#">Atletismo</a></li>
           <li><a href="#">E-Sports</a></li>
         </ul>
       </li>
-
       <li><a href="Noticias.html">Noticias</a></li>
     </ul>
   </nav>
 
   <main>
     <section class="hero-baloncesto">
-      <h1>Baloncesto EnergySports</h1>
+      <h1>Baloncesto the NBA corner</h1>
       <p>Todo lo que necesitas para dominar la cancha. Desde zapatillas de última generación hasta equipamiento profesional.</p>
     </section>
 
@@ -984,12 +976,12 @@
 
     // Guardar carrito en localStorage - Usamos una clave específica para baloncesto
     function saveCartToStorage() {
-      localStorage.setItem('energySportsBaloncestoCart', JSON.stringify(cart));
+      localStorage.setItem('the NBA cornerBaloncestoCart', JSON.stringify(cart));
     }
 
     // Cargar carrito desde localStorage - Usamos la clave específica para baloncesto
     function loadCartFromStorage() {
-      const savedCart = localStorage.getItem('energySportsBaloncestoCart');
+      const savedCart = localStorage.getItem('the NBA cornerBaloncestoCart');
       if (savedCart) {
         cart = JSON.parse(savedCart);
       }

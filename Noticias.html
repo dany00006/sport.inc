@@ -1,339 +1,231 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Energy-Noticias</title>
-  <link href="STYLE.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baloncesto | Noticias NBA</title>
+
+  <link href="STYLE.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
-footer {
-  background-color: #111;
-  color: #fff;
-  text-align: center;
-  padding: 25px 10px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  border-top: 2px solid #ffcc00;
-}
-
-footer h3 {
-  color: #ffcc00;
-  margin-bottom: 10px;
-}
-
-footer p {
-  margin: 5px 0;
-  color: #ccc;
-}
-
-    .boton-login {
-    background:#26aee4
-   }
-
-    .boton-login:hover {
-      background: #2430d6;
-      transform: translateY(-2px);
+    body {
+      background:#000;
+      color:#fff;
+      font-family:'Poppins',sans-serif;
+      margin:0;
     }
 
-    .boletin {
-  grid-column: 1 / -1;
-  margin-top: 4rem;
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  color: #fff;
-  text-align: center;
-}
-
-.boletin h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.boletin p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #e0e0e0;
-}
-
-.noticia {
-  margin-bottom: 2.5rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-}
-
-.noticia img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-}
-
-.noticia h3 {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  color: #2c8ecf;
-}
-
-.noticia p {
-  font-size: 0.95rem;
-  color: #f0f0f0;
-}
-
-.noticia a {
-  text-decoration: none;
-  color: inherit;
-}
-    .contenido {
-      position: relative;
-      z-index: 1;
-      color: white;
-      text-align: center;
-      padding: 10% 20px;
+    video.video-fondo{
+      position:fixed;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      z-index:-1;
+      opacity:.4;
     }
 
-    section.noticias-layout {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-      margin-top: 40px;
-      padding: 0 40px;
+    nav{
+      background:rgba(0,0,0,.85);
+      backdrop-filter:blur(8px);
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
 
-    section.noticias-layout article {
-      list-style: none;
-      background: rgba(49, 117, 219, 0.7);
-      border-radius: 10px;
-      padding: 20px;
-      color: white;
-      transition: transform 0.3s ease;
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:20px;
+      margin:0;
+      padding:0;
     }
 
-    section.noticias-layout article:hover {
-      transform: scale(1.05);
-      background: rgba(0, 255, 136, 0.2);
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
     }
 
-    section.noticias-layout img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 15px;
+    nav a:hover{
+      color:#00ffff;
     }
 
-    section.noticias-layout h3 {
-      margin-bottom: 10px;
-      font-size: 1.3em;
+    .boton-login{
+      position:fixed;
+      bottom:30px;
+      right:30px;
+      background:#00ffff;
+      color:#000;
+      padding:12px 18px;
+      border-radius:30px;
+      font-weight:700;
+      text-decoration:none;
+      box-shadow:0 0 15px rgba(0,255,255,.6);
+      transition:.3s;
+      z-index:999;
     }
 
-    section.noticias-layout p {
-      font-size: 0.95em;
-      line-height: 1.4em;
+    .boton-login:hover{
+      transform:scale(1.1);
+      background:#fff;
     }
 
-    form {
-      margin-top: 60px;
+    .boletin{
+      max-width:1100px;
+      margin:120px auto 60px;
+      padding:30px;
+      background:rgba(0,0,0,.7);
+      backdrop-filter:blur(10px);
+      border-radius:16px;
+      text-align:center;
     }
 
-    input[type="email"] {
-      padding: 10px;
-      width: 250px;
-      border-radius: 5px;
-      border: none;
+    .boletin h2{
+      color:#00ffff;
+      margin-bottom:10px;
+      font-size:2rem;
     }
 
-    button {
-      padding: 10px 20px;
-      margin-left: 10px;
-      border: none;
-      background: #b2beb8;
-      color: #111;
-      border-radius: 5px;
-      cursor: pointer;
+    .noticia{
+      max-width:700px;
+      margin:40px auto;
+      text-align:left;
     }
 
-    @media (max-width: 768px) {
-      section.noticias-layout {
-        grid-template-columns: 1fr;
-      }
+    .noticia img{
+      width:100%;
+      border-radius:10px;
+    }
+
+    .noticia h3{
+      margin-top:15px;
+      color:#00ffff;
+    }
+
+    .noticia p{
+      color:#ddd;
+    }
+
+    #newsletter{
+      background:rgba(0,0,0,.9);
+      padding:50px;
+      text-align:center;
+    }
+
+    input[type="email"]{
+      padding:10px;
+      border-radius:6px;
+      border:none;
+      width:260px;
+    }
+
+    button{
+      padding:10px 20px;
+      border:none;
+      background:#00ffff;
+      font-weight:700;
+      cursor:pointer;
+      margin-left:10px;
+    }
+
+    #redes-sociales{
+      padding:60px 0;
+      text-align:center;
+      background:#000;
+    }
+
+    footer{
+      background:#111;
+      text-align:center;
+      padding:25px;
+      border-top:2px solid #00ffff;
+    }
+
+    footer h3{
+      color:#00ffff;
     }
   </style>
 </head>
+
 <body>
 
-  <video class="video-fondo" autoplay muted loop playsinline>
-    <source src="https://cdn.pixabay.com/video/2016/01/29/1992-153555258_large.mp4" type="video/mp4">
-    Tu navegador no soporta video HTML5.
-  </video>
+<video class="video-fondo" autoplay muted loop playsinline>
+  <source src="https://cdn.pixabay.com/video/2024/04/18/208442_large.mp4" type="video/mp4">
+</video>
 
-  <nav>...</nav>
-  <main>...</main>
-<nav style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-  
-
-  <a href="INDEX.HTML" class="logo">
-    <img src="logo3.png" alt="Energy Sports Logo" style="height:40px;">
+<!-- NAV -->
+<nav>
+  <a href="INDEX.HTML">
+    <img src="logo3.png" alt="the NBA corner" style="height:40px;">
   </a>
 
-  
-  <ul style="list-style: none; display: flex; flex-wrap: wrap; margin: 0; padding: 0;">
+  <ul>
     <li><a href="INDEX.HTML">Inicio</a></li>
-
-    <li><a href="futbol.html">Fútbol</a></li>
     <li><a href="baloncesto.html">Baloncesto</a></li>
-    <li><a href="tenis.html">Tenis</a></li>
-    <li><a href="motor.html">Motor</a></li>
+    <li><a href="Noticias.html">Noticias</a></li>
+  </ul>
+</nav>
 
-
-      <li>
-        <a href="#">Más Deportes</a>
-        <ul>
-          <li><a href="boxeo.html">Boxeo / MMA</a></li>
-          <li><a href="ciclismo.html">Ciclismo</a></li>
-          <li><a href="atletismo.html">Atletismo</a></li>
-          <li><a href="ESports.html">E-Sports</a></li>
-        </ul>
-      </li>
-
-      <li><a href="Noticias.html">Noticias</a></li>
-    </ul>
-  </nav>
-
-  
+<!-- NOTICIAS -->
 <section class="boletin">
-  <h2>Noticias deportivas recientes</h2>
-  <p>Actualidad del deporte colombiano e internacional en fútbol, baloncesto, motor y tenis:</p>
+  <h2>Últimas Noticias NBA</h2>
+  <p>Todo lo que ocurre en el mundo del baloncesto profesional</p>
 
   <article class="noticia">
-    <a href="https://www.eltiempo.com/deportes/futbol-internacional/seleccion-colombia-y-su-dificil-debut-en-el-mundial-sub-17-de-qatar-contra-alemania-dia-hora-y-por-donde-ver-el-partido-3505579" target="_blank">
-      <img src="https://imagenes2.eltiempo.com/files/image_1200_535/uploads/2025/11/03/6908bb64a4a1a.jpeg" alt="Colombia Sub-17 en Qatar">
-      <h3>Colombia Sub-17 debuta ante Alemania en el Mundial</h3>
-    </a>
-    <p>La selección juvenil enfrenta a los campeones del mundo en su primer partido en Qatar 2025.</p>
-    <p><em>Fuente: El Tiempo</em></p>
+    <img src="https://cdn.nba.com/manage/2024/10/lebron-james-lakers-1568x882.jpg">
+    <h3>LeBron lidera a Lakers en una noche histórica</h3>
+    <p>El Rey volvió a brillar con una actuación dominante que mantiene a Los Ángeles en la pelea del Oeste.</p>
+    <p><em>Fuente: NBA.com</em></p>
   </article>
 
   <article class="noticia">
-    <a href="https://www.hsbnoticias.com/en-la-liga-profesional-colombiana-de-baloncesto/" target="_blank">
-      <img src="https://www.hsbnoticias.com/wp-content/uploads/2025/11/2-4.png" alt="Toros del Valle lideran la LBP">
-      <h3>Toros del Valle lideran la Liga Profesional de Baloncesto</h3>
-    </a>
-    <p>Con siete victorias, Toros se consolidan como líderes del torneo nacional 2025-II.</p>
-    <p><em>Fuente: HSB Noticias</em></p>
+    <img src="https://cdn.nba.com/manage/2024/10/stephen-curry-warriors.jpg">
+    <h3>Stephen Curry rompe otro récord de triples</h3>
+    <p>El base de los Warriors sigue agrandando su legado como el mejor tirador de todos los tiempos.</p>
+    <p><em>Fuente: ESPN NBA</em></p>
   </article>
 
   <article class="noticia">
-    <a href="https://www.motogp.com/es/news/2025/10/31/bulega-sustituira-a-marquez-en-portugal-y-valencia/488765" target="_blank">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuT4aKmFUgCCoHxaPiTjAbA9Fhz2Hyhsxzig&s" alt="Bulega reemplaza a Márquez">
-      <h3>Bulega reemplazará a Marc Márquez en las últimas fechas</h3>
-    </a>
-    <p>El piloto italiano tomará el lugar de Márquez en Portugal y Valencia por lesión.</p>
-    <p><em>Fuente: MotoGP.com</em></p>
-  </article>
-
-  <article class="noticia">
-    <a href="https://www.diariomotor.com/competicion/noticia/previo-rally-de-japon-2025/" target="_blank">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-TJDkNYCJ3CJPABkwa9GC6aJc1JHAz5sqEw&s" alt="Rally de Japón 2025">
-      <h3>Rally de Japón: penúltima cita del WRC 2025</h3>
-    </a>
-    <p>Cuatro equipos luchan por el título en uno de los tramos más exigentes del calendario.</p>
-    <p><em>Fuente: Diariomotor</em></p>
-  </article>
-
-  <article class="noticia">
-    <a href="https://canaltenis.com/category/noticias/" target="_blank">
-      <img src="https://canaltenis.com/wp-content/uploads/2025/11/donde-ver-Djokovic-Tabilo-ATP-Atenas-2025-990x658.webp" alt="Masters 1000 París">
-      <h3>Dimitrov sorprende en el Masters 1000 de París</h3>
-    </a>
-    <p>El búlgaro eliminó a uno de los favoritos locales en su regreso tras lesión.</p>
-    <p><em>Fuente: Canal Tenis</em></p>
+    <img src="https://cdn.nba.com/manage/2024/10/nikola-jokic-nuggets.jpg">
+    <h3>Jokić lidera a Denver con otro triple-doble</h3>
+    <p>El MVP serbio continúa dominando la liga con números históricos.</p>
+    <p><em>Fuente: Bleacher Report</em></p>
   </article>
 </section>
 
-<section id="newsletter" style="position:relative; z-index:1; padding:40px; background:rgba(0,0,0,0.85); color:white; text-align:center;">
-  <h2>Suscríbete al Boletín</h2>
-  <p>Recibe las últimas noticias deportivas directamente en tu correo.</p>
-
-  <form id="form-newsletter">
-    <input type="email" id="email" placeholder="Tu correo electrónico" required style="padding:10px; width:250px;">
-    <button type="submit" style="padding:10px 20px; margin-left:10px;">Suscribirse</button>
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <h2>Suscríbete al boletín NBA</h2>
+  <p>Noticias, resultados y rumores directamente a tu correo</p>
+  <form>
+    <input type="email" placeholder="Tu correo" required>
+    <button>Suscribirse</button>
   </form>
-
-  <output id="mensaje-newsletter" style="margin-top:20px;"></output>
 </section>
-<a href="LOGIN.HTML" class="boton-login" title="Iniciar sesión">Iniciar sesión</a>
 
+<!-- LOGIN -->
+<a href="LOGIN.HTML" class="boton-login">Iniciar sesión</a>
 
-<section id="redes-sociales"
-    style="padding:50px 0; text-align:center; background:radial-gradient(circle at center, rgba(66, 63, 63, 0.9) 0%, rgba(0,0,0,1) 100%); color:#fff; border-top:2px solid #00ff88;">
-    <h2 style="font-size:1.8em; margin-bottom:25px; color:#ffffff; letter-spacing:1px;">Conéctate con Energy</h2>
+<!-- REDES -->
+<section id="redes-sociales">
+  <h2>Conéctate con la NBA</h2>
+  <div style="display:flex; justify-content:center; gap:25px; margin-top:25px;">
+    <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+    <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+    <a href="#"><i class="fab fa-x-twitter fa-2x"></i></a>
+    <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+  </div>
+</section>
 
-    <section style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
-
-      <a href="https://facebook.com" target="_blank" title="Facebook" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#00ff88; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(0,255,136,0.4), inset 0 0 10px rgba(0,255,136,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#00ff88'; this.style.color='black'; this.style.boxShadow='0 0 20px #00ff88';"
-        onmouseout="this.style.background='#111'; this.style.color='#00ff88'; this.style.boxShadow='0 0 10px rgba(0,255,136,0.4), inset 0 0 10px rgba(0,255,136,0.2)';">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-
-      <a href="https://instagram.com" target="_blank" title="Instagram" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#ff00ff; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(255,0,255,0.4), inset 0 0 10px rgba(255,0,255,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#ff00ff'; this.style.color='white'; this.style.boxShadow='0 0 20px #ff00ff';"
-        onmouseout="this.style.background='#111'; this.style.color='#ff00ff'; this.style.boxShadow='0 0 10px rgba(255,0,255,0.4), inset 0 0 10px rgba(255,0,255,0.2)';">
-        <i class="fab fa-instagram"></i>
-      </a>
-
-      <a href="https://twitter.com" target="_blank" title="Twitter" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#1da1f2; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(29,161,242,0.4), inset 0 0 10px rgba(29,161,242,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#1da1f2'; this.style.color='black'; this.style.boxShadow='0 0 20px #1da1f2';"
-        onmouseout="this.style.background='#111'; this.style.color='#1da1f2'; this.style.boxShadow='0 0 10px rgba(29,161,242,0.4), inset 0 0 10px rgba(29,161,242,0.2)';">
-        <i class="fab fa-x-twitter"></i>
-      </a>
-
-      <a href="https://youtube.com" target="_blank" title="YouTube" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#ff0000; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(255,0,0,0.4), inset 0 0 10px rgba(255,0,0,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#ff0000'; this.style.color='white'; this.style.boxShadow='0 0 20px #ff0000';"
-        onmouseout="this.style.background='#111'; this.style.color='#ff0000'; this.style.boxShadow='0 0 10px rgba(255,0,0,0.4), inset 0 0 10px rgba(255,0,0,0.2)';">
-        <i class="fab fa-youtube"></i>
-      </a>
-
-      <a href="https://tiktok.com" target="_blank" title="TikTok" style="
-      width:60px; height:60px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      background:#111; color:#00ffff; font-size:26px; text-decoration:none;
-      box-shadow:0 0 10px rgba(0,255,255,0.4), inset 0 0 10px rgba(0,255,255,0.2);
-      transition:all 0.3s ease;
-    " onmouseover="this.style.background='#00ffff'; this.style.color='black'; this.style.boxShadow='0 0 20px #00ffff';"
-        onmouseout="this.style.background='#111'; this.style.color='#00ffff'; this.style.boxShadow='0 0 10px rgba(0,255,255,0.4), inset 0 0 10px rgba(0,255,255,0.2)';">
-        <i class="fab fa-tiktok"></i>
-      </a>
-
-    </section>
-  </section>
-
-  <!-- 💡 Librería de iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- FOOTER -->
 <footer>
-  <h3>Energy Sports</h3>
-  <p>Email: energysports@gmail.com</p>
-  <p>Teléfono: +57 320 555 8899</p>
+  <h3>the NBA corner</h3>
+  <p>Email: baloncesto@gmail.com</p>
   <p>Bogotá, Colombia</p>
-  <p>&copy; 2025 Energy Sports - Todos los derechos reservados ⚡</p>
+  <p>&copy; 2025 the NBA corner</p>
 </footer>
-
 </body>
 </html>

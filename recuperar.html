@@ -3,107 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recuperar Contraseña</title>
+  <title>Recuperar contraseña | the NBA corner</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: "Poppins", sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
     }
 
-    body {
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#000;
+      color:#fff;
+      overflow:hidden;
     }
 
-    video.fondo-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
+    video.fondo-video{
+      position:fixed;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      z-index:-1;
+      opacity:.45;
     }
 
-    .recuperar-container {
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(10px);
-      padding: 40px;
-      border-radius: 15px;
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    .recuperar-container{
+      background:rgba(0,0,0,.7);
+      backdrop-filter:blur(12px);
+      padding:40px;
+      border-radius:18px;
+      width:100%;
+      max-width:420px;
+      text-align:center;
+      box-shadow:0 0 25px rgba(0,255,255,.4);
+      border:1px solid rgba(255,255,255,.1);
+      animation:fadeIn .8s ease;
     }
 
-    .recuperar-container h1 {
-      margin-bottom: 20px;
-      font-size: 2rem;
-      color: #838488;
+    .recuperar-container h1{
+      font-size:2.1rem;
+      margin-bottom:15px;
+      color:#00ffff;
     }
 
-    .recuperar-container input {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
+    .recuperar-container p{
+      font-size:.95rem;
+      color:#ccc;
+      margin-bottom:25px;
+      line-height:1.5;
     }
 
-    .recuperar-container input[type="email"] {
-      background-color: #222;
-      color: white;
+    .recuperar-container input{
+      width:100%;
+      padding:12px;
+      margin:10px 0;
+      border:none;
+      border-radius:6px;
+      font-size:.95rem;
     }
 
-    .recuperar-container input[type="submit"] {
-      background-color: #2528b9;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
+    .recuperar-container input[type="email"]{
+      background:#222;
+      color:#fff;
     }
 
-    .recuperar-container input[type="submit"]:hover {
-      background-color: #2369ec69;
+    .recuperar-container input[type="submit"]{
+      background:linear-gradient(45deg,#ffffff,#0c4da3);
+      color:#000;
+      font-weight:700;
+      cursor:pointer;
+      transition:.3s;
     }
 
-    .recuperar-container a {
-      color: #ffffff;
-      text-decoration: none;
-      display: block;
-      margin-top: 15px;
-      font-size: 0.9rem;
+    .recuperar-container input[type="submit"]:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 20px rgba(0,255,255,.5);
     }
 
-    @media (max-width: 480px) {
-      .recuperar-container {
-        width: 90%;
-        padding: 25px;
+    .recuperar-container a{
+      display:block;
+      margin-top:20px;
+      font-size:.9rem;
+      color:#00ffff;
+      text-decoration:none;
+    }
+
+    .recuperar-container a:hover{
+      text-decoration:underline;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0; transform:translateY(20px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    @media(max-width:480px){
+      .recuperar-container{
+        width:90%;
+        padding:30px;
       }
     }
   </style>
 </head>
+
 <body>
 
   <video class="fondo-video" autoplay muted loop playsinline>
     <source src="https://cdn.pixabay.com/video/2024/04/18/208442_large.mp4" type="video/mp4">
-    Tu navegador no soporta video HTML5.
   </video>
 
   <section class="recuperar-container">
-    <h1>Recuperar Contraseña</h1>
-    <p>Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.</p>
+    <h1>Recuperar acceso NBA</h1>
+    <p>
+      ¿Olvidaste tu contraseña?  
+      Ingresa tu correo y te enviaremos un enlace para que vuelvas
+      a disfrutar de <strong>the NBA corner</strong>.
+    </p>
+
     <form action="LOGIN.HTML">
       <input type="email" placeholder="Correo electrónico" required>
       <input type="submit" value="Enviar enlace">
     </form>
-    <a href="LOGIN.HTML">Volver al inicio de sesión</a>
+
+    <a href="LOGIN.HTML">← Volver al inicio de sesión</a>
   </section>
 
 </body>

@@ -31,7 +31,7 @@ form.addEventListener('submit', async (e) => {
 
     if (error) throw error;
 
-    mensaje.textContent = '¡Gracias por suscribirte al boletín Energy Sports! ⚡';
+    mensaje.textContent = '¡Gracias por suscribirte al boletín the NBA corner! ⚡';
     mensaje.style.color = 'limegreen';
     emailInput.value = '';
   } catch (err) {
